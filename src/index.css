@@ -1,4 +1,38 @@
-body {
+*,
+*::after,
+*::before {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
   font-family: 'Assistant', sans-serif;
+  font-size: 1.6rem;
+  color: #fff;
+  width: 100vw;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input {
+  outline: 0;
+}
+
+button {
+  border: 0;
 }
