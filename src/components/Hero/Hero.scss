@@ -1,0 +1,38 @@
+.hero {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  width: 100vw;
+  height: calc(100vh - 12.4rem);
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 50%);
+  }
+
+  &__men,
+  &__women {
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media (max-width: 768px) {
+      background-position-y: -15rem;
+    }
+
+    @media (max-width: 425px) {
+      background-position-y: -3rem;
+    }
+
+    @media (max-width: 425px) {
+      background-position-y: 0rem;
+    }
+  }
+
+  &__men {
+    background-image: url('../../assets/shop-men.jpg');
+  }
+
+  &__women {
+    background-image: url('../../assets/shop-women.jpg');
+  }
+}
