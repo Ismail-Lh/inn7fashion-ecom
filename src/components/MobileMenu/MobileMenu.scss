@@ -1,0 +1,14 @@
+.mobile__menu {
+  background-color: #282828;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  width: 90%;
+  margin: 1rem auto 0 auto;
+  padding: 1rem 0;
+  border-radius: 1rem;
+
+  &-link {
+    padding: 1rem 0;
+  }
+}
