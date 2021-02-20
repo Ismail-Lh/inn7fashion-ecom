@@ -16,14 +16,34 @@
     background-size: cover;
 
     @media (max-width: 768px) {
-      background-position-y: -15rem;
+      background-position-y: -17rem;
     }
 
-    @media (max-width: 425px) {
+    @media (max-width: 650px) {
+      background-position-y: -12rem;
+    }
+
+    @media (max-width: 600px) {
+      background-position-y: -10rem;
+    }
+
+    @media (max-width: 550px) {
+      background-position-y: -8rem;
+    }
+
+    @media (max-width: 500px) {
+      background-position-y: -5rem;
+    }
+
+    @media (max-width: 450px) {
       background-position-y: -3rem;
     }
 
     @media (max-width: 425px) {
+      background-position-y: -1rem;
+    }
+
+    @media (max-width: 375px) {
       background-position-y: 0rem;
     }
   }
