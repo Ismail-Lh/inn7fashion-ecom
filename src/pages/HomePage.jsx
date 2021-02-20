@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hero, FeaturedProduct } from '../components';
+import { Hero, FeaturedProduct, InstaShop } from '../components';
 
 import feat_home_1 from '../assets/feat-home-1.jpg';
 import feat_home_2 from '../assets/feat-home-2.jpg';
@@ -18,6 +18,7 @@ const HomePage = () => {
     <>
       <Hero />
       <FeaturedProduct images={images} />
+      <InstaShop />
     </>
   );
 };
