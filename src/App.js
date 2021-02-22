@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { Navbar } from './components';
+import { Footer, Navbar } from './components';
 import { HomePage } from './pages';
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
           <HomePage />
         </Route>
       </Switch>
+      <Footer />
     </Router>
   );
 }
