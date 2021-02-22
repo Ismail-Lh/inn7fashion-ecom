@@ -1,0 +1,125 @@
+.newsletter {
+  background-image: url('../../assets/foter-top-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 3.5rem 6rem 2rem 6rem;
+
+  @media (max-width: 500px) {
+    padding: 3.5rem 4rem 2rem 4rem;
+  }
+
+  &__text {
+    color: #fff;
+
+    @media (max-width: 425px) {
+      text-align: center;
+    }
+
+    &-title {
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+
+      @media (max-width: 600px) {
+        font-size: 3.5rem;
+      }
+
+      @media (max-width: 550px) {
+        font-size: 3rem;
+      }
+
+      @media (max-width: 425px) {
+        font-size: 2.5rem;
+      }
+
+      @media (max-width: 375px) {
+        font-size: 2rem;
+      }
+    }
+
+    &-p-1 {
+      font-size: 1.9rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+
+      @media (max-width: 600px) {
+        font-size: 1.5rem;
+      }
+
+      @media (max-width: 375px) {
+        font-size: 1.4rem;
+      }
+    }
+
+    &-p-2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+
+      @media (max-width: 600px) {
+        font-size: 1.3rem;
+      }
+
+      @media (max-width: 375px) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &__form {
+    margin: 3rem 0;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 500px) {
+      flex-direction: column;
+    }
+
+    input {
+      padding: 1.5rem;
+      width: 40%;
+      font-size: 1.8rem;
+      color: #282828;
+
+      @media (max-width: 900px) {
+        width: 60%;
+      }
+
+      @media (max-width: 550px) {
+        width: 65%;
+      }
+
+      @media (max-width: 500px) {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+    }
+
+    button {
+      padding: 1.5rem 2.5rem;
+      height: 5.5rem;
+      background-color: #fff;
+      font-size: 2rem;
+      color: #282828;
+      margin-left: 1rem;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.3s ease-in;
+
+      &:hover {
+        background-color: #282828;
+        color: #fff;
+        border: 2px solid #fff;
+      }
+
+      @media (max-width: 550px) {
+        padding: 1.5rem 1.5rem;
+      }
+
+      @media (max-width: 500px) {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+  }
+}
