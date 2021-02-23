@@ -49,15 +49,15 @@ const Footer = () => {
               className={`footer__grid-items footer__grid-item-${id}`}
               key={id}>
               <h3>{title}</h3>
-              {links.map(({ id, link }) => (
-                <ul key={id}>
+              <ul>
+                {links.map(({ id, link }) => (
                   <li key={id}>
                     <Link to='/' key={id}>
                       {link}
                     </Link>
                   </li>
-                </ul>
-              ))}
+                ))}
+              </ul>
             </div>
           ))}
 

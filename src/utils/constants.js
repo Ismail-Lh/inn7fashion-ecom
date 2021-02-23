@@ -81,7 +81,7 @@ export const footerLinks = [
   },
   {
     title: 'account',
-    id: '4',
+    id: '5',
     links: [
       {
         id: uuidv4(),
