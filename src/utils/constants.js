@@ -113,6 +113,54 @@ export const featuredImages = ({ feat_1, feat_2 }) => {
   return images;
 };
 
+export const popularProducts = [
+  {
+    id: uuidv4(),
+    name: 'isaac sellam epicurien-wax pants',
+    designer: 'isaac sellam',
+    colors: ['white', 'grey'],
+    itemsId: ['1', '2'],
+    price: 67000,
+    popular: true,
+  },
+  {
+    id: uuidv4(),
+    name: 'epicurien-wax',
+    designer: 'isaac sellam',
+    colors: ['black'],
+    itemsId: ['1', '2'],
+    price: 67000,
+    popular: true,
+  },
+  {
+    id: uuidv4(),
+    name: 'carson',
+    designer: 'the last conspiracy',
+    colors: ['black'],
+    itemsId: ['1', '2'],
+    price: 25500,
+    popular: true,
+  },
+  {
+    id: uuidv4(),
+    name: 'riley',
+    designer: 'the last conspiracy',
+    colors: ['black'],
+    itemsId: ['1', '2'],
+    price: 24000,
+    popular: true,
+  },
+  {
+    id: uuidv4(),
+    name: 'caden',
+    designer: 'the last conspiracy',
+    colors: ['black'],
+    itemsId: ['1', '2'],
+    price: 22000,
+    popular: true,
+  },
+];
+
 {
   /* <i class="fab fa-searchengin"></i> */
 }
