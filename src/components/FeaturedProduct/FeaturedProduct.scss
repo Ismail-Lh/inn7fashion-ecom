@@ -14,6 +14,18 @@
       grid-template-rows: repeat(3, 1fr);
     }
 
+    &-items {
+      transition: all 0.3s ease-in;
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      img {
+        height: 100%;
+      }
+    }
+
     &-item {
       &-1 {
         grid-column: 1 / 2;
@@ -46,21 +58,6 @@
         @media (max-width: 500px) {
           grid-column: 1 / 2;
           grid-row: 3 / 4;
-        }
-      }
-
-      &-1,
-      &-2,
-      &-3,
-      &-4 {
-        transition: all 0.3s ease-in;
-
-        &:hover {
-          opacity: 0.9;
-        }
-
-        img {
-          height: 100%;
         }
       }
     }

@@ -1,5 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
 
+import feat_3 from '../assets/feat-3.jpg';
+import feat_4 from '../assets/feat-4.jpg';
+
 export const navLinks = [
   {
     id: 1,
@@ -98,6 +101,17 @@ export const footerLinks = [
     ],
   },
 ];
+
+export const featuredImages = ({ feat_1, feat_2 }) => {
+  const images = [
+    { id: 1, img: feat_1, url: '/', alt: 'feat_1' },
+    { id: 2, img: feat_2, url: '/', alt: 'feat_2' },
+    { id: 3, img: feat_3, url: '/', alt: 'feat_3' },
+    { id: 4, img: feat_4, url: '/', alt: 'feat_4' },
+  ];
+
+  return images;
+};
 
 {
   /* <i class="fab fa-searchengin"></i> */

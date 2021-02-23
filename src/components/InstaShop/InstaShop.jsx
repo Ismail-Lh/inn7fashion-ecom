@@ -29,7 +29,9 @@ const InstaShop = () => {
 
       <div className='instashop__grid'>
         {images.map(({ id, img, alt }) => (
-          <div className={`instashop__grid-item-${id} instashop__grid-items`}>
+          <div
+            className={`instashop__grid-item-${id} instashop__grid-items`}
+            key={id}>
             <img src={img} alt={alt} />
             <div className='overlay'>
               <i className='fab fa-instagram' />

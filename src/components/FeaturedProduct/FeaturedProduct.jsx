@@ -7,7 +7,10 @@ const FeaturedProduct = ({ images }) => {
   return (
     <div className='featured__grid'>
       {images.map(({ img, id, url, alt }) => (
-        <Link to={url} key={id} className={`featured__grid-item-${id}`}>
+        <Link
+          to={url}
+          key={id}
+          className={`featured__grid-item-${id} featured__grid-items`}>
           <img src={img} alt={alt} />
         </Link>
       ))}
