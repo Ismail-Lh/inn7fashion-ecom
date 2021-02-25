@@ -1,1 +1,66 @@
+.card {
+  color: #282828;
 
+  position: relative;
+
+  &__img {
+    cursor: pointer;
+  }
+
+  &__name,
+  &__designer {
+    text-transform: uppercase;
+  }
+
+  &__name {
+    font-size: 1.7rem;
+    font-weight: 300;
+  }
+
+  &__designer {
+    margin: 0.3rem 0;
+    font-weight: 600;
+    font-size: 1.4rem;
+  }
+
+  &__price {
+    font-weight: 400;
+
+    span {
+      &:first-of-type {
+        text-decoration: line-through;
+        opacity: 0.7;
+      }
+
+      &:last-of-type {
+        color: red;
+        margin-left: 0.7rem;
+      }
+    }
+  }
+
+  .icons {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+
+    i {
+      font-size: 2rem;
+      cursor: pointer;
+
+      &:first-of-type {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &:hover {
+    .icons {
+      opacity: 1;
+    }
+  }
+}

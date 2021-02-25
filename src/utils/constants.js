@@ -3,6 +3,24 @@ import { v4 as uuidv4 } from 'uuid';
 import feat_3 from '../assets/feat-3.jpg';
 import feat_4 from '../assets/feat-4.jpg';
 
+import isaac_sellam_epicurien_wax_pants_white_1 from '../assets/men/isaac sellam/isaac sellam epicurien-wax pants/white/1.jpg';
+import isaac_sellam_epicurien_wax_pants_white_2 from '../assets/men/isaac sellam/isaac sellam epicurien-wax pants/white/2.jpg';
+
+import isaac_sellam_epicurien_wax_pants_grey_1 from '../assets/men/isaac sellam/isaac sellam epicurien-wax pants/grey/1.jpg';
+import isaac_sellam_epicurien_wax_pants_grey_2 from '../assets/men/isaac sellam/isaac sellam epicurien-wax pants/grey/2.jpg';
+
+import epicurien_wax_black_1 from '../assets/men/isaac sellam/epicurien-wax/black/1.jpg';
+import epicurien_wax_black_2 from '../assets/men/isaac sellam/epicurien-wax/black/2.jpg';
+
+import carson_black_1 from '../assets/men/the last conspiracy/carson/black/1.jpg';
+import carson_black_2 from '../assets/men/the last conspiracy/carson/black/2.jpg';
+
+import riley_black_1 from '../assets/men/the last conspiracy/riley/black/1.jpg';
+import riley_black_2 from '../assets/men/the last conspiracy/riley/black/2.jpg';
+
+import caden_black_1 from '../assets/men/the last conspiracy/caden/black/1.jpg';
+import caden_black_2 from '../assets/men/the last conspiracy/caden/black/2.jpg';
+
 export const navLinks = [
   {
     id: 1,
@@ -118,57 +136,78 @@ export const popularProducts = [
     id: uuidv4(),
     name: 'isaac sellam epicurien-wax pants',
     designer: 'isaac sellam',
-    colors: ['white', 'grey'],
-    itemsId: ['1', '2'],
+    images: [
+      isaac_sellam_epicurien_wax_pants_white_1,
+      isaac_sellam_epicurien_wax_pants_white_2,
+    ],
     price: 67000,
+    discountPer: 70,
+    color: 'white',
+    popular: true,
+  },
+  {
+    id: uuidv4(),
+    name: 'isaac sellam epicurien-wax pants',
+    designer: 'isaac sellam',
+    images: [
+      isaac_sellam_epicurien_wax_pants_grey_1,
+      isaac_sellam_epicurien_wax_pants_grey_2,
+    ],
+    price: 67000,
+    discountPer: 70,
+    color: 'grey',
     popular: true,
   },
   {
     id: uuidv4(),
     name: 'epicurien-wax',
     designer: 'isaac sellam',
-    colors: ['black'],
-    itemsId: ['1', '2'],
+    images: [epicurien_wax_black_1, epicurien_wax_black_2],
+    color: 'black',
     price: 67000,
+    discountPer: 70,
     popular: true,
   },
   {
     id: uuidv4(),
     name: 'carson',
     designer: 'the last conspiracy',
-    colors: ['black'],
-    itemsId: ['1', '2'],
+    images: [carson_black_1, carson_black_2],
+    color: 'black',
     price: 25500,
+    discountPer: 50,
     popular: true,
   },
   {
     id: uuidv4(),
     name: 'riley',
     designer: 'the last conspiracy',
-    colors: ['black'],
-    itemsId: ['1', '2'],
+    images: [riley_black_1, riley_black_2],
+    color: 'black',
     price: 24000,
+    discountPer: 50,
     popular: true,
   },
   {
     id: uuidv4(),
     name: 'caden',
     designer: 'the last conspiracy',
-    colors: ['black'],
-    itemsId: ['1', '2'],
+    images: [caden_black_1, caden_black_2],
+    color: 'black',
     price: 22000,
+    discountPer: 50,
     popular: true,
   },
 ];
 
-{
-  /* <i class="fab fa-searchengin"></i> */
-}
+// {
+//   /* <i class="fab fa-searchengin"></i> */
+// }
 
-{
-  /* <i class="fas fa-search"></i> */
-  // <i class="fas fa-heart"></i>
-  // <i class="far fa-heart"></i>
-  // <i class="fas fa-user"></i>
-  // <i class="far fa-user"></i>
-}
+// {
+//   /* <i class="fas fa-search"></i> */
+//   // <i class="fas fa-heart"></i>
+//   // <i class="far fa-heart"></i>
+//   // <i class="fas fa-user"></i>
+//   // <i class="far fa-user"></i>
+// }
