@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { Footer, Navbar } from './components';
-import { HomePage, MenPage } from './pages';
+import { HomePage, MenPage, WomenPage } from './pages';
 
 function App() {
   return (
@@ -15,6 +15,10 @@ function App() {
 
         <Route exact path='/men'>
           <MenPage />
+        </Route>
+
+        <Route exact path='/women'>
+          <WomenPage />
         </Route>
       </Switch>
 

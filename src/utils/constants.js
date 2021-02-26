@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 
-import feat_3 from '../assets/feat-3.jpg';
-import feat_4 from '../assets/feat-4.jpg';
+import feat_img_3 from '../assets/feat-3.jpg';
+import feat_img_4 from '../assets/feat-4.jpg';
 
 import isaac_sellam_epicurien_wax_pants_white_1 from '../assets/men/isaac sellam/isaac sellam epicurien-wax pants/white/1.jpg';
 import isaac_sellam_epicurien_wax_pants_white_2 from '../assets/men/isaac sellam/isaac sellam epicurien-wax pants/white/2.jpg';
@@ -120,7 +120,12 @@ export const footerLinks = [
   },
 ];
 
-export const featuredImages = ({ feat_1, feat_2 }) => {
+export const featuredImages = ({
+  feat_1,
+  feat_2,
+  feat_3 = feat_img_3,
+  feat_4 = feat_img_4,
+}) => {
   const images = [
     { id: 1, img: feat_1, url: '/', alt: 'feat_1' },
     { id: 2, img: feat_2, url: '/', alt: 'feat_2' },
