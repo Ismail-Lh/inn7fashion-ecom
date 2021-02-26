@@ -1,10 +1,48 @@
 .card {
   color: #282828;
-
   position: relative;
 
   &__img {
     cursor: pointer;
+    position: relative;
+
+    &-2 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      z-index: -1;
+      transition: all 0.2s ease-in;
+    }
+
+    &:hover &-2 {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .icons {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+
+      i {
+        font-size: 2rem;
+        cursor: pointer;
+
+        &:first-of-type {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    &:hover .icons {
+      opacity: 1;
+      z-index: 11;
+    }
   }
 
   &__name,
@@ -36,31 +74,6 @@
         color: red;
         margin-left: 0.7rem;
       }
-    }
-  }
-
-  .icons {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    display: flex;
-    flex-direction: column;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-
-    i {
-      font-size: 2rem;
-      cursor: pointer;
-
-      &:first-of-type {
-        margin-bottom: 1rem;
-      }
-    }
-  }
-
-  &:hover {
-    .icons {
-      opacity: 1;
     }
   }
 }
