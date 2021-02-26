@@ -39,7 +39,33 @@
       }
     }
 
-    &:hover .icons {
+    .sizes {
+      display: flex;
+      justify-content: space-around;
+      background-color: #282828;
+      color: #fff;
+      text-transform: uppercase;
+      padding: 1rem 0;
+      position: absolute;
+      left: 0;
+      bottom: 6px;
+      width: 100%;
+      opacity: 0;
+      z-index: -111;
+      transition: opacity 0.2s ease-in;
+
+      .regular {
+        opacity: 0.7;
+      }
+
+      .bold {
+        opacity: 1;
+        font-weight: bold;
+      }
+    }
+
+    &:hover .icons,
+    &:hover .sizes {
       opacity: 1;
       z-index: 11;
     }

@@ -3,10 +3,16 @@ import React, { useState } from 'react';
 import './CardItem.scss';
 import { formatPrice } from '../../utils/helpers';
 
-const CardItem = ({ name, designer, price, discountPer, color, images }) => {
+const CardItem = ({
+  name,
+  designer,
+  price,
+  discountPer,
+  color,
+  images,
+  sizes,
+}) => {
   const salePrice = (price * discountPer) / 100;
-
-  // const [img, setImg] = useState(images[0]);
 
   return (
     <div className='card'>
@@ -25,7 +31,14 @@ const CardItem = ({ name, designer, price, discountPer, color, images }) => {
           <i class='fas fa-search' />
           <i class='far fa-heart' />
         </div>
+
+        <div className='sizes'>
+          {sizes.map(({ size, isAvailable }) => (
+            <p className={`${isAvailable ? 'bold' : 'regular'}`}>{size}</p>
+          ))}
+        </div>
       </div>
+
       <h3 className='card__name'>{name}</h3>
       <p className='card__designer'>{designer}</p>
       <p className='card__price'>

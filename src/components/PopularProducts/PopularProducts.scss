@@ -1,6 +1,6 @@
 .cards {
   color: #282828;
-  padding: 3rem 6rem;
+  padding: 3rem 4rem;
   text-align: center;
 
   @media (max-width: 1024px) {
@@ -21,45 +21,17 @@
     margin-bottom: 2rem;
   }
 
-  .rec.rec-arrow {
-    color: #fff;
-    background-color: #282828;
-    border: 0;
-    outline: 0;
-    transition: all 0.3s ease-in-out;
+  .btns {
+    background-color: transparent;
+    transform: translateY(-3rem);
+    cursor: pointer;
 
-    &:hover {
-      color: #282828;
-      background-color: #fff;
+    i {
+      font-size: 3rem;
     }
-  }
-
-  .rec.rec-arrow:disabled {
-    visibility: hidden;
   }
 
   .rec-item-wrapper {
     padding: 0.5rem !important;
   }
-
-  .rec-swipable {
-    display: grid !important;
-    grid-template-columns: repeat(6, 1fr);
-    // width: 200%;
-  }
-
-  // &__grid {
-  //   display: grid;
-  //   grid-template-columns: repeat(6, 1fr);
-  //   gap: 1rem;
-  //   width: 200%;
-
-  //   @media (max-width: 768px) {
-  //     grid-template-columns: repeat(2, 1fr);
-  //   }
-
-  //   @media (max-width: 500px) {
-  //     grid-template-columns: 1fr;
-  //   }
-  // }
 }

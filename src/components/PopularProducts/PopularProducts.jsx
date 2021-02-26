@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Carousel from 'react-elastic-carousel';
+import Carousel, { consts } from 'react-elastic-carousel';
 
 import './PopularProducts.scss';
 
@@ -16,6 +16,22 @@ const PopularProducts = () => {
     { width: 1750, itemsToShow: 6 },
   ]);
 
+  const arrow = ({ type, onClick, isEdge }) => {
+    const pointer =
+      type === consts.PREV ? (
+        <i class='fas fa-chevron-left' />
+      ) : (
+        <i class='fas fa-chevron-right' />
+      );
+    return (
+      <button onClick={onClick} disabled={isEdge} className='btns'>
+        {pointer}
+      </button>
+    );
+  };
+
+  // <i class="fas fa-chevron-right"></i>
+
   return (
     <div className='cards'>
       <h1>most popular</h1>
@@ -23,6 +39,7 @@ const PopularProducts = () => {
         <Carousel
           itemsToScroll={1}
           pagination={false}
+          renderArrow={arrow}
           breakPoints={breakPoints}>
           {popularProducts.map(product => (
             <CardItem key={product.id} {...product} />

@@ -143,6 +143,14 @@ export const popularProducts = [
     price: 67000,
     discountPer: 70,
     color: 'white',
+    sizes: [
+      { size: 's', isAvailable: false },
+      { size: 'm', isAvailable: true },
+      { size: 'l', isAvailable: false },
+      { size: 'xl', isAvailable: true },
+      { size: 'xxl', isAvailable: false },
+      { size: 'xxxl', isAvailable: false },
+    ],
     popular: true,
   },
   {
@@ -156,6 +164,14 @@ export const popularProducts = [
     price: 67000,
     discountPer: 70,
     color: 'grey',
+    sizes: [
+      { size: 's', isAvailable: false },
+      { size: 'm', isAvailable: true },
+      { size: 'l', isAvailable: false },
+      { size: 'xl', isAvailable: true },
+      { size: 'xxl', isAvailable: false },
+      { size: 'xxxl', isAvailable: false },
+    ],
     popular: true,
   },
   {
@@ -166,6 +182,14 @@ export const popularProducts = [
     color: 'black',
     price: 67000,
     discountPer: 70,
+    sizes: [
+      { size: 's', isAvailable: false },
+      { size: 'm', isAvailable: true },
+      { size: 'l', isAvailable: false },
+      { size: 'xl', isAvailable: true },
+      { size: 'xxl', isAvailable: false },
+      { size: 'xxxl', isAvailable: false },
+    ],
     popular: true,
   },
   {
@@ -176,6 +200,14 @@ export const popularProducts = [
     color: 'black',
     price: 25500,
     discountPer: 50,
+    sizes: [
+      { size: '41seu', isAvailable: false },
+      { size: '42seu', isAvailable: false },
+      { size: '43seu', isAvailable: false },
+      { size: '44seu', isAvailable: false },
+      { size: '45seu', isAvailable: true },
+      { size: '46seu', isAvailable: true },
+    ],
     popular: true,
   },
   {
@@ -186,6 +218,14 @@ export const popularProducts = [
     color: 'black',
     price: 24000,
     discountPer: 50,
+    sizes: [
+      { size: '41seu', isAvailable: false },
+      { size: '42seu', isAvailable: false },
+      { size: '43seu', isAvailable: false },
+      { size: '44seu', isAvailable: false },
+      { size: '45seu', isAvailable: true },
+      { size: '46seu', isAvailable: true },
+    ],
     popular: true,
   },
   {
@@ -196,6 +236,14 @@ export const popularProducts = [
     color: 'black',
     price: 22000,
     discountPer: 50,
+    sizes: [
+      { size: '41seu', isAvailable: false },
+      { size: '42seu', isAvailable: false },
+      { size: '43seu', isAvailable: false },
+      { size: '44seu', isAvailable: false },
+      { size: '45seu', isAvailable: true },
+      { size: '46seu', isAvailable: true },
+    ],
     popular: true,
   },
 ];
