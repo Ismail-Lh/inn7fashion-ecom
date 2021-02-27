@@ -1,22 +1,30 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './CardItem.scss';
 import { formatPrice } from '../../utils/helpers';
+import { useProductsContext } from '../../contexts/products_context';
 
 const CardItem = ({
   name,
   designer,
   price,
   discountPer,
-  color,
   images,
   sizes,
+  id,
 }) => {
+  const { categories, getSingleProduct } = useProductsContext();
+
   const salePrice = (price * discountPer) / 100;
+  const url = `${categories}/${designer}/${name}`;
 
   return (
     <div className='card'>
-      <div className='card__img'>
+      <Link
+        to={`/products/${url}`}
+        className='card__img'
+        onClick={() => getSingleProduct(id, categories)}>
         <img
           src={images[0]}
           alt={`${designer}-${name}-1`}
@@ -37,7 +45,7 @@ const CardItem = ({
             <p className={`${isAvailable ? 'bold' : 'regular'}`}>{size}</p>
           ))}
         </div>
-      </div>
+      </Link>
 
       <h3 className='card__name'>{name}</h3>
       <p className='card__designer'>{designer}</p>
