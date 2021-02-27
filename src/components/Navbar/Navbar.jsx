@@ -7,8 +7,10 @@ import bag from '../../assets/bag.png';
 
 import { navLinks } from '../../utils/constants';
 import { MobileMenu } from '..';
+import { useProductsContext } from '../../contexts/products_context';
 
 const Navbar = () => {
+  const { updateCategories } = useProductsContext();
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => setShowMenu(!showMenu);
@@ -64,8 +66,17 @@ const Navbar = () => {
           </ul>
 
           <div className='nav__links-2'>
-            <Link to='/women'>women</Link>
-            <Link to='/men' className='active'>
+            <Link
+              to='/women'
+              data-categories='women'
+              onClick={updateCategories}>
+              women
+            </Link>
+            <Link
+              to='/men'
+              data-categories='men'
+              className='active'
+              onClick={updateCategories}>
               men
             </Link>
           </div>

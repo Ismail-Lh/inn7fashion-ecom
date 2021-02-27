@@ -7,7 +7,7 @@ import { CardItem } from '..';
 import { useProductsContext } from '../../contexts/products_context';
 
 const PopularProducts = () => {
-  const { getPopularProducts } = useProductsContext();
+  const { popular_products } = useProductsContext();
 
   const [breakPoints, setbreakPoints] = useState([
     { width: 1, itemsToShow: 1 },
@@ -17,10 +17,6 @@ const PopularProducts = () => {
     { width: 1450, itemsToShow: 5 },
     { width: 1750, itemsToShow: 6 },
   ]);
-
-  useEffect(() => {
-    console.log(getPopularProducts());
-  }, []);
 
   const arrow = ({ type, onClick, isEdge }) => {
     const pointer =
@@ -40,15 +36,15 @@ const PopularProducts = () => {
     <div className='cards'>
       <h1>most popular</h1>
       <div>
-        {/* <Carousel
+        <Carousel
           itemsToScroll={1}
           pagination={false}
           renderArrow={arrow}
           breakPoints={breakPoints}>
-          {products.map(product => (
-            <CardItem key={product.id} {...product} />
-          ))}
-        </Carousel> */}
+          {popular_products.map(products =>
+            products.map(product => <CardItem key={product.id} {...product} />)
+          )}
+        </Carousel>
       </div>
     </div>
   );
