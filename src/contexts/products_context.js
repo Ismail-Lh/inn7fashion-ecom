@@ -9,11 +9,21 @@ import {
 import ProductsReducer from '../reducers/products_reducer';
 import AllProducts from '../productsData';
 
+const getLocalStorage = key => {
+  let storage = localStorage.getItem(key);
+
+  if (key === 'singleProduct') {
+    return storage ? JSON.parse(localStorage.getItem(key)) : {};
+  } else if (key === 'categories') {
+    return storage ? JSON.parse(localStorage.getItem(key)) : 'men';
+  }
+};
+
 const initialState = {
   all_products: [AllProducts],
   popular_products: [],
-  categories: 'men',
-  single_product: {},
+  categories: getLocalStorage('categories'),
+  single_product: getLocalStorage('singleProduct'),
 };
 
 const ProductsContext = createContext();
@@ -46,10 +56,13 @@ export const ProductsProvider = ({ children }) => {
         categories,
       },
     });
+
+    localStorage.setItem('singleProduct', JSON.stringify(state.single_product));
   };
 
   useEffect(() => {
     getPopularProducts(state.categories);
+    localStorage.setItem('categories', JSON.stringify(state.categories));
   }, [state.categories]);
 
   return (

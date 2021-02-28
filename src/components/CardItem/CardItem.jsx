@@ -36,8 +36,8 @@ const CardItem = ({
           className='card__img-2'
         />
         <div className='icons'>
-          <i class='fas fa-search' />
-          <i class='far fa-heart' />
+          <i className='fas fa-search' />
+          <i className='far fa-heart' />
         </div>
 
         <div className='sizes'>

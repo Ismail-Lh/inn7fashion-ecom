@@ -1,11 +1,15 @@
 import { v4 as uuidv4 } from 'uuid';
 
 // Men
-import isaac_sellam_epicurien_wax_pants_white_1 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/white/1.jpg';
-import isaac_sellam_epicurien_wax_pants_white_2 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/white/2.jpg';
+import isaac_sellam_epicurien_wax_pants_stone_white_1 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/stone white/1.jpg';
+import isaac_sellam_epicurien_wax_pants_stone_white_2 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/stone white/2.jpg';
 
-import isaac_sellam_epicurien_wax_pants_grey_1 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/grey/1.jpg';
-import isaac_sellam_epicurien_wax_pants_grey_2 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/grey/2.jpg';
+import isaac_sellam_epicurien_wax_pants_dark_grey_1 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/dark grey/1.jpg';
+import isaac_sellam_epicurien_wax_pants_dark_grey_2 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/dark grey/2.jpg';
+import isaac_sellam_epicurien_wax_pants_dark_grey_3 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/dark grey/3.jpg';
+import isaac_sellam_epicurien_wax_pants_dark_grey_4 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/dark grey/4.jpg';
+import isaac_sellam_epicurien_wax_pants_dark_grey_5 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/dark grey/5.jpg';
+import isaac_sellam_epicurien_wax_pants_dark_grey_6 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/dark grey/6.jpg';
 
 import epicurien_wax_black_1 from './assets/men/isaac sellam/epicurien-wax/black/1.jpg';
 import epicurien_wax_black_2 from './assets/men/isaac sellam/epicurien-wax/black/2.jpg';
@@ -42,12 +46,12 @@ const AllProducts = {
       name: 'isaac sellam epicurien-wax pants',
       designer: 'isaac sellam',
       images: [
-        isaac_sellam_epicurien_wax_pants_white_1,
-        isaac_sellam_epicurien_wax_pants_white_2,
+        isaac_sellam_epicurien_wax_pants_stone_white_1,
+        isaac_sellam_epicurien_wax_pants_stone_white_2,
       ],
       price: 67000,
       discountPer: 70,
-      color: 'white',
+      color: 'stone white',
       sizes: [
         { size: 's', isAvailable: false },
         { size: 'm', isAvailable: true },
@@ -63,12 +67,29 @@ const AllProducts = {
       name: 'isaac sellam epicurien-wax pants',
       designer: 'isaac sellam',
       images: [
-        isaac_sellam_epicurien_wax_pants_grey_1,
-        isaac_sellam_epicurien_wax_pants_grey_2,
+        isaac_sellam_epicurien_wax_pants_dark_grey_1,
+        isaac_sellam_epicurien_wax_pants_dark_grey_2,
+        isaac_sellam_epicurien_wax_pants_dark_grey_3,
+        isaac_sellam_epicurien_wax_pants_dark_grey_4,
+        isaac_sellam_epicurien_wax_pants_dark_grey_5,
+        isaac_sellam_epicurien_wax_pants_dark_grey_6,
       ],
       price: 67000,
       discountPer: 70,
-      color: 'grey',
+      color: 'dark grey',
+      sku: 'epicurien-wax~dark grey',
+      collection: 'SS20 New Collection',
+      desc: 'Waxed Slim Pants by ISAAC SELLAM in Dark Grey',
+      details: [
+        'Natural waist rise',
+        'Slim fit',
+        'Concealed buttons closure',
+        'Belt hooks',
+        'Two side slant pockets with signature staple details',
+        'Back welt pockets',
+        'Scar seams throughout',
+        'Dye effect may vary',
+      ],
       sizes: [
         { size: 's', isAvailable: false },
         { size: 'm', isAvailable: true },
