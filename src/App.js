@@ -21,11 +21,9 @@ function App() {
           <WomenPage />
         </Route>
 
-        <Route
-          exact
-          path='/products/:categories/:designer/:name'
-          children={<SingleProductPage />}
-        />
+        <Route exact path='/products/:categories/:designer/:name'>
+          <SingleProductPage />
+        </Route>
       </Switch>
 
       <Footer />

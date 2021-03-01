@@ -8,8 +8,6 @@ import isaac_sellam_epicurien_wax_pants_dark_grey_1 from './assets/men/isaac sel
 import isaac_sellam_epicurien_wax_pants_dark_grey_2 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/dark grey/2.jpg';
 import isaac_sellam_epicurien_wax_pants_dark_grey_3 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/dark grey/3.jpg';
 import isaac_sellam_epicurien_wax_pants_dark_grey_4 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/dark grey/4.jpg';
-import isaac_sellam_epicurien_wax_pants_dark_grey_5 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/dark grey/5.jpg';
-import isaac_sellam_epicurien_wax_pants_dark_grey_6 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/dark grey/6.jpg';
 
 import epicurien_wax_black_1 from './assets/men/isaac sellam/epicurien-wax/black/1.jpg';
 import epicurien_wax_black_2 from './assets/men/isaac sellam/epicurien-wax/black/2.jpg';
@@ -71,8 +69,6 @@ const AllProducts = {
         isaac_sellam_epicurien_wax_pants_dark_grey_2,
         isaac_sellam_epicurien_wax_pants_dark_grey_3,
         isaac_sellam_epicurien_wax_pants_dark_grey_4,
-        isaac_sellam_epicurien_wax_pants_dark_grey_5,
-        isaac_sellam_epicurien_wax_pants_dark_grey_6,
       ],
       price: 67000,
       discountPer: 70,

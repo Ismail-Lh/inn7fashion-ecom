@@ -9,3 +9,8 @@ export { default as CardItem } from './CardItem/CardItem';
 
 // Home Page
 export { default as Hero } from './Hero/Hero';
+
+// SingleProduct Page
+export { default as SingleProductContainer } from './SingleProductContainer/SingleProductContainer';
+export { default as SingleProductImages } from './SingleProductImages/SingleProductImages';
+export { default as SingleProductInfo } from './SingleProductInfo/SingleProductInfo';

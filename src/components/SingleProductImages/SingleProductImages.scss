@@ -1,0 +1,30 @@
+.single_product {
+  &-images {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: max-content;
+    column-gap: 2rem;
+
+    &-1 {
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto;
+      row-gap: 1rem;
+
+      img {
+        cursor: pointer;
+      }
+    }
+
+    &-2 {
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    img {
+      display: block;
+    }
+  }
+}
