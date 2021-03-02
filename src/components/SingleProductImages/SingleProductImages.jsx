@@ -5,23 +5,19 @@ import './SingleProductImages.scss';
 
 const SingleProductImages = () => {
   const { single_product: product } = useProductsContext();
-  const images = product[0].map(({ images }) => images);
+  const { images } = product;
 
-  const [image, setImage] = useState(0);
+  const [idx, setIdx] = useState(0);
 
   return (
     <div className='single_product-images'>
       <div className='single_product-images-1'>
-        {images.map(img =>
-          img.map((src, idx) => (
-            <img src={src} alt={src} key={idx} onClick={() => setImage(idx)} />
-          ))
-        )}
+        {images.map((img, idx) => (
+          <img src={img} alt={img} key={idx} onClick={() => setIdx(idx)} />
+        ))}
       </div>
       <div className='single_product-images-2'>
-        {images.map((src, idx) => (
-          <img src={src[image]} alt={src} key={idx} />
-        ))}
+        <img src={images[idx]} alt={images[idx]} />
       </div>
     </div>
   );

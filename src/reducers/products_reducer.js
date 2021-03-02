@@ -21,11 +21,11 @@ const ProductsReducer = (state, action) => {
 
   if (action.type === GET_SINGLE_PRODUCT) {
     const { allProducts, categories, id } = action.payload;
-    const singleProduct = allProducts.map(products =>
-      products[categories].filter(product => product.id === id)
-    );
+    const products = allProducts[0][categories].map(products => products);
 
-    return { ...state, single_product: singleProduct };
+    const singleProduct = products.filter(p => p.id === id);
+
+    return { ...state, single_product: singleProduct[0] };
   }
 
   throw new Error(`No Matching "${action.type}" - action type`);

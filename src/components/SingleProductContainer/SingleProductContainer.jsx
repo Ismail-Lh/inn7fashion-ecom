@@ -7,8 +7,7 @@ import { useProductsContext } from '../../contexts/products_context';
 
 const SingleProductContainer = () => {
   const { single_product: product, categories } = useProductsContext();
-  const name = product[0].map(item => item.name);
-  const designer = product[0].map(item => item.designer);
+  const { name, designer } = product;
 
   return (
     <div className='single_product'>

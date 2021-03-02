@@ -62,6 +62,7 @@ export const ProductsProvider = ({ children }) => {
 
   useEffect(() => {
     getPopularProducts(state.categories);
+
     localStorage.setItem('categories', JSON.stringify(state.categories));
   }, [state.categories]);
 
