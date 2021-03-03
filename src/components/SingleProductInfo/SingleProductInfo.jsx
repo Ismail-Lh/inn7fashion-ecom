@@ -53,6 +53,41 @@ const SingleProductInfo = () => {
           </div>
         </div>
       </div>
+
+      <div className='single-product_info-3'>
+        <button type='button' className='btn'>
+          add to bag
+        </button>
+        <div className='wishlist'>
+          <i className='far fa-heart' />
+          <p>wishlist</p>
+        </div>
+      </div>
+      <Link to='/' className='link'>
+        do you have a question?
+      </Link>
+
+      <div className='single-product_info-4'>
+        <div className='single-product_info-color_sku'>
+          <div>
+            <p>color :</p>
+            <p>sku :</p>
+          </div>
+          <div>
+            <p>{color}</p>
+            <p>{sku}</p>
+          </div>
+        </div>
+      </div>
+
+      <div className='single-product_info-5'>
+        <p className='single-product_info-desc'>{desc}</p>
+        <ul className='single-product_info-details'>
+          {details.map((detail, idx) => (
+            <li key={idx}>{detail}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

@@ -11,6 +11,50 @@
       padding-top: 1rem;
     }
 
+    &-3 {
+      display: flex;
+      align-items: center;
+
+      & .btn {
+        color: #fff;
+        background-color: #282828;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        padding: 1.5rem 7rem;
+        margin-right: 2rem;
+        border: 2px solid transparent;
+        transition: all 0.3s ease-out;
+        cursor: pointer;
+
+        &:hover {
+          color: #282828;
+          background-color: #fff;
+          border: 2px solid #282828;
+        }
+      }
+
+      & .wishlist {
+        display: flex;
+        align-items: flex-end;
+
+        i {
+          font-size: 2.5rem;
+          margin-right: 1rem;
+          cursor: pointer;
+        }
+
+        p {
+          text-transform: uppercase;
+          font-weight: 300;
+          font-size: 1.7rem;
+        }
+      }
+    }
+
+    &-4 {
+      margin-bottom: 1.5rem;
+    }
+
     &-name {
       font-weight: 300;
       text-transform: uppercase;
@@ -74,6 +118,50 @@
       }
     }
 
+    &-color_sku {
+      text-transform: uppercase;
+      font-size: 1.7rem;
+      display: flex;
+
+      div {
+        &:first-of-type {
+          margin-right: 6rem;
+
+          p {
+            font-weight: 600;
+          }
+        }
+
+        &:last-of-type,
+        &:first-of-type {
+          p {
+            &:first-of-type {
+              margin-bottom: 1rem;
+            }
+          }
+        }
+      }
+    }
+
+    &-desc {
+      font-size: 1.7rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+
+    &-details {
+      list-style: disc;
+      padding-left: 2rem;
+
+      li {
+        font-weight: 300;
+
+        &:not(:last-of-type) {
+          margin-bottom: 0.3rem;
+        }
+      }
+    }
+
     a {
       color: #282828;
     }
@@ -84,6 +172,13 @@
 
     .bold {
       font-weight: bold;
+    }
+
+    .link {
+      text-transform: uppercase;
+      font-size: 1.8rem;
+      border-bottom: 1px solid #282828;
+      margin: 1rem 0 2rem 0;
     }
   }
 }
