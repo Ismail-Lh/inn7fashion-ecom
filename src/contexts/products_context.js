@@ -4,10 +4,11 @@ import {
   GET_POPULAR_PRODUCTS,
   UPDATE_CATEGORIES,
   GET_SINGLE_PRODUCT,
+  GET_DESIGNER_PRODUCTS,
 } from '../actions';
 
 import ProductsReducer from '../reducers/products_reducer';
-import AllProducts from '../productsData';
+import { AllProducts } from '../productsData';
 
 const getLocalStorage = key => {
   let storage = localStorage.getItem(key);
@@ -24,6 +25,7 @@ const initialState = {
   popular_products: [],
   categories: getLocalStorage('categories'),
   single_product: getLocalStorage('singleProduct'),
+  designer_products: [],
 };
 
 const ProductsContext = createContext();
@@ -59,6 +61,17 @@ export const ProductsProvider = ({ children }) => {
 
     localStorage.setItem('singleProduct', JSON.stringify(state.single_product));
   };
+
+  // const getDesignerProducts = designer => {
+  //   dispatch({
+  //     type: GET_DESIGNER_PRODUCTS,
+  //     payload: {
+  //       allProducts: state.all_products,
+  //       categories: state.categories,
+  //       designer,
+  //     },
+  //   });
+  // };
 
   useEffect(() => {
     getPopularProducts(state.categories);

@@ -10,7 +10,7 @@ import { MobileMenu } from '..';
 import { useProductsContext } from '../../contexts/products_context';
 
 const Navbar = () => {
-  const { updateCategories } = useProductsContext();
+  const { updateCategories, categories } = useProductsContext();
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => setShowMenu(!showMenu);
@@ -60,7 +60,7 @@ const Navbar = () => {
           <ul className='nav__links-1'>
             {navLinks.map(({ id, link, url }) => (
               <li key={id} className='nav__links-1-item'>
-                <Link to={`/${url}`}>{link}</Link>
+                <Link to={`/${categories}/${url}`}>{link}</Link>
               </li>
             ))}
           </ul>

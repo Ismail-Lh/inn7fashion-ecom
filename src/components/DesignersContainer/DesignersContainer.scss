@@ -1,0 +1,35 @@
+.designers {
+  padding: 2rem 8rem;
+  color: #282828;
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
+
+    &-items {
+      h2 {
+        text-transform: uppercase;
+        font-size: 2rem;
+        margin-bottom: 0.7rem;
+      }
+
+      li {
+        font-weight: 300;
+
+        &:not(:last-of-type) {
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+
+  a {
+    color: #282828;
+  }
+}

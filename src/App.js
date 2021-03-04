@@ -1,7 +1,14 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { Footer, Navbar } from './components';
-import { HomePage, MenPage, SingleProductPage, WomenPage } from './pages';
+import {
+  HomePage,
+  MenPage,
+  SingleProductPage,
+  WomenPage,
+  DesignersPage,
+  DesignerProductsPage,
+} from './pages';
 
 function App() {
   return (
@@ -23,6 +30,14 @@ function App() {
 
         <Route exact path='/products/:categories/:designer/:name'>
           <SingleProductPage />
+        </Route>
+
+        <Route exact path='/:categories/designers'>
+          <DesignersPage />
+        </Route>
+
+        <Route exact path='/:categories/designers/:designer'>
+          <DesignerProductsPage />
         </Route>
       </Switch>
 

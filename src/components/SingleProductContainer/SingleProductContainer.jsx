@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './SingleProductContainer.scss';
-import { SingleProductImages, SingleProductInfo } from '..';
+import { SingleProductImages, SingleProductInfo, Links } from '..';
 import { useProductsContext } from '../../contexts/products_context';
 
 const SingleProductContainer = () => {
@@ -11,13 +11,12 @@ const SingleProductContainer = () => {
 
   return (
     <div className='single_product'>
-      <div className='single_product-links'>
+      <Links>
         <Link to='/'>home /</Link>
         <Link to={`/${categories}`}>{categories} /</Link>
         <Link to={`/${designer}`}>{designer} /</Link>
         <p>{name}</p>
-      </div>
-
+      </Links>
       <div className='single_product-grid'>
         <SingleProductImages />
         <SingleProductInfo />

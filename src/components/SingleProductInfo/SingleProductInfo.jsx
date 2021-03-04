@@ -38,7 +38,9 @@ const SingleProductInfo = () => {
       </div>
 
       <div className='single-product_info-2'>
-        <p className='single-product_info-collection'>{collection}</p>
+        {collection && (
+          <p className='single-product_info-collection'>{collection}</p>
+        )}
         <div className='single-product_info-sizes'>
           <p className='title'>select size - {size}</p>
           <div className='sizes'>

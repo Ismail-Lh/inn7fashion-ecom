@@ -2,6 +2,7 @@ import {
   GET_POPULAR_PRODUCTS,
   UPDATE_CATEGORIES,
   GET_SINGLE_PRODUCT,
+  GET_DESIGNER_PRODUCTS,
 } from '../actions';
 
 const ProductsReducer = (state, action) => {
@@ -27,6 +28,19 @@ const ProductsReducer = (state, action) => {
 
     return { ...state, single_product: singleProduct[0] };
   }
+
+  // if (action.type === GET_DESIGNER_PRODUCTS) {
+  //   const { allProducts, categories, designer } = action.payload;
+  //   const products = allProducts[0][categories].map(products => products);
+
+  //   const designerProducts = products.filter(
+  //     products => products.designer === designer
+  //   );
+
+  //   console.log(designerProducts);
+
+  //   return { ...state };
+  // }
 
   throw new Error(`No Matching "${action.type}" - action type`);
 };
