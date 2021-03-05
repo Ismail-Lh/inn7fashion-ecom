@@ -5,10 +5,11 @@ import {
   UPDATE_CATEGORIES,
   GET_SINGLE_PRODUCT,
   GET_DESIGNER_PRODUCTS,
+  GET_DESIGNER,
 } from '../actions';
 
 import ProductsReducer from '../reducers/products_reducer';
-import { AllProducts } from '../productsData';
+import { AllProducts, designers } from '../productsData';
 
 const getLocalStorage = key => {
   let storage = localStorage.getItem(key);
@@ -17,6 +18,8 @@ const getLocalStorage = key => {
     return storage ? JSON.parse(localStorage.getItem(key)) : {};
   } else if (key === 'categories') {
     return storage ? JSON.parse(localStorage.getItem(key)) : 'men';
+  } else if (key === 'designerProducts') {
+    return storage ? JSON.parse(localStorage.getItem(key)) : [];
   }
 };
 
@@ -25,7 +28,8 @@ const initialState = {
   popular_products: [],
   categories: getLocalStorage('categories'),
   single_product: getLocalStorage('singleProduct'),
-  designer_products: [],
+  designer_products: getLocalStorage('designerProducts'),
+  designer_data: {},
 };
 
 const ProductsContext = createContext();
@@ -58,30 +62,51 @@ export const ProductsProvider = ({ children }) => {
         categories,
       },
     });
-
-    localStorage.setItem('singleProduct', JSON.stringify(state.single_product));
   };
 
-  // const getDesignerProducts = designer => {
-  //   dispatch({
-  //     type: GET_DESIGNER_PRODUCTS,
-  //     payload: {
-  //       allProducts: state.all_products,
-  //       categories: state.categories,
-  //       designer,
-  //     },
-  //   });
-  // };
+  const getDesignerProducts = e => {
+    const designer = e.target.dataset.designer;
+
+    dispatch({
+      type: GET_DESIGNER_PRODUCTS,
+      payload: {
+        allProducts: state.all_products,
+        categories: state.categories,
+        designer,
+      },
+    });
+
+    dispatch({
+      type: GET_DESIGNER,
+      payload: {
+        designers,
+        categories: state.categories,
+        designer,
+      },
+    });
+  };
 
   useEffect(() => {
     getPopularProducts(state.categories);
 
     localStorage.setItem('categories', JSON.stringify(state.categories));
-  }, [state.categories]);
+
+    localStorage.setItem(
+      'designerProducts',
+      JSON.stringify(state.designer_products)
+    );
+
+    localStorage.setItem('singleProduct', JSON.stringify(state.single_product));
+  }, [state.categories, state.designer_products, state.single_product]);
 
   return (
     <ProductsContext.Provider
-      value={{ ...state, updateCategories, getSingleProduct }}>
+      value={{
+        ...state,
+        updateCategories,
+        getSingleProduct,
+        getDesignerProducts,
+      }}>
       {children}
     </ProductsContext.Provider>
   );

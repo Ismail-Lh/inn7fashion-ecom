@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 
 import { useProductsContext } from '../../contexts/products_context';
 import { designers } from '../../productsData';
@@ -8,7 +9,7 @@ import { Links } from '..';
 import './DesignersContainer.scss';
 
 const DesignersContainer = () => {
-  const { categories } = useProductsContext();
+  const { categories, getDesignerProducts } = useProductsContext();
   return (
     <div className='designers'>
       <Links>
@@ -24,15 +25,17 @@ const DesignersContainer = () => {
           return (
             <div className='designers__grid-items'>
               <h2>{order}</h2>
-              <ul>
-                {designer.map((des, idx) => (
-                  <li key={idx}>
+              <ul key={uuidv4()}>
+                {designer.map(({ desig, itemId }) => (
+                  <li key={uuidv4()}>
                     <Link
-                      to={`/${categories}/designers/${des
+                      to={`/${categories}/designers/${desig
                         .trim()
                         .toLowerCase()}`}
-                      key={idx}>
-                      {des}
+                      key={uuidv4()}
+                      data-designer={desig}
+                      onClick={getDesignerProducts}>
+                      {desig}
                     </Link>
                   </li>
                 ))}

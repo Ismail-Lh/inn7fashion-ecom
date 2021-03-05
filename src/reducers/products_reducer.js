@@ -3,6 +3,7 @@ import {
   UPDATE_CATEGORIES,
   GET_SINGLE_PRODUCT,
   GET_DESIGNER_PRODUCTS,
+  GET_DESIGNER,
 } from '../actions';
 
 const ProductsReducer = (state, action) => {
@@ -29,15 +30,26 @@ const ProductsReducer = (state, action) => {
     return { ...state, single_product: singleProduct[0] };
   }
 
-  // if (action.type === GET_DESIGNER_PRODUCTS) {
-  //   const { allProducts, categories, designer } = action.payload;
-  //   const products = allProducts[0][categories].map(products => products);
+  if (action.type === GET_DESIGNER_PRODUCTS) {
+    const { allProducts, categories, designer } = action.payload;
+    const products = allProducts[0][categories].map(products => products);
 
-  //   const designerProducts = products.filter(
-  //     products => products.designer === designer
-  //   );
+    const designerProducts = products.filter(
+      products => products.designer === designer.toLowerCase()
+    );
 
-  //   console.log(designerProducts);
+    return { ...state, designer_products: designerProducts };
+  }
+
+  // if (action.type === GET_DESIGNER) {
+  //   const { designers, categories, designer: DSG } = action.payload;
+  //   // console.log(designers[categories]);
+  //   const designerData = designers[categories]
+  //     .map(({ designer }) => designer)
+  //     .map(item => item)
+  //     .filter(data => console.log(data));
+
+  //   // console.log(designerData);
 
   //   return { ...state };
   // }
