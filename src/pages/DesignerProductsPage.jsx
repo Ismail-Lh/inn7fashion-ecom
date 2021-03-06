@@ -1,7 +1,8 @@
 import React from 'react';
+import { DesignerProductsContainer } from '../components';
 
 const DesignerProductsPage = () => {
-  return <div>DesignerProductsPage</div>;
+  return <DesignerProductsContainer />;
 };
 
 export default DesignerProductsPage;

@@ -19,3 +19,8 @@ export { default as SingleProductInfo } from './SingleProductInfo/SingleProductI
 // Designers Page
 export { default as DesignersContainer } from './DesignersContainer/DesignersContainer';
 export { default as DesignersLinks } from './DesignersLinks/DesignersLinks';
+
+// DesignerProducts Page
+export { default as DesignerProductsContainer } from './DesignerProductsContainer/DesignerProductsContainer';
+export { default as DesignerInfo } from './DesignerInfo/DesignerInfo';
+export { default as DesignerProducts } from './DesignerProducts/DesignerProducts';
