@@ -35,24 +35,17 @@ const ProductsReducer = (state, action) => {
     const products = allProducts[0][categories].map(products => products);
 
     const designerProducts = products.filter(
-      products => products.designer === designer.toLowerCase()
+      products => products.designer.toLowerCase() === designer.toLowerCase()
     );
 
     return { ...state, designer_products: designerProducts };
   }
 
-  // if (action.type === GET_DESIGNER) {
-  //   const { designers, categories, designer: DSG } = action.payload;
-  //   // console.log(designers[categories]);
-  //   const designerData = designers[categories]
-  //     .map(({ designer }) => designer)
-  //     .map(item => item)
-  //     .filter(data => console.log(data));
+  if (action.type === GET_DESIGNER) {
+    const { designer } = action.payload;
 
-  //   // console.log(designerData);
-
-  //   return { ...state };
-  // }
+    return { ...state, designer_data: designer };
+  }
 
   throw new Error(`No Matching "${action.type}" - action type`);
 };

@@ -26,16 +26,15 @@ const DesignersContainer = () => {
             <div className='designers__grid-items'>
               <h2>{order}</h2>
               <ul key={uuidv4()}>
-                {designer.map(({ desig, itemId }) => (
+                {designer.map(item => (
                   <li key={uuidv4()}>
                     <Link
-                      to={`/${categories}/designers/${desig
+                      to={`/${categories}/designers/${item.desig
                         .trim()
                         .toLowerCase()}`}
-                      key={uuidv4()}
-                      data-designer={desig}
-                      onClick={getDesignerProducts}>
-                      {desig}
+                      key={item.desigId}
+                      onClick={() => getDesignerProducts(item)}>
+                      {item.desig}
                     </Link>
                   </li>
                 ))}

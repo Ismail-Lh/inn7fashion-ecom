@@ -20,6 +20,8 @@ const getLocalStorage = key => {
     return storage ? JSON.parse(localStorage.getItem(key)) : 'men';
   } else if (key === 'designerProducts') {
     return storage ? JSON.parse(localStorage.getItem(key)) : [];
+  } else if (key === 'designerData') {
+    return storage ? JSON.parse(localStorage.getItem(key)) : {};
   }
 };
 
@@ -29,7 +31,7 @@ const initialState = {
   categories: getLocalStorage('categories'),
   single_product: getLocalStorage('singleProduct'),
   designer_products: getLocalStorage('designerProducts'),
-  designer_data: {},
+  designer_data: getLocalStorage('designerData'),
 };
 
 const ProductsContext = createContext();
@@ -64,15 +66,13 @@ export const ProductsProvider = ({ children }) => {
     });
   };
 
-  const getDesignerProducts = e => {
-    const designer = e.target.dataset.designer;
-
+  const getDesignerProducts = designer => {
     dispatch({
       type: GET_DESIGNER_PRODUCTS,
       payload: {
         allProducts: state.all_products,
         categories: state.categories,
-        designer,
+        designer: designer.desig,
       },
     });
 
@@ -91,13 +91,20 @@ export const ProductsProvider = ({ children }) => {
 
     localStorage.setItem('categories', JSON.stringify(state.categories));
 
+    localStorage.setItem('singleProduct', JSON.stringify(state.single_product));
+
     localStorage.setItem(
       'designerProducts',
       JSON.stringify(state.designer_products)
     );
 
-    localStorage.setItem('singleProduct', JSON.stringify(state.single_product));
-  }, [state.categories, state.designer_products, state.single_product]);
+    localStorage.setItem('designerData', JSON.stringify(state.designer_data));
+  }, [
+    state.categories,
+    state.designer_products,
+    state.single_product,
+    state.designer_data,
+  ]);
 
   return (
     <ProductsContext.Provider
