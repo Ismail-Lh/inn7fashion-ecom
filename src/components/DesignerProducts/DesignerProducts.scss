@@ -1,0 +1,9 @@
+.products {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 2.5rem;
+    row-gap: 4rem;
+    text-align: center;
+  }
+}

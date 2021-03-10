@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 
-// Men
+// Men Products
+// -------------------- Isaac Sellam Products ----------------------
 import isaac_sellam_epicurien_wax_pants_stone_white_1 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/stone white/1.jpg';
 import isaac_sellam_epicurien_wax_pants_stone_white_2 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/stone white/2.jpg';
 import isaac_sellam_epicurien_wax_pants_stone_white_3 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/stone white/3.jpg';
@@ -11,11 +12,92 @@ import isaac_sellam_epicurien_wax_pants_dark_grey_2 from './assets/men/isaac sel
 import isaac_sellam_epicurien_wax_pants_dark_grey_3 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/dark grey/3.jpg';
 import isaac_sellam_epicurien_wax_pants_dark_grey_4 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/dark grey/4.jpg';
 
+import isaac_sellam_epicurien_wax_pants_bronze_1 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/bronze/1.jpg';
+import isaac_sellam_epicurien_wax_pants_bronze_2 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/bronze/2.jpg';
+import isaac_sellam_epicurien_wax_pants_bronze_3 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/bronze/3.jpg';
+import isaac_sellam_epicurien_wax_pants_bronze_4 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/bronze/4.jpg';
+
+import isaac_sellam_epicurien_wax_pants_white_1 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/white/1.jpg';
+import isaac_sellam_epicurien_wax_pants_white_2 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/white/2.jpg';
+import isaac_sellam_epicurien_wax_pants_white_3 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/white/3.jpg';
+import isaac_sellam_epicurien_wax_pants_white_4 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/white/4.jpg';
+
+import isaac_sellam_epicurien_wax_pants_petrole_1 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/petrole/1.jpg';
+import isaac_sellam_epicurien_wax_pants_petrole_2 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/petrole/2.jpg';
+import isaac_sellam_epicurien_wax_pants_petrole_3 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/petrole/3.jpg';
+import isaac_sellam_epicurien_wax_pants_petrole_4 from './assets/men/isaac sellam/isaac sellam epicurien-wax pants/petrole/4.jpg';
+
 import epicurien_wax_black_1 from './assets/men/isaac sellam/epicurien-wax/black/1.jpg';
 import epicurien_wax_black_2 from './assets/men/isaac sellam/epicurien-wax/black/2.jpg';
 import epicurien_wax_black_3 from './assets/men/isaac sellam/epicurien-wax/black/3.jpg';
 import epicurien_wax_black_4 from './assets/men/isaac sellam/epicurien-wax/black/4.jpg';
 
+import arpenteur_leather_jacket_black_1 from './assets/men/isaac sellam/arpenteur leather jacket/black/1.jpg';
+import arpenteur_leather_jacket_black_2 from './assets/men/isaac sellam/arpenteur leather jacket/black/2.jpg';
+import arpenteur_leather_jacket_black_3 from './assets/men/isaac sellam/arpenteur leather jacket/black/3.jpg';
+import arpenteur_leather_jacket_black_4 from './assets/men/isaac sellam/arpenteur leather jacket/black/4.jpg';
+
+import arrete_tshirt_black_1 from './assets/men/isaac sellam/arrete tshirt/black/1.jpg';
+import arrete_tshirt_black_2 from './assets/men/isaac sellam/arrete tshirt/black/2.jpg';
+import arrete_tshirt_black_3 from './assets/men/isaac sellam/arrete tshirt/black/3.jpg';
+import arrete_tshirt_black_4 from './assets/men/isaac sellam/arrete tshirt/black/4.jpg';
+
+import arrete_tshirt_dark_grey_1 from './assets/men/isaac sellam/arrete tshirt/dark grey/1.jpg';
+import arrete_tshirt_dark_grey_2 from './assets/men/isaac sellam/arrete tshirt/dark grey/2.jpg';
+import arrete_tshirt_dark_grey_3 from './assets/men/isaac sellam/arrete tshirt/dark grey/3.jpg';
+import arrete_tshirt_dark_grey_4 from './assets/men/isaac sellam/arrete tshirt/dark grey/4.jpg';
+
+import arrete_tshirt_red_1 from './assets/men/isaac sellam/arrete tshirt/red/1.jpg';
+import arrete_tshirt_red_2 from './assets/men/isaac sellam/arrete tshirt/red/2.jpg';
+import arrete_tshirt_red_3 from './assets/men/isaac sellam/arrete tshirt/red/3.jpg';
+import arrete_tshirt_red_4 from './assets/men/isaac sellam/arrete tshirt/red/4.jpg';
+
+import arrete_tshirt_white_1 from './assets/men/isaac sellam/arrete tshirt/white/1.jpg';
+import arrete_tshirt_white_2 from './assets/men/isaac sellam/arrete tshirt/white/2.jpg';
+import arrete_tshirt_white_3 from './assets/men/isaac sellam/arrete tshirt/white/3.jpg';
+import arrete_tshirt_white_4 from './assets/men/isaac sellam/arrete tshirt/white/4.jpg';
+
+import debloque_white_1 from './assets/men/isaac sellam/debloque/white/1.jpg';
+import debloque_white_2 from './assets/men/isaac sellam/debloque/white/2.jpg';
+import debloque_white_3 from './assets/men/isaac sellam/debloque/white/3.jpg';
+import debloque_white_4 from './assets/men/isaac sellam/debloque/white/4.jpg';
+
+import debloque_tshirt_black_1 from './assets/men/isaac sellam/debloque tshirt/black/1.jpg';
+import debloque_tshirt_black_2 from './assets/men/isaac sellam/debloque tshirt/black/2.jpg';
+import debloque_tshirt_black_3 from './assets/men/isaac sellam/debloque tshirt/black/3.jpg';
+import debloque_tshirt_black_4 from './assets/men/isaac sellam/debloque tshirt/black/4.jpg';
+
+import debloque_tshirt_dark_grey_1 from './assets/men/isaac sellam/debloque tshirt/dark grey/1.jpg';
+import debloque_tshirt_dark_grey_2 from './assets/men/isaac sellam/debloque tshirt/dark grey/2.jpg';
+import debloque_tshirt_dark_grey_3 from './assets/men/isaac sellam/debloque tshirt/dark grey/3.jpg';
+import debloque_tshirt_dark_grey_4 from './assets/men/isaac sellam/debloque tshirt/dark grey/4.jpg';
+
+import debloque_tshirt_red_1 from './assets/men/isaac sellam/debloque tshirt/red/1.jpg';
+import debloque_tshirt_red_2 from './assets/men/isaac sellam/debloque tshirt/red/2.jpg';
+import debloque_tshirt_red_3 from './assets/men/isaac sellam/debloque tshirt/red/3.jpg';
+import debloque_tshirt_red_4 from './assets/men/isaac sellam/debloque tshirt/red/4.jpg';
+
+import ecorne_tshirt_black_1 from './assets/men/isaac sellam/ecorne tshirt/black/1.jpg';
+import ecorne_tshirt_black_2 from './assets/men/isaac sellam/ecorne tshirt/black/2.jpg';
+import ecorne_tshirt_black_3 from './assets/men/isaac sellam/ecorne tshirt/black/3.jpg';
+import ecorne_tshirt_black_4 from './assets/men/isaac sellam/ecorne tshirt/black/4.jpg';
+
+import ecorne_tshirt_dark_grey_1 from './assets/men/isaac sellam/ecorne tshirt/dark grey/1.jpg';
+import ecorne_tshirt_dark_grey_2 from './assets/men/isaac sellam/ecorne tshirt/dark grey/2.jpg';
+import ecorne_tshirt_dark_grey_3 from './assets/men/isaac sellam/ecorne tshirt/dark grey/3.jpg';
+import ecorne_tshirt_dark_grey_4 from './assets/men/isaac sellam/ecorne tshirt/dark grey/4.jpg';
+
+import ecorne_tshirt_red_1 from './assets/men/isaac sellam/ecorne tshirt/red/1.jpg';
+import ecorne_tshirt_red_2 from './assets/men/isaac sellam/ecorne tshirt/red/2.jpg';
+import ecorne_tshirt_red_3 from './assets/men/isaac sellam/ecorne tshirt/red/3.jpg';
+import ecorne_tshirt_red_4 from './assets/men/isaac sellam/ecorne tshirt/red/4.jpg';
+
+import ecorne_tshirt_white_1 from './assets/men/isaac sellam/ecorne tshirt/white/1.jpg';
+import ecorne_tshirt_white_2 from './assets/men/isaac sellam/ecorne tshirt/white/2.jpg';
+import ecorne_tshirt_white_3 from './assets/men/isaac sellam/ecorne tshirt/white/3.jpg';
+import ecorne_tshirt_white_4 from './assets/men/isaac sellam/ecorne tshirt/white/4.jpg';
+
+// -------------------- The Last Conspirasy Products ----------------------
 import carson_black_1 from './assets/men/the last conspiracy/carson/black/1.jpg';
 import carson_black_2 from './assets/men/the last conspiracy/carson/black/2.jpg';
 import carson_black_3 from './assets/men/the last conspiracy/carson/black/3.jpg';
@@ -31,7 +113,7 @@ import caden_black_2 from './assets/men/the last conspiracy/caden/black/2.jpg';
 import caden_black_3 from './assets/men/the last conspiracy/caden/black/3.jpg';
 import caden_black_4 from './assets/men/the last conspiracy/caden/black/4.jpg';
 
-// Women
+// Women Products
 import dce_jacket_black_1 from './assets/women/139dec/139dec jacket/black/1.jpg';
 import dce_jacket_black_2 from './assets/women/139dec/139dec jacket/black/2.jpg';
 import dce_jacket_black_3 from './assets/women/139dec/139dec jacket/black/3.jpg';
@@ -133,6 +215,113 @@ export const AllProducts = {
     },
     {
       id: uuidv4(),
+      name: 'isaac sellam epicurien-wax pants',
+      designer: 'isaac sellam',
+      images: [
+        isaac_sellam_epicurien_wax_pants_bronze_1,
+        isaac_sellam_epicurien_wax_pants_bronze_2,
+        isaac_sellam_epicurien_wax_pants_bronze_3,
+        isaac_sellam_epicurien_wax_pants_bronze_4,
+      ],
+      price: 67000,
+      discountPer: 70,
+      color: 'bronze',
+      sku: 'epicurien-wax~bronze',
+      collection: 'SS20 New Collection',
+      desc: 'Waxed Slim Pants by ISAAC SELLAM in Bronze',
+      details: [
+        'Natural waist rise',
+        'Slim fit',
+        'Concealed buttons closure',
+        'Belt hooks',
+        'Two side slant pockets with signature staple details',
+        'Back welt pockets',
+        'Scar seams throughout',
+        'Dye effect may vary',
+      ],
+      sizes: [
+        { size: 's', isAvailable: true },
+        { size: 'm', isAvailable: true },
+        { size: 'l', isAvailable: true },
+        { size: 'xl', isAvailable: true },
+        { size: 'xxl', isAvailable: true },
+        { size: 'xxxl', isAvailable: true },
+      ],
+      popularity: false,
+    },
+    {
+      id: uuidv4(),
+      name: 'isaac sellam epicurien-wax pants',
+      designer: 'isaac sellam',
+      images: [
+        isaac_sellam_epicurien_wax_pants_white_1,
+        isaac_sellam_epicurien_wax_pants_white_2,
+        isaac_sellam_epicurien_wax_pants_white_3,
+        isaac_sellam_epicurien_wax_pants_white_4,
+      ],
+      price: 67000,
+      discountPer: 70,
+      color: 'white',
+      sku: 'epicurien-wax~white',
+      collection: 'SS20 New Collection',
+      desc: 'Waxed Slim Pants by ISAAC SELLAM in White',
+      details: [
+        'Natural waist rise',
+        'Slim fit',
+        'Concealed buttons closure',
+        'Belt hooks',
+        'Two side slant pockets with signature staple details',
+        'Back welt pockets',
+        'Scar seams throughout',
+      ],
+      sizes: [
+        { size: 's', isAvailable: false },
+        { size: 'm', isAvailable: true },
+        { size: 'l', isAvailable: false },
+        { size: 'xl', isAvailable: false },
+        { size: 'xxl', isAvailable: false },
+        { size: 'xxxl', isAvailable: false },
+      ],
+      popularity: false,
+    },
+    {
+      id: uuidv4(),
+      name: 'isaac sellam epicurien-wax pants',
+      designer: 'isaac sellam',
+      images: [
+        isaac_sellam_epicurien_wax_pants_petrole_1,
+        isaac_sellam_epicurien_wax_pants_petrole_2,
+        isaac_sellam_epicurien_wax_pants_petrole_3,
+        isaac_sellam_epicurien_wax_pants_petrole_4,
+      ],
+      price: 67000,
+      discountPer: 70,
+      color: 'petrole',
+      sku: 'epicurien-wax~petrole',
+      collection: 'SS20 New Collection',
+      desc: 'Waxed Slim Pants by ISAAC SELLAM in Petrole',
+      details: [
+        'Natural waist rise',
+        'Slim fit',
+        'Concealed buttons closure',
+        'Belt hooks',
+        'Two side slant pockets with signature staple details',
+        'Back welt pockets',
+        'Scar seams throughout',
+        'Dye effect may vary',
+      ],
+      sizes: [
+        { size: 's', isAvailable: false },
+        { size: 'm', isAvailable: true },
+        { size: 'l', isAvailable: false },
+        { size: 'xl', isAvailable: false },
+        { size: 'xxl', isAvailable: false },
+        { size: 'xxxl', isAvailable: true },
+      ],
+      popularity: false,
+    },
+    {
+      id: uuidv4(),
       name: 'epicurien-wax',
       designer: 'isaac sellam',
       images: [
@@ -165,6 +354,477 @@ export const AllProducts = {
         { size: 'xxxl', isAvailable: false },
       ],
       popularity: true,
+    },
+    {
+      id: uuidv4(),
+      name: 'arpenteur leather jacket',
+      designer: 'isaac sellam',
+      collection: '2020 Fall/Winter collection',
+      images: [
+        arpenteur_leather_jacket_black_1,
+        arpenteur_leather_jacket_black_2,
+        arpenteur_leather_jacket_black_3,
+        arpenteur_leather_jacket_black_4,
+      ],
+      color: 'black',
+      sku: 'arpenteur-h21~black',
+      desc: 'Suede Jacket by ISAAC SELLAM in Black',
+      details: [
+        'Band collar',
+        'Fitted',
+        'Two-way zip closure',
+        'Side zip pockets',
+        'Scar seams throughout',
+        'Back signature staple details',
+        'Raw-edge hem',
+        'Model wearing size s',
+      ],
+      price: 149000,
+      discountPer: 25,
+      sizes: [
+        { size: 's', isAvailable: true },
+        { size: 'm', isAvailable: true },
+        { size: 'l', isAvailable: true },
+        { size: 'xl', isAvailable: false },
+        { size: 'xxl', isAvailable: true },
+        { size: 'xxxl', isAvailable: false },
+      ],
+      popularity: false,
+    },
+    {
+      id: uuidv4(),
+      name: 'arpenteur leather jacket',
+      designer: 'isaac sellam',
+      collection: '2020 Fall/Winter collection',
+      images: [
+        arpenteur_leather_jacket_black_1,
+        arpenteur_leather_jacket_black_2,
+        arpenteur_leather_jacket_black_3,
+        arpenteur_leather_jacket_black_4,
+      ],
+      color: 'black',
+      sku: 'arpenteur-h21~black',
+      desc: 'Suede Jacket by ISAAC SELLAM in Black',
+      details: [
+        'Band collar',
+        'Fitted',
+        'Two-way zip closure',
+        'Side zip pockets',
+        'Scar seams throughout',
+        'Back signature staple details',
+        'Raw-edge hem',
+        'Model wearing size s',
+      ],
+      price: 149000,
+      discountPer: 25,
+      sizes: [
+        { size: 's', isAvailable: true },
+        { size: 'm', isAvailable: true },
+        { size: 'l', isAvailable: true },
+        { size: 'xl', isAvailable: false },
+        { size: 'xxl', isAvailable: true },
+        { size: 'xxxl', isAvailable: false },
+      ],
+      popularity: false,
+    },
+    {
+      id: uuidv4(),
+      name: 'arrete tshirt',
+      designer: 'isaac sellam',
+      collection: '2020 Fall/Winter collection',
+      images: [
+        arrete_tshirt_black_1,
+        arrete_tshirt_black_2,
+        arrete_tshirt_black_3,
+        arrete_tshirt_black_4,
+      ],
+      color: 'black',
+      sku: 'arrete-h21~black',
+      desc: 'Long Cotton T-Shirt by ISAAC SELLAM in Black',
+      details: [
+        'Round neck',
+        'Standard fit',
+        'Taped tonal seams',
+        'Glove cuffs',
+        'Raw-edge and hem',
+        'Model wearing size M',
+      ],
+      price: 39500,
+      discountPer: 30,
+      sizes: [
+        { size: 's', isAvailable: false },
+        { size: 'm', isAvailable: false },
+        { size: 'l', isAvailable: true },
+        { size: 'xl', isAvailable: true },
+        { size: 'xxl', isAvailable: true },
+        { size: 'xxxl', isAvailable: false },
+      ],
+      popularity: false,
+    },
+    {
+      id: uuidv4(),
+      name: 'arrete tshirt',
+      designer: 'isaac sellam',
+      collection: '2020 Fall/Winter collection',
+      images: [
+        arrete_tshirt_dark_grey_1,
+        arrete_tshirt_dark_grey_2,
+        arrete_tshirt_dark_grey_3,
+        arrete_tshirt_dark_grey_4,
+      ],
+      color: 'dark grey',
+      sku: 'arrete-h21~dark grey',
+      desc: 'Long Cotton T-Shirt by ISAAC SELLAM in Darck Grey',
+      details: [
+        'Round neck',
+        'Standard fit',
+        'Taped tonal seams',
+        'Glove cuffs',
+        'Raw-edge and hem',
+        'Model wearing size M',
+      ],
+      price: 39500,
+      discountPer: 30,
+      sizes: [
+        { size: 's', isAvailable: false },
+        { size: 'm', isAvailable: false },
+        { size: 'l', isAvailable: true },
+        { size: 'xl', isAvailable: true },
+        { size: 'xxl', isAvailable: true },
+        { size: 'xxxl', isAvailable: false },
+      ],
+      popularity: false,
+    },
+    {
+      id: uuidv4(),
+      name: 'arrete tshirt',
+      designer: 'isaac sellam',
+      collection: '2020 Fall/Winter collection',
+      images: [
+        arrete_tshirt_red_1,
+        arrete_tshirt_red_2,
+        arrete_tshirt_red_3,
+        arrete_tshirt_red_4,
+      ],
+      color: 'red',
+      sku: 'arrete-h21~red',
+      desc: 'Long Cotton T-Shirt by ISAAC SELLAM in Red',
+      details: [
+        'Round neck',
+        'Standard fit',
+        'Taped tonal seams',
+        'Glove cuffs',
+        'Raw-edge and hem',
+        'Model wearing size M',
+      ],
+      price: 39500,
+      discountPer: 30,
+      sizes: [
+        { size: 's', isAvailable: false },
+        { size: 'm', isAvailable: false },
+        { size: 'l', isAvailable: true },
+        { size: 'xl', isAvailable: true },
+        { size: 'xxl', isAvailable: true },
+        { size: 'xxxl', isAvailable: false },
+      ],
+      popularity: false,
+    },
+    {
+      id: uuidv4(),
+      name: 'arrete tshirt',
+      designer: 'isaac sellam',
+      collection: '2020 Fall/Winter collection',
+      images: [
+        arrete_tshirt_white_1,
+        arrete_tshirt_white_2,
+        arrete_tshirt_white_3,
+        arrete_tshirt_white_4,
+      ],
+      color: 'white',
+      sku: 'arrete-h21~white',
+      desc: 'Long Cotton T-Shirt by ISAAC SELLAM in White',
+      details: [
+        'Round neck',
+        'Standard fit',
+        'Taped tonal seams',
+        'Glove cuffs',
+        'Raw-edge and hem',
+        'Model wearing size M',
+      ],
+      price: 39500,
+      discountPer: 30,
+      sizes: [
+        { size: 's', isAvailable: false },
+        { size: 'm', isAvailable: false },
+        { size: 'l', isAvailable: true },
+        { size: 'xl', isAvailable: true },
+        { size: 'xxl', isAvailable: true },
+        { size: 'xxxl', isAvailable: false },
+      ],
+      popularity: false,
+    },
+    {
+      id: uuidv4(),
+      name: 'debloque',
+      designer: 'isaac sellam',
+      images: [
+        debloque_white_1,
+        debloque_white_2,
+        debloque_white_3,
+        debloque_white_4,
+      ],
+      color: 'white',
+      sku: 'debloque-h21~white',
+      desc: 'The model is wearing size S',
+      price: 29000,
+      discountPer: 20,
+      sizes: [
+        { size: 's', isAvailable: false },
+        { size: 'm', isAvailable: false },
+        { size: 'l', isAvailable: false },
+        { size: 'xl', isAvailable: false },
+        { size: 'xxl', isAvailable: true },
+        { size: 'xxxl', isAvailable: true },
+      ],
+      popularity: false,
+    },
+    {
+      id: uuidv4(),
+      name: 'debloque tshirt',
+      designer: 'isaac sellam',
+      collection: '2020 Fall/Winter collection',
+      images: [
+        debloque_tshirt_black_1,
+        debloque_tshirt_black_2,
+        debloque_tshirt_black_3,
+        debloque_tshirt_black_4,
+      ],
+      color: 'black',
+      sku: 'debloque-h21~black',
+      desc: 'Cotton T-Shirt by ISAAC SELLAM in Black',
+      details: [
+        'Round neck',
+        'Standard fit',
+        'Washed',
+        'Taped tonal seams',
+        'Raw-edge long hem',
+        'Model wearing size M',
+      ],
+      price: 29000,
+      discountPer: 29,
+      sizes: [
+        { size: 's', isAvailable: false },
+        { size: 'm', isAvailable: false },
+        { size: 'l', isAvailable: false },
+        { size: 'xl', isAvailable: true },
+        { size: 'xxl', isAvailable: true },
+        { size: 'xxxl', isAvailable: true },
+      ],
+      popularity: false,
+    },
+    {
+      id: uuidv4(),
+      name: 'debloque tshirt',
+      designer: 'isaac sellam',
+      collection: '2020 Fall/Winter collection',
+      images: [
+        debloque_tshirt_dark_grey_1,
+        debloque_tshirt_dark_grey_2,
+        debloque_tshirt_dark_grey_3,
+        debloque_tshirt_dark_grey_4,
+      ],
+      color: 'dark grey',
+      sku: 'debloque-h21~dark grey',
+      desc: 'Cotton T-Shirt by ISAAC SELLAM in Dark grey',
+      details: [
+        'Round neck',
+        'Standard fit',
+        'Washed',
+        'Taped tonal seams',
+        'Raw-edge long hem',
+        'Model wearing size M',
+      ],
+      price: 29000,
+      discountPer: 29,
+      sizes: [
+        { size: 's', isAvailable: false },
+        { size: 'm', isAvailable: false },
+        { size: 'l', isAvailable: false },
+        { size: 'xl', isAvailable: true },
+        { size: 'xxl', isAvailable: true },
+        { size: 'xxxl', isAvailable: true },
+      ],
+      popularity: false,
+    },
+    {
+      id: uuidv4(),
+      name: 'debloque tshirt',
+      designer: 'isaac sellam',
+      collection: '2020 Fall/Winter collection',
+      images: [
+        debloque_tshirt_red_1,
+        debloque_tshirt_red_2,
+        debloque_tshirt_red_3,
+        debloque_tshirt_red_4,
+      ],
+      color: 'red',
+      sku: 'debloque-h21~red',
+      desc: 'Cotton T-Shirt by ISAAC SELLAM in Red',
+      details: [
+        'Round neck',
+        'Standard fit',
+        'Washed',
+        'Taped tonal seams',
+        'Raw-edge long hem',
+        'Model wearing size M',
+      ],
+      price: 29000,
+      discountPer: 29,
+      sizes: [
+        { size: 's', isAvailable: false },
+        { size: 'm', isAvailable: false },
+        { size: 'l', isAvailable: false },
+        { size: 'xl', isAvailable: true },
+        { size: 'xxl', isAvailable: true },
+        { size: 'xxxl', isAvailable: true },
+      ],
+      popularity: false,
+    },
+    {
+      id: uuidv4(),
+      name: 'ecorne tshirt',
+      designer: 'isaac sellam',
+      collection: '2020 Fall/Winter collection',
+      images: [
+        ecorne_tshirt_black_1,
+        ecorne_tshirt_black_2,
+        ecorne_tshirt_black_3,
+        ecorne_tshirt_black_4,
+      ],
+      color: 'black',
+      sku: 'ecorne-h21~black',
+      desc: 'Cotton T-Shirt by ISAAC SELLAM in Black',
+      details: [
+        'Round neck',
+        'Standard fit',
+        'Washed',
+        'Taped tonal seams',
+        'Raw-edge long hem',
+        'Model wearing size M',
+      ],
+      price: 37000,
+      discountPer: 30,
+      sizes: [
+        { size: 's', isAvailable: false },
+        { size: 'm', isAvailable: true },
+        { size: 'l', isAvailable: true },
+        { size: 'xl', isAvailable: true },
+        { size: 'xxl', isAvailable: true },
+        { size: 'xxxl', isAvailable: true },
+      ],
+      popularity: false,
+    },
+    {
+      id: uuidv4(),
+      name: 'ecorne tshirt',
+      designer: 'isaac sellam',
+      collection: '2020 Fall/Winter collection',
+      images: [
+        ecorne_tshirt_dark_grey_1,
+        ecorne_tshirt_dark_grey_2,
+        ecorne_tshirt_dark_grey_3,
+        ecorne_tshirt_dark_grey_4,
+      ],
+      color: 'dark grey',
+      sku: 'ecorne-h21~dark grey',
+      desc: 'Cotton T-Shirt by ISAAC SELLAM in Dark Grey',
+      details: [
+        'Round neck',
+        'Standard fit',
+        'Washed',
+        'Taped tonal seams',
+        'Raw-edge long hem',
+        'Model wearing size M',
+      ],
+      price: 37000,
+      discountPer: 30,
+      sizes: [
+        { size: 's', isAvailable: false },
+        { size: 'm', isAvailable: true },
+        { size: 'l', isAvailable: true },
+        { size: 'xl', isAvailable: true },
+        { size: 'xxl', isAvailable: true },
+        { size: 'xxxl', isAvailable: true },
+      ],
+      popularity: false,
+    },
+    {
+      id: uuidv4(),
+      name: 'ecorne tshirt',
+      designer: 'isaac sellam',
+      collection: '2020 Fall/Winter collection',
+      images: [
+        ecorne_tshirt_red_1,
+        ecorne_tshirt_red_2,
+        ecorne_tshirt_red_3,
+        ecorne_tshirt_red_4,
+      ],
+      color: 'red',
+      sku: 'ecorne-h21~red',
+      desc: 'Cotton T-Shirt by ISAAC SELLAM in Red',
+      details: [
+        'Round neck',
+        'Standard fit',
+        'Washed',
+        'Taped tonal seams',
+        'Raw-edge long hem',
+        'Model wearing size M',
+      ],
+      price: 37000,
+      discountPer: 30,
+      sizes: [
+        { size: 's', isAvailable: false },
+        { size: 'm', isAvailable: true },
+        { size: 'l', isAvailable: true },
+        { size: 'xl', isAvailable: true },
+        { size: 'xxl', isAvailable: true },
+        { size: 'xxxl', isAvailable: true },
+      ],
+      popularity: false,
+    },
+    {
+      id: uuidv4(),
+      name: 'ecorne tshirt',
+      designer: 'isaac sellam',
+      collection: '2020 Fall/Winter collection',
+      images: [
+        ecorne_tshirt_white_1,
+        ecorne_tshirt_white_2,
+        ecorne_tshirt_white_3,
+        ecorne_tshirt_white_4,
+      ],
+      color: 'white',
+      sku: 'ecorne-h21~white',
+      desc: 'Cotton T-Shirt by ISAAC SELLAM in White',
+      details: [
+        'Round neck',
+        'Standard fit',
+        'Washed',
+        'Taped tonal seams',
+        'Raw-edge long hem',
+        'Model wearing size M',
+      ],
+      price: 37000,
+      discountPer: 30,
+      sizes: [
+        { size: 's', isAvailable: false },
+        { size: 'm', isAvailable: true },
+        { size: 'l', isAvailable: true },
+        { size: 'xl', isAvailable: true },
+        { size: 'xxl', isAvailable: true },
+        { size: 'xxxl', isAvailable: true },
+      ],
+      popularity: false,
     },
     {
       id: uuidv4(),

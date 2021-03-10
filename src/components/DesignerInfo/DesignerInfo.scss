@@ -1,0 +1,15 @@
+.designer {
+  &__info {
+    &-name {
+      font-size: 2.6rem;
+    }
+
+    &-desc {
+      margin-top: 1rem;
+      margin-bottom: 4rem;
+      width: 65%;
+      // font-weight: 300;
+      font-size: 1.7rem;
+    }
+  }
+}
