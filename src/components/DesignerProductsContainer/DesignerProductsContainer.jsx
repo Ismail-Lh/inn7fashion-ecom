@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './DesignerProductsContainer.scss';
 
 import { useProductsContext } from '../../contexts/products_context';
-import { DesignerInfo, DesignerProducts, Links } from '..';
+import { DesignerInfo, DesignerProducts, Filters, Links, Sort } from '..';
 
 const DesignerProductsContainer = () => {
   const { categories, designer_data: designer } = useProductsContext();
@@ -18,6 +18,8 @@ const DesignerProductsContainer = () => {
         <p>{designer.desig}</p>
       </Links>
       <DesignerInfo />
+      <Filters />
+      <Sort />
       <DesignerProducts />
     </div>
   );
