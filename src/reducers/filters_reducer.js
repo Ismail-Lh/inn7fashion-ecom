@@ -1,15 +1,35 @@
-import { LOAD_PRODUCTS, UPDATE_SORT, SORT_PRODUCTS } from '../actions';
+import {
+  LOAD_PRODUCTS,
+  UPDATE_SORT,
+  SORT_PRODUCTS,
+  UPDATE_FILTERS,
+  FILTER_PRODUCTS,
+} from '../actions';
 
 const FiltersReducer = (state, action) => {
   if (action.type === LOAD_PRODUCTS) {
-    let maxPrice = action.payload.map(({ price }) => price);
-    maxPrice = Math.max(...maxPrice);
+    const prices = action.payload.map(({ price }) => price);
+    const percentages = action.payload.map(({ discountPer }) => discountPer);
+
+    let maxPrice = Math.max(...prices);
+    let minPrice = Math.min(...prices);
+
+    let maxPercentage = Math.max(...percentages);
+    let minPercentage = Math.min(...percentages);
 
     return {
       ...state,
       all_products: [...action.payload],
       filtered_products: [...action.payload],
-      filters: { ...state.filters, max_price: maxPrice, price: maxPrice },
+      filters: {
+        ...state.filters,
+        max_price: maxPrice,
+        min_price: minPrice,
+        price: maxPrice,
+        max_percentage: maxPercentage,
+        min_percentage: minPercentage,
+        percentage: maxPercentage,
+      },
     };
   }
 
@@ -32,6 +52,31 @@ const FiltersReducer = (state, action) => {
     } else if (sort === 'name-z') {
       tempProducts = tempProducts.sort((curr, next) =>
         next.name.localeCompare(curr.name)
+      );
+    }
+
+    return { ...state, filtered_products: tempProducts };
+  }
+
+  if (action.type === UPDATE_FILTERS) {
+    const { name, value } = action.payload;
+
+    return { ...state, filters: { ...state.filters, [name]: value } };
+  }
+
+  if (action.type === FILTER_PRODUCTS) {
+    const { all_products } = state;
+    const { price, percentage } = state.filters;
+
+    let tempProducts = [...all_products];
+
+    if (price) {
+      tempProducts = tempProducts.filter(product => product.price <= price);
+    }
+
+    if (percentage) {
+      tempProducts = tempProducts.filter(
+        product => product.discountPer <= +percentage
       );
     }
 
