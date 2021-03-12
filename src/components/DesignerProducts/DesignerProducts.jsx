@@ -2,11 +2,11 @@ import React from 'react';
 
 import './DesignerProducts.scss';
 
-import { useProductsContext } from '../../contexts/products_context';
+import { useFiltersContext } from '../../contexts/filters_context';
 import { CardItem } from '../';
 
 const DesignerProducts = () => {
-  const { designer_products: products } = useProductsContext();
+  const { filtered_products: products } = useFiltersContext();
   return (
     <div className='products__grid'>
       {products.map(product => (

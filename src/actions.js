@@ -8,4 +8,4 @@ export const GET_DESIGNER = 'GET_DESIGNER';
 // Filters Context
 export const LOAD_PRODUCTS = 'LOAD_PRODUCTS';
 export const UPDATE_SORT = 'UPDATE_SORT';
-export const SORT_PRODUCTS = 'UPDATE_SORT';
+export const SORT_PRODUCTS = 'SORT_PRODUCTS';
