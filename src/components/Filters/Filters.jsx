@@ -5,7 +5,7 @@ import { formatPrice } from '../../utils/helpers';
 import './Filters.scss';
 
 const Filters = () => {
-  const { filters, updateFilters } = useFiltersContext();
+  const { filters, updateFilters, clearFilters } = useFiltersContext();
   const {
     max_price,
     min_price,
@@ -32,7 +32,7 @@ const Filters = () => {
           <p>{percentage}%</p>
         </div>
 
-        <div className='collections'>
+        <div className='filters__collection'>
           <select name='collection'>
             <option value='summer 2021' default>
               summer 2021
@@ -44,7 +44,7 @@ const Filters = () => {
           </select>
         </div>
 
-        <div className='price'>
+        <div className='filters__price'>
           <h2>price {formatPrice(price)}</h2>
           <input
             type='range'
@@ -57,7 +57,9 @@ const Filters = () => {
         </div>
       </form>
 
-      <button className='clear-btn'>clear filters</button>
+      <button className='clear-btn' onClick={clearFilters}>
+        clear filters
+      </button>
     </div>
   );
 };

@@ -8,6 +8,7 @@ import {
   SORT_PRODUCTS,
   UPDATE_FILTERS,
   FILTER_PRODUCTS,
+  CLEAR_FILTERS,
 } from '../actions';
 
 const initialState = {
@@ -44,6 +45,10 @@ export const FiltersProvider = ({ children }) => {
     dispatch({ type: UPDATE_FILTERS, payload: { name, value } });
   };
 
+  const clearFilters = () => {
+    dispatch({ type: CLEAR_FILTERS });
+  };
+
   useEffect(() => {
     dispatch({ type: LOAD_PRODUCTS, payload: products });
   }, [products]);
@@ -54,7 +59,8 @@ export const FiltersProvider = ({ children }) => {
   }, [state.sort, state.filters, products]);
 
   return (
-    <FiltersContext.Provider value={{ ...state, updateSort, updateFilters }}>
+    <FiltersContext.Provider
+      value={{ ...state, updateSort, updateFilters, clearFilters }}>
       {children}
     </FiltersContext.Provider>
   );

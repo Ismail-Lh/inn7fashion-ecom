@@ -4,6 +4,7 @@ import {
   SORT_PRODUCTS,
   UPDATE_FILTERS,
   FILTER_PRODUCTS,
+  CLEAR_FILTERS,
 } from '../actions';
 
 const FiltersReducer = (state, action) => {
@@ -81,6 +82,17 @@ const FiltersReducer = (state, action) => {
     }
 
     return { ...state, filtered_products: tempProducts };
+  }
+
+  if (action.type === CLEAR_FILTERS) {
+    return {
+      ...state,
+      filters: {
+        ...state.filters,
+        price: state.filters.max_price,
+        percentage: state.filters.max_percentage,
+      },
+    };
   }
 
   throw new Error(`No Matching "${action.type}" - action type`);
