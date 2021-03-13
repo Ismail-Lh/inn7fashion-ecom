@@ -1,11 +1,13 @@
 import React from 'react';
+
+import './Sort.scss';
 import { useFiltersContext } from '../../contexts/filters_context';
 
 const Sort = () => {
   const { sort, updateSort } = useFiltersContext();
   return (
-    <form>
-      <label htmlFor='sort'>Sort by</label>
+    <form className='sort'>
+      <label htmlFor='sort'>Sort by :</label>
       <select
         name='sort'
         id='sort'

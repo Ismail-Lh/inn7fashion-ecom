@@ -18,9 +18,12 @@ const DesignerProductsContainer = () => {
         <p>{designer.desig}</p>
       </Links>
       <DesignerInfo />
-      <Filters />
-      <Sort />
-      <DesignerProducts />
+
+      <div className='designer__products'>
+        <Sort />
+        <Filters />
+        <DesignerProducts />
+      </div>
     </div>
   );
 };

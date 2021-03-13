@@ -1,0 +1,47 @@
+.filters {
+  &__title {
+    text-transform: uppercase;
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+  }
+
+  &__percentage,
+  &__collection {
+    margin-bottom: 2rem;
+  }
+
+  &__collection {
+    & select {
+      border: none;
+      text-transform: uppercase;
+      font-size: 1.8rem;
+      font-weight: 300;
+      margin-top: 0.5rem;
+    }
+  }
+
+  &__clear {
+    background-color: #282828;
+    color: #fff;
+    border: 2px solid transparent;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+
+    &:hover {
+      color: #282828;
+      background-color: #fff;
+      border: 2px solid #282828;
+    }
+  }
+
+  h4 {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 0.7rem;
+  }
+}

@@ -3,4 +3,18 @@
     padding: 2rem 8rem;
     color: #282828;
   }
+
+  &__products {
+    display: grid;
+    grid-template-columns: max-content auto;
+    gap: 2rem;
+
+    & .sort {
+      grid-column: 2 / -1;
+    }
+
+    & .filters {
+      grid-row: 1 / 3;
+    }
+  }
 }

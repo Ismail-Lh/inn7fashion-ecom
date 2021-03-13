@@ -20,6 +20,7 @@ const Filters = () => {
       <h1 className='filters__title'>Filters</h1>
       <form className='filters__form' onSubmit={e => e.preventDefault()}>
         <div className='filters__percentage'>
+          <h4>discount percentage : {percentage}%</h4>
           <input
             type='range'
             name='percentage'
@@ -29,10 +30,10 @@ const Filters = () => {
             value={percentage}
             onChange={updateFilters}
           />
-          <p>{percentage}%</p>
         </div>
 
-        <div className='filters__collection'>
+        {/* <div className='filters__collection'>
+          <h4>collection</h4>
           <select name='collection'>
             <option value='summer 2021' default>
               summer 2021
@@ -42,10 +43,10 @@ const Filters = () => {
             <option value='winter 19/20'>winter 19/20</option>
             <option value='summer 2019'>summer 2019</option>
           </select>
-        </div>
+        </div> */}
 
         <div className='filters__price'>
-          <h2>price {formatPrice(price)}</h2>
+          <h4>price : {formatPrice(price)}</h4>
           <input
             type='range'
             name='price'
@@ -57,7 +58,7 @@ const Filters = () => {
         </div>
       </form>
 
-      <button className='clear-btn' onClick={clearFilters}>
+      <button className='filters__clear' onClick={clearFilters}>
         clear filters
       </button>
     </div>
