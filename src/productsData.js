@@ -1164,23 +1164,23 @@ export const designers = {
       id: uuidv4(),
     },
   ],
-  // women: [
-  //   {
-  //     order: 'h',
-  //     designer: [{ desig: 'H BY HUDSON', desc: '' }],
-  //     id: uuidv4(),
-  //   },
-  //   {
-  //     order: 'i',
-  //     designer: [
-  //       { desig: 'INCARNATION', desc: '' },
-  //       {
-  //         desig: 'ISAAC SELLAM',
-  //         desc:
-  //           'Isaac Sellam Experience is a Parisian label created in 2002 of leatherwear. Its original style follows an "Endless modernity". A self- taught leather master leather, Isaac Sellam uses soft leather hides that are juxtaposed by industrial staples and leather bindings to create a style that is distinctively his. Research leading to innovation, experimentation and un-compromising technique. The result is unique, rare, timeless and sculptured garments.',
-  //       },
-  //     ],
-  //     id: uuidv4(),
-  //   },
-  // ],
+  women: [
+    {
+      order: 'h',
+      designer: [{ desig: 'H BY HUDSON', desc: '' }],
+      id: uuidv4(),
+    },
+    {
+      order: 'i',
+      designer: [
+        { desig: 'INCARNATION', desc: '' },
+        {
+          desig: 'ISAAC SELLAM',
+          desc:
+            'Isaac Sellam Experience is a Parisian label created in 2002 of leatherwear. Its original style follows an "Endless modernity". A self- taught leather master leather, Isaac Sellam uses soft leather hides that are juxtaposed by industrial staples and leather bindings to create a style that is distinctively his. Research leading to innovation, experimentation and un-compromising technique. The result is unique, rare, timeless and sculptured garments.',
+        },
+      ],
+      id: uuidv4(),
+    },
+  ],
 };

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { v4 as uuidv4 } from 'uuid';
+
 import './CardItem.scss';
 import { formatPrice } from '../../utils/helpers';
 import { useProductsContext } from '../../contexts/products_context';
@@ -42,7 +44,9 @@ const CardItem = ({
 
         <div className='sizes'>
           {sizes.map(({ size, isAvailable }) => (
-            <p className={`${isAvailable ? 'bold' : 'regular'}`}>{size}</p>
+            <p className={`${isAvailable ? 'bold' : 'regular'}`} key={uuidv4()}>
+              {size}
+            </p>
           ))}
         </div>
       </Link>

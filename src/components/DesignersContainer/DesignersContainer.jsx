@@ -21,11 +21,11 @@ const DesignersContainer = () => {
       <h1 className='designers__title'>designer</h1>
 
       <div className='designers__grid'>
-        {designers[categories].map(({ order, designer }) => {
+        {designers[categories].map(({ order, designer, id }) => {
           return (
-            <div className='designers__grid-items'>
+            <div className='designers__grid-items' key={id}>
               <h2>{order}</h2>
-              <ul key={uuidv4()}>
+              <ul>
                 {designer.map(item => (
                   <li key={uuidv4()}>
                     <Link

@@ -10,7 +10,7 @@ const DesignerProducts = () => {
   return (
     <div className='products__grid'>
       {products.map(product => (
-        <CardItem {...product} />
+        <CardItem {...product} key={product.id} />
       ))}
     </div>
   );
