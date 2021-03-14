@@ -6,12 +6,13 @@ import logo from '../../assets/logo.png';
 import bag from '../../assets/bag.png';
 
 import { navLinks } from '../../utils/constants';
-import { MobileMenu } from '..';
+import { MobileMenu, CartModel } from '..';
 import { useProductsContext } from '../../contexts/products_context';
 
 const Navbar = () => {
   const { updateCategories, categories } = useProductsContext();
   const [showMenu, setShowMenu] = useState(false);
+  const [cartModel, setCartModel] = useState(true);
 
   const toggleMenu = () => setShowMenu(!showMenu);
   const closeMenu = () => setShowMenu(false);
@@ -50,7 +51,11 @@ const Navbar = () => {
               <i className='fas fa-heart' />
             </Link>
 
-            <Link to='/cart' className='cart'>
+            <Link
+              to='/cart'
+              className='cart'
+              // onMouseEnter={() => setCartModel(true)}
+            >
               <img src={bag} alt='bag' />
             </Link>
           </div>
@@ -88,6 +93,7 @@ const Navbar = () => {
       </nav>
 
       {showMenu && <MobileMenu showMenu={showMenu} closeMenu={closeMenu} />}
+      {cartModel && <CartModel />}
     </>
   );
 };

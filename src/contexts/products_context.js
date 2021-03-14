@@ -8,22 +8,10 @@ import {
   GET_DESIGNER,
 } from '../actions';
 
+import { getLocalStorage } from '../utils/helpers';
+
 import ProductsReducer from '../reducers/products_reducer';
 import { AllProducts, designers } from '../productsData';
-
-const getLocalStorage = key => {
-  let storage = localStorage.getItem(key);
-
-  if (key === 'singleProduct') {
-    return storage ? JSON.parse(localStorage.getItem(key)) : {};
-  } else if (key === 'categories') {
-    return storage ? JSON.parse(localStorage.getItem(key)) : 'men';
-  } else if (key === 'designerProducts') {
-    return storage ? JSON.parse(localStorage.getItem(key)) : [];
-  } else if (key === 'designerData') {
-    return storage ? JSON.parse(localStorage.getItem(key)) : {};
-  }
-};
 
 const initialState = {
   all_products: [AllProducts],

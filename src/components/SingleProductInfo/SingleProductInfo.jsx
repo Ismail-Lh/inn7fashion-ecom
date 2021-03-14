@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import './SingleProductInfo.scss';
 
 import { useProductsContext } from '../../contexts/products_context';
+import { useCartContext } from '../../contexts/cart_context';
 import { formatPrice } from '../../utils/helpers';
 
 const SingleProductInfo = () => {
   const { single_product: product, categories } = useProductsContext();
-  const [size, setSize] = useState('');
   const {
     name,
     designer,
@@ -20,7 +20,12 @@ const SingleProductInfo = () => {
     color,
     sku,
     discountPer,
+    id,
   } = product;
+
+  const [size, setSize] = useState('');
+
+  const { addToCart, selectSize } = useCartContext();
 
   const salePrice = (price * discountPer) / 100;
 
@@ -48,7 +53,10 @@ const SingleProductInfo = () => {
               <p
                 className={`${s.isAvailable ? 'bold' : 'regular'}`}
                 key={idx}
-                onClick={() => setSize(s.size)}>
+                onClick={() => {
+                  setSize(s.size);
+                  selectSize(s.size);
+                }}>
                 {s.size}
               </p>
             ))}
@@ -57,7 +65,10 @@ const SingleProductInfo = () => {
       </div>
 
       <div className='single-product_info-3'>
-        <button type='button' className='btn'>
+        <button
+          type='button'
+          className='btn'
+          onClick={() => addToCart(product)}>
           add to bag
         </button>
         <div className='wishlist'>

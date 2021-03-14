@@ -12,3 +12,7 @@ export const SORT_PRODUCTS = 'SORT_PRODUCTS';
 export const UPDATE_FILTERS = 'UPDATE_FILTERS';
 export const FILTER_PRODUCTS = 'FILTER_PRODUCTS';
 export const CLEAR_FILTERS = 'CLEAR_FILTERS';
+
+// Cart Context
+export const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART';
+export const SELECT_SIZE = 'SELECT_SIZE';

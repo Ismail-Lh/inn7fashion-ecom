@@ -26,3 +26,7 @@ export { default as DesignersLinks } from './DesignersLinks/DesignersLinks';
 export { default as DesignerProductsContainer } from './DesignerProductsContainer/DesignerProductsContainer';
 export { default as DesignerInfo } from './DesignerInfo/DesignerInfo';
 export { default as DesignerProducts } from './DesignerProducts/DesignerProducts';
+
+// Cart
+export { default as CartModel } from './CartModel/CartModel';
+export { default as CartModelItem } from './CartModelItem/CartModelItem';
