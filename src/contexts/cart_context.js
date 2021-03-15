@@ -8,12 +8,14 @@ import {
   SHOW_CART_MODEL,
   HIDE_CART_MODEL,
   REMOVE_PRODUCT_FROM_CART,
+  GET_CART_SUBTOTAL,
 } from '../actions';
 
 const initialState = {
   cart: getLocalStorage('cart'),
   size: '',
   show_cart: false,
+  subtotal: 0,
 };
 
 const CartContext = createContext();
@@ -38,12 +40,12 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeItem = id => {
-    console.log(id);
     dispatch({ type: REMOVE_PRODUCT_FROM_CART, payload: id });
   };
 
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(state.cart));
+    dispatch({ type: GET_CART_SUBTOTAL });
   }, [state.cart]);
 
   return (

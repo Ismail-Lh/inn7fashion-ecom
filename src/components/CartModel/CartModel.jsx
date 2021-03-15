@@ -5,20 +5,28 @@ import './CartModel.scss';
 import { Button, CartModelItem } from '..';
 
 const CartModel = () => {
-  const { cart, hideCart } = useCartContext();
+  const { cart, hideCart, subtotal } = useCartContext();
 
   return (
     <div className='cartModel'>
       <div className='cartModel__overlay' onMouseEnter={hideCart} />
       <div className='cartModel__content' onMouseLeave={hideCart}>
         <div className='triangle'></div>
-        <p className='cartModel__total'>{cart.length} items total</p>
-        {cart.map(item => (
-          <CartModelItem {...item} key={item.id} />
-        ))}
-        <p className='cartModel__subtotal'>subtotal : $250.00</p>
-        <Button outline>view shopping bag</Button>
-        <Button>checkout</Button>
+        {cart.length === 0 ? (
+          <p className='cartModel__empty'>
+            You have no items in your shopping cart.
+          </p>
+        ) : (
+          <div>
+            <p className='cartModel__total'>{cart.length} items total</p>
+            {cart.map(item => (
+              <CartModelItem {...item} key={item.id} />
+            ))}
+            <p className='cartModel__subtotal'>subtotal : {subtotal}</p>
+            <Button outline>view shopping bag</Button>
+            <Button>checkout</Button>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -22,3 +22,15 @@ export const getLocalStorage = key => {
     return storage ? JSON.parse(localStorage.getItem(key)) : [];
   }
 };
+
+export const finalItemPrice = (price, discountPer) => {
+  let finalPrice;
+
+  if (discountPer) {
+    finalPrice = (price * discountPer) / 100;
+  } else {
+    finalPrice = price;
+  }
+
+  return finalPrice;
+};

@@ -10,6 +10,8 @@ import { Button } from '..';
 
 const SingleProductInfo = () => {
   const { single_product: product, categories } = useProductsContext();
+  const { addToCart, selectSize } = useCartContext();
+
   const {
     name,
     designer,
@@ -25,10 +27,18 @@ const SingleProductInfo = () => {
   } = product;
 
   const [size, setSize] = useState('');
-
-  const { addToCart, selectSize } = useCartContext();
+  const [showError, setShowError] = useState(false);
 
   const salePrice = (price * discountPer) / 100;
+
+  const handelClick = () => {
+    if (size.length <= 0) {
+      setShowError(true);
+    } else {
+      addToCart(product);
+      setShowError(false);
+    }
+  };
 
   return (
     <div className='single-product_info'>
@@ -49,24 +59,30 @@ const SingleProductInfo = () => {
         )}
         <div className='single-product_info-sizes'>
           <p className='title'>select size - {size}</p>
-          <div className='sizes'>
+          <div className='size'>
             {sizes.map((s, idx) => (
-              <p
-                className={`${s.isAvailable ? 'bold' : 'regular'}`}
+              <button
+                className={`${
+                  s.isAvailable ? 'size__value bold' : 'size__value regular'
+                }`}
+                disabled={!s.isAvailable}
                 key={idx}
                 onClick={() => {
                   setSize(s.size);
                   selectSize(s.size);
                 }}>
                 {s.size}
-              </p>
+              </button>
             ))}
           </div>
+          {showError && (
+            <p className='error'>please select a size! is required.</p>
+          )}
         </div>
       </div>
 
       <div className='single-product_info-3'>
-        <Button handelClick={() => addToCart(product)}>add to bag</Button>
+        <Button handelClick={handelClick}>add to bag</Button>
         <div className='wishlist'>
           <i className='far fa-heart' />
           <p>wishlist</p>

@@ -4,7 +4,10 @@ import {
   SHOW_CART_MODEL,
   HIDE_CART_MODEL,
   REMOVE_PRODUCT_FROM_CART,
+  GET_CART_SUBTOTAL,
 } from '../actions';
+
+import { finalItemPrice, formatPrice } from '../utils/helpers';
 
 const CartReducer = (state, action) => {
   if (action.type === SELECT_SIZE) {
@@ -41,6 +44,15 @@ const CartReducer = (state, action) => {
     const tempCart = state.cart.filter(product => product.id !== id);
 
     return { ...state, cart: tempCart };
+  }
+
+  if (action.type === GET_CART_SUBTOTAL) {
+    const prices = state.cart.map(({ price, discountPer }) =>
+      finalItemPrice(price, discountPer)
+    );
+    const subTotal = prices.reduce((acc, curr) => acc + curr, 0);
+
+    return { ...state, subtotal: formatPrice(subTotal) };
   }
 
   throw new Error(`No Matching "${action.type}" - action type`);
