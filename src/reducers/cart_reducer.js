@@ -1,4 +1,10 @@
-import { ADD_PRODUCT_TO_CART, SELECT_SIZE } from '../actions';
+import {
+  ADD_PRODUCT_TO_CART,
+  SELECT_SIZE,
+  SHOW_CART_MODEL,
+  HIDE_CART_MODEL,
+  REMOVE_PRODUCT_FROM_CART,
+} from '../actions';
 
 const CartReducer = (state, action) => {
   if (action.type === SELECT_SIZE) {
@@ -20,6 +26,21 @@ const CartReducer = (state, action) => {
     };
 
     return { ...state, cart: [...state.cart, newItem] };
+  }
+
+  if (action.type === SHOW_CART_MODEL) {
+    return { ...state, show_cart: true };
+  }
+
+  if (action.type === HIDE_CART_MODEL) {
+    return { ...state, show_cart: false };
+  }
+
+  if (action.type === REMOVE_PRODUCT_FROM_CART) {
+    const id = action.payload;
+    const tempCart = state.cart.filter(product => product.id !== id);
+
+    return { ...state, cart: tempCart };
   }
 
   throw new Error(`No Matching "${action.type}" - action type`);

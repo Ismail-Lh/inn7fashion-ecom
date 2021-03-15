@@ -66,7 +66,7 @@ const SingleProductInfo = () => {
       </div>
 
       <div className='single-product_info-3'>
-        <Button onClick={() => addToCart(product)}>add to bag</Button>
+        <Button handelClick={() => addToCart(product)}>add to bag</Button>
         <div className='wishlist'>
           <i className='far fa-heart' />
           <p>wishlist</p>

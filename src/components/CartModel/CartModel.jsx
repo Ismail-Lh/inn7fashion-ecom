@@ -5,17 +5,18 @@ import './CartModel.scss';
 import { Button, CartModelItem } from '..';
 
 const CartModel = () => {
-  const { cart } = useCartContext();
+  const { cart, hideCart } = useCartContext();
 
   return (
-    <div className='cart-overlay'>
-      <div className='cart-model'>
+    <div className='cartModel'>
+      <div className='cartModel__overlay' onMouseEnter={hideCart} />
+      <div className='cartModel__content' onMouseLeave={hideCart}>
         <div className='triangle'></div>
-        <p className='cart-model__total'>{cart.length} items total</p>
+        <p className='cartModel__total'>{cart.length} items total</p>
         {cart.map(item => (
           <CartModelItem {...item} key={item.id} />
         ))}
-        <p className='cart-model__subtotal'>subtotal : $250.00</p>
+        <p className='cartModel__subtotal'>subtotal : $250.00</p>
         <Button outline>view shopping bag</Button>
         <Button>checkout</Button>
       </div>

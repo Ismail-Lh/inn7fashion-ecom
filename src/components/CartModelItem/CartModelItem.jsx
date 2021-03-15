@@ -3,8 +3,19 @@ import React from 'react';
 import './CartModelItem.scss';
 
 import { formatPrice } from '../../utils/helpers';
+import { useCartContext } from '../../contexts/cart_context';
 
-const CartModelItem = ({ name, designer, price, size, image, discountPer }) => {
+const CartModelItem = ({
+  id,
+  name,
+  designer,
+  price,
+  size,
+  image,
+  discountPer,
+}) => {
+  const { removeItem } = useCartContext();
+
   const itemPrice = () => {
     let finalPrice;
 
@@ -18,14 +29,14 @@ const CartModelItem = ({ name, designer, price, size, image, discountPer }) => {
   };
 
   return (
-    <div className='cart-model__item'>
-      <button className='delete-icon'>
+    <div className='cartModel__item'>
+      <button className='delete-icon' onClick={() => removeItem(id)}>
         <i className='fas fa-trash-alt' />
       </button>
-      <div className='cart-model__img'>
+      <div className='cartModel__img'>
         <img src={image} alt={name} />
       </div>
-      <div className='cart-model__info'>
+      <div className='cartModel__info'>
         <p className='name'>{name}</p>
         <p className='designer'>{designer}</p>
         <p className='price'>{itemPrice()}</p>
