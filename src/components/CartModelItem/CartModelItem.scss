@@ -8,7 +8,7 @@
 
     & .delete-icon {
       position: absolute;
-      top: 1rem;
+      top: 1.3rem;
       right: 0;
       cursor: pointer;
       transition: transform 0.2s ease;
@@ -22,6 +22,7 @@
   &__info {
     & .name {
       text-transform: uppercase;
+      width: 90%;
     }
 
     & .designer {

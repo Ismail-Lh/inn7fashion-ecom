@@ -6,6 +6,7 @@ import './SingleProductInfo.scss';
 import { useProductsContext } from '../../contexts/products_context';
 import { useCartContext } from '../../contexts/cart_context';
 import { formatPrice } from '../../utils/helpers';
+import { Button } from '..';
 
 const SingleProductInfo = () => {
   const { single_product: product, categories } = useProductsContext();
@@ -65,12 +66,7 @@ const SingleProductInfo = () => {
       </div>
 
       <div className='single-product_info-3'>
-        <button
-          type='button'
-          className='btn'
-          onClick={() => addToCart(product)}>
-          add to bag
-        </button>
+        <Button onClick={() => addToCart(product)}>add to bag</Button>
         <div className='wishlist'>
           <i className='far fa-heart' />
           <p>wishlist</p>

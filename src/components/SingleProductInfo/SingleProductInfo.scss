@@ -15,24 +15,6 @@
       display: flex;
       align-items: center;
 
-      & .btn {
-        color: #fff;
-        background-color: #282828;
-        text-transform: uppercase;
-        font-size: 1.7rem;
-        padding: 1.5rem 7rem;
-        margin-right: 2rem;
-        border: 2px solid transparent;
-        transition: all 0.3s ease-out;
-        cursor: pointer;
-
-        &:hover {
-          color: #282828;
-          background-color: #fff;
-          border: 2px solid #282828;
-        }
-      }
-
       & .wishlist {
         display: flex;
         align-items: flex-end;

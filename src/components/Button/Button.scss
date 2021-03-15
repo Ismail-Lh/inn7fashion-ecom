@@ -1,0 +1,31 @@
+.btn {
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  padding: 1.5rem 7rem;
+  margin-right: 2rem;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+
+  &-outline {
+    color: #282828;
+    background-color: #fff;
+    border: 2px solid #282828;
+
+    &:hover {
+      color: #fff;
+      background-color: #282828;
+    }
+  }
+
+  &-full {
+    color: #fff;
+    background-color: #282828;
+    border: 2px solid transparent;
+
+    &:hover {
+      color: #282828;
+      background-color: #fff;
+      border: 2px solid #282828;
+    }
+  }
+}

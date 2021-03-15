@@ -7,6 +7,7 @@ export { default as Footer } from './Footer/Footer';
 export { default as PopularProducts } from './PopularProducts/PopularProducts';
 export { default as CardItem } from './CardItem/CardItem';
 export { default as Links } from './Links/Links';
+export { default as Button } from './Button/Button';
 export { default as Filters } from './Filters/Filters';
 export { default as Sort } from './Sort/Sort';
 
