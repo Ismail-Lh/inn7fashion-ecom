@@ -26,11 +26,15 @@ export const getLocalStorage = key => {
 export const finalItemPrice = (price, discountPer) => {
   let finalPrice;
 
-  if (discountPer) {
-    finalPrice = (price * discountPer) / 100;
-  } else {
-    finalPrice = price;
-  }
+  if (!discountPer) finalPrice = price;
+
+  finalPrice = (price * discountPer) / 100;
+
+  // if (!discountPer) {
+  //   finalPrice = (price * discountPer) / 100;
+  // } else {
+  //   finalPrice = price;
+  // }
 
   return finalPrice;
 };

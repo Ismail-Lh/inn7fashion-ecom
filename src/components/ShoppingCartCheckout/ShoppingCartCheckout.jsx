@@ -1,9 +1,11 @@
 import React from 'react';
 import { Button } from '..';
+import { useCartContext } from '../../contexts/cart_context';
 
 import './ShoppingCartCheckout.scss';
 
 const ShoppingCartCheckout = () => {
+  const { subtotal } = useCartContext();
   return (
     <div className='shoppingCart__checkout'>
       <div className='promotionalCode'>
@@ -20,8 +22,8 @@ const ShoppingCartCheckout = () => {
       </div>
       <div className='checkout'>
         <h2>order summary</h2>
-        <p className='subtotal'>subtotal : $250.00</p>
-        <p className='grandtotal'>grand total : $250.00</p>
+        <p className='subtotal'>subtotal : {subtotal}</p>
+        <p className='grandtotal'>grand total : {subtotal}</p>
 
         <Button>proceed to checkout</Button>
       </div>

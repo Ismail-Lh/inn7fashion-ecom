@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import './CartModelItem.scss';
 
 import { finalItemPrice, formatPrice } from '../../utils/helpers';
-import { useCartContext } from '../../contexts/cart_context';
 import { useProductsContext } from '../../contexts/products_context';
+import { RemoveButton } from '..';
 
 const CartModelItem = ({
   id,
@@ -16,14 +16,11 @@ const CartModelItem = ({
   image,
   discountPer,
 }) => {
-  const { removeItem } = useCartContext();
   const { categories } = useProductsContext();
 
   return (
     <div className='cartModel__item'>
-      <button className='delete-icon' onClick={() => removeItem(id)}>
-        <i className='fas fa-trash-alt' />
-      </button>
+      <RemoveButton id={id} />
       <Link
         // ------------------------------------
         to={`/products/${categories}/${designer}/${name}`}

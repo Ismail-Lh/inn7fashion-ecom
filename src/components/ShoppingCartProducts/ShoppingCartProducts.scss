@@ -1,0 +1,86 @@
+.shoppingCart {
+  &__products {
+    .header,
+    .product {
+      display: grid;
+      grid-template-columns: 2fr repeat(3, 1fr);
+      column-gap: 1rem;
+      padding: 1rem;
+      border-bottom: 1px solid #ebebeb;
+    }
+
+    .header {
+      p {
+        text-transform: uppercase;
+        font-size: 1.8rem;
+        font-weight: 300;
+      }
+    }
+
+    .products {
+      display: grid;
+      grid-template-rows: 22rem;
+
+      .product {
+        &__image {
+          display: flex;
+
+          img {
+            width: 15rem;
+            margin-right: 2rem;
+          }
+
+          p:not(:last-of-type) {
+            margin-bottom: 0.5rem;
+          }
+        }
+
+        &__info,
+        &__price,
+        &__qty,
+        &__actions {
+          padding-top: 2.5rem;
+        }
+
+        &__name {
+          text-transform: uppercase;
+          font-weight: 300;
+          font-size: 1.8rem;
+        }
+
+        &__designer {
+          text-transform: capitalize;
+          font-weight: bold;
+        }
+
+        &__sku,
+        &__color {
+          text-transform: uppercase;
+          font-size: 1.5rem;
+          font-weight: 400;
+        }
+
+        &__size {
+          span {
+            text-transform: uppercase;
+            font-weight: bold;
+          }
+        }
+
+        &__price {
+          font-size: 1.8rem;
+          font-weight: 300;
+        }
+
+        &__actions {
+          p {
+            display: inline-block;
+            margin-left: 1rem;
+            text-transform: capitalize;
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
+}

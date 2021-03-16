@@ -10,12 +10,6 @@
       position: absolute;
       top: 1.3rem;
       right: 0;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-
-      &:hover {
-        transform: scale(1.3);
-      }
     }
   }
 

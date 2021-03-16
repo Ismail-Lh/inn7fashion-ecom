@@ -10,6 +10,7 @@ export { default as Links } from './Links/Links';
 export { default as Button } from './Button/Button';
 export { default as Filters } from './Filters/Filters';
 export { default as Sort } from './Sort/Sort';
+export { default as RemoveButton } from './RemoveButton/RemoveButton';
 
 // Home Page
 export { default as Hero } from './Hero/Hero';
