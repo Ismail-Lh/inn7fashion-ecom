@@ -8,6 +8,7 @@ import {
   WomenPage,
   DesignersPage,
   DesignerProductsPage,
+  ShoppingCartPage,
 } from './pages';
 
 function App() {
@@ -38,6 +39,10 @@ function App() {
 
         <Route exact path='/:categories/designers/:designer'>
           <DesignerProductsPage />
+        </Route>
+
+        <Route exact path='/checkout/cart'>
+          <ShoppingCartPage />
         </Route>
       </Switch>
 

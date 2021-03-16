@@ -1,0 +1,59 @@
+.shoppingCart {
+  &__checkout {
+    h2 {
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .promotionalCode,
+    .checkout {
+      padding: 3rem 2rem;
+      border: 1px solid #ebebeb;
+    }
+
+    .promotionalCode {
+      &__form {
+        input {
+          padding: 1.5rem 1rem;
+          border: 1px solid #ebebeb;
+          width: 75%;
+          text-transform: capitalize;
+        }
+
+        button {
+          background-color: #282828;
+          color: #fff;
+          text-transform: uppercase;
+          height: 4.7rem;
+          width: 25%;
+        }
+      }
+    }
+
+    .checkout {
+      border-top: 0;
+
+      .subtotal,
+      .grandtotal {
+        text-transform: uppercase;
+        font-size: 2rem;
+      }
+
+      .subtotal {
+        font-weight: 300;
+        margin-bottom: 1rem;
+      }
+
+      .grandtotal {
+        font-weight: bold;
+      }
+
+      .btn {
+        margin-right: 0;
+        margin-top: 1.5rem;
+        padding: 1.5rem 4rem;
+        width: 100%;
+      }
+    }
+  }
+}

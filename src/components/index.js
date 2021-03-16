@@ -31,3 +31,8 @@ export { default as DesignerProducts } from './DesignerProducts/DesignerProducts
 // Cart
 export { default as CartModel } from './CartModel/CartModel';
 export { default as CartModelItem } from './CartModelItem/CartModelItem';
+
+// Shopping Cart Page
+export { default as ShoppingCartContainer } from './ShoppingCartContainer/ShoppingCartContainer';
+export { default as ShoppingCartProducts } from './ShoppingCartProducts/ShoppingCartProducts';
+export { default as ShoppingCartCheckout } from './ShoppingCartCheckout/ShoppingCartCheckout';

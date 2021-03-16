@@ -7,13 +7,19 @@
   cursor: pointer;
 
   &-outline {
-    color: #282828;
     background-color: #fff;
     border: 2px solid #282828;
 
+    a {
+      color: #282828;
+    }
+
     &:hover {
-      color: #fff;
       background-color: #282828;
+
+      a {
+        color: #fff;
+      }
     }
   }
 

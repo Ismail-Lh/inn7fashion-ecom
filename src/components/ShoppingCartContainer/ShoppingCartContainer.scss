@@ -1,0 +1,19 @@
+.shoppingCart {
+  &__container {
+    color: #282828;
+    padding: 2rem 6rem;
+    height: calc(100vh - 12.4rem);
+
+    .title {
+      text-transform: uppercase;
+      font-size: 2.8rem;
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 70% auto;
+    column-gap: 2rem;
+  }
+}

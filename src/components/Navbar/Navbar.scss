@@ -182,4 +182,23 @@
       }
     }
   }
+
+  & .cart {
+    position: relative;
+    &__length {
+      position: absolute;
+      top: -2px;
+      left: -4px;
+      background: #fff;
+      color: #282828;
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }

@@ -12,7 +12,7 @@ import { useCartContext } from '../../contexts/cart_context';
 
 const Navbar = () => {
   const { updateCategories, categories } = useProductsContext();
-  const { show_cart, showCart, hideCart } = useCartContext();
+  const { show_cart, showCart, cart } = useCartContext();
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => setShowMenu(!showMenu);
@@ -53,6 +53,7 @@ const Navbar = () => {
             </Link>
 
             <Link to='/cart' className='cart' onMouseEnter={showCart}>
+              <div className='cart__length'>{cart.length}</div>
               <img src={bag} alt='bag' />
             </Link>
           </div>
