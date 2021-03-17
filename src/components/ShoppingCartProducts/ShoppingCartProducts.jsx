@@ -1,12 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import { RemoveButton } from '..';
 import { useCartContext } from '../../contexts/cart_context';
+import { useProductsContext } from '../../contexts/products_context';
 import { formatPrice, finalItemPrice } from '../../utils/helpers';
 
 import './ShoppingCartProducts.scss';
 
 const ShoppingCartProducts = () => {
   const { cart } = useCartContext();
+  const { categories, getSingleProduct } = useProductsContext();
+
   return (
     <div className='shoppingCart__products'>
       <div className='header'>
@@ -18,14 +23,28 @@ const ShoppingCartProducts = () => {
 
       <div className='products'>
         {cart.map(
-          ({ id, name, price, designer, color, image, size, discountPer }) => (
+          ({
+            id,
+            name,
+            price,
+            designer,
+            color,
+            image,
+            size,
+            discountPer,
+            sku,
+          }) => (
             <div className='product' key={id}>
               <div className='product__image'>
-                <img src={image} alt={name} />
+                <Link
+                  to={`/products/${categories}/${designer}/${name}`}
+                  onClick={() => getSingleProduct(id, categories)}>
+                  <img src={image} alt={name} />
+                </Link>
                 <div className='product__info'>
                   <p className='product__name'>{name}</p>
                   <p className='product__designer'>{designer}</p>
-                  <p className='product__sku'>sku : {color}</p>
+                  <p className='product__sku'>sku : {sku}</p>
                   <p className='product__color'>color : {color}</p>
                   <p className='product__size'>
                     Size : <span>{size}</span>

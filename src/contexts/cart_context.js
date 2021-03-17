@@ -9,6 +9,7 @@ import {
   HIDE_CART_MODEL,
   REMOVE_PRODUCT_FROM_CART,
   GET_CART_SUBTOTAL,
+  CLEAR_CART,
 } from '../actions';
 
 const initialState = {
@@ -43,6 +44,10 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: REMOVE_PRODUCT_FROM_CART, payload: id });
   };
 
+  const clearCart = () => {
+    dispatch({ type: CLEAR_CART });
+  };
+
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(state.cart));
     dispatch({ type: GET_CART_SUBTOTAL });
@@ -57,6 +62,7 @@ export const CartProvider = ({ children }) => {
         showCart,
         hideCart,
         removeItem,
+        clearCart,
       }}>
       {children}
     </CartContext.Provider>

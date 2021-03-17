@@ -16,14 +16,14 @@ const CartModelItem = ({
   image,
   discountPer,
 }) => {
-  const { categories } = useProductsContext();
+  const { categories, getSingleProduct } = useProductsContext();
 
   return (
     <div className='cartModel__item'>
       <RemoveButton id={id} />
       <Link
-        // ------------------------------------
         to={`/products/${categories}/${designer}/${name}`}
+        onClick={() => getSingleProduct(id, categories)}
         className='cartModel__img'>
         <img src={image} alt={name} />
       </Link>

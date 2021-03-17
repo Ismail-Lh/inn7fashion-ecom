@@ -5,6 +5,7 @@ import {
   HIDE_CART_MODEL,
   REMOVE_PRODUCT_FROM_CART,
   GET_CART_SUBTOTAL,
+  CLEAR_CART,
 } from '../actions';
 
 import { finalItemPrice, formatPrice } from '../utils/helpers';
@@ -21,6 +22,7 @@ const CartReducer = (state, action) => {
       id: product.id,
       name: product.name,
       designer: product.designer,
+      sku: product.sku,
       color: product.color,
       price: product.price,
       discountPer: product.discountPer,
@@ -53,6 +55,10 @@ const CartReducer = (state, action) => {
     const subTotal = prices.reduce((acc, curr) => acc + curr, 0);
 
     return { ...state, subtotal: formatPrice(subTotal) };
+  }
+
+  if (action.type === CLEAR_CART) {
+    return { ...state, cart: [] };
   }
 
   throw new Error(`No Matching "${action.type}" - action type`);

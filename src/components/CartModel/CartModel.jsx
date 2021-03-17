@@ -7,7 +7,7 @@ import './CartModel.scss';
 import { Button, CartModelItem } from '..';
 
 const CartModel = () => {
-  const { cart, hideCart, subtotal } = useCartContext();
+  const { cart, hideCart, subtotal, clearCart } = useCartContext();
 
   return (
     <div className='cartModel'>
@@ -28,6 +28,8 @@ const CartModel = () => {
             <Button outline>
               <Link to='/checkout/cart'>view shopping bag</Link>
             </Button>
+
+            <Button handelClick={clearCart}>clear cart</Button>
 
             <Button>checkout</Button>
           </div>

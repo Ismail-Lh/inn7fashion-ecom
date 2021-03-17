@@ -45,7 +45,7 @@
   & .btn {
     width: 100%;
 
-    &:first-of-type {
+    &:not(:last-of-type) {
       margin-bottom: 1rem;
     }
   }

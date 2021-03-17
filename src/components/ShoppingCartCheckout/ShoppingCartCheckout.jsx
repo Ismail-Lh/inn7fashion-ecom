@@ -5,7 +5,7 @@ import { useCartContext } from '../../contexts/cart_context';
 import './ShoppingCartCheckout.scss';
 
 const ShoppingCartCheckout = () => {
-  const { subtotal } = useCartContext();
+  const { subtotal, clearCart } = useCartContext();
   return (
     <div className='shoppingCart__checkout'>
       <div className='promotionalCode'>
@@ -24,6 +24,10 @@ const ShoppingCartCheckout = () => {
         <h2>order summary</h2>
         <p className='subtotal'>subtotal : {subtotal}</p>
         <p className='grandtotal'>grand total : {subtotal}</p>
+
+        <Button handelClick={clearCart} outline>
+          clear cart
+        </Button>
 
         <Button>proceed to checkout</Button>
       </div>
