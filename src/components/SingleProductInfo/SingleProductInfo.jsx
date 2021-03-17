@@ -6,7 +6,7 @@ import './SingleProductInfo.scss';
 import { useProductsContext } from '../../contexts/products_context';
 import { useCartContext } from '../../contexts/cart_context';
 import { formatPrice } from '../../utils/helpers';
-import { Button } from '..';
+import { Button, AmountButtons } from '..';
 
 const SingleProductInfo = () => {
   const { single_product: product, categories } = useProductsContext();
@@ -24,10 +24,12 @@ const SingleProductInfo = () => {
     sku,
     discountPer,
     id,
+    stock,
   } = product;
 
   const [size, setSize] = useState('');
   const [showError, setShowError] = useState(false);
+  const [amount, setAmount] = useState(1);
 
   const salePrice = (price * discountPer) / 100;
 
@@ -35,9 +37,31 @@ const SingleProductInfo = () => {
     if (size.length <= 0) {
       setShowError(true);
     } else {
-      addToCart(product);
+      addToCart(product, amount);
       setShowError(false);
     }
+  };
+
+  const inc = () => {
+    setAmount(oldAmount => {
+      let newAmount = oldAmount + 1;
+
+      if (newAmount > stock) {
+        newAmount = stock;
+      }
+      return newAmount;
+    });
+  };
+
+  const dec = () => {
+    setAmount(oldAmount => {
+      let newAmount = oldAmount - 1;
+
+      if (newAmount < 1) {
+        newAmount = 1;
+      }
+      return newAmount;
+    });
   };
 
   return (
@@ -82,11 +106,17 @@ const SingleProductInfo = () => {
       </div>
 
       <div className='single-product_info-3'>
+        <AmountButtons
+          amount={amount}
+          increaseAmount={inc}
+          decreaseAmount={dec}
+        />
         <Button handelClick={handelClick}>add to bag</Button>
-        <div className='wishlist'>
+
+        {/* <div className='wishlist'>
           <i className='far fa-heart' />
           <p>wishlist</p>
-        </div>
+        </div> */}
       </div>
       <Link to='/' className='link'>
         do you have a question?

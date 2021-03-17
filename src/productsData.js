@@ -176,6 +176,7 @@ export const AllProducts = {
         { size: 'xxxl', isAvailable: false },
       ],
       popularity: true,
+      stock: 25,
     },
     {
       id: uuidv4(),
@@ -212,6 +213,7 @@ export const AllProducts = {
         { size: 'xxxl', isAvailable: false },
       ],
       popularity: true,
+      stock: 10,
     },
     {
       id: uuidv4(),
@@ -248,6 +250,7 @@ export const AllProducts = {
         { size: 'xxxl', isAvailable: true },
       ],
       popularity: false,
+      stock: 9,
     },
     {
       id: uuidv4(),
@@ -283,6 +286,7 @@ export const AllProducts = {
         { size: 'xxxl', isAvailable: false },
       ],
       popularity: false,
+      stock: 14,
     },
     {
       id: uuidv4(),
@@ -319,6 +323,7 @@ export const AllProducts = {
         { size: 'xxxl', isAvailable: true },
       ],
       popularity: false,
+      stock: 8,
     },
     {
       id: uuidv4(),
@@ -354,6 +359,7 @@ export const AllProducts = {
         { size: 'xxxl', isAvailable: false },
       ],
       popularity: true,
+      stock: 6,
     },
     {
       id: uuidv4(),
@@ -390,6 +396,7 @@ export const AllProducts = {
         { size: 'xxxl', isAvailable: false },
       ],
       popularity: false,
+      stock: 5,
     },
     {
       id: uuidv4(),
@@ -426,6 +433,7 @@ export const AllProducts = {
         { size: 'xxxl', isAvailable: false },
       ],
       popularity: false,
+      stock: 12,
     },
     {
       id: uuidv4(),
@@ -460,6 +468,7 @@ export const AllProducts = {
         { size: 'xxxl', isAvailable: false },
       ],
       popularity: false,
+      stock: 23,
     },
     {
       id: uuidv4(),
@@ -494,6 +503,7 @@ export const AllProducts = {
         { size: 'xxxl', isAvailable: false },
       ],
       popularity: false,
+      stock: 20,
     },
     {
       id: uuidv4(),
@@ -528,6 +538,7 @@ export const AllProducts = {
         { size: 'xxxl', isAvailable: false },
       ],
       popularity: false,
+      stock: 13,
     },
     {
       id: uuidv4(),
@@ -562,6 +573,7 @@ export const AllProducts = {
         { size: 'xxxl', isAvailable: false },
       ],
       popularity: false,
+      stock: 4,
     },
     {
       id: uuidv4(),
@@ -587,6 +599,7 @@ export const AllProducts = {
         { size: 'xxxl', isAvailable: true },
       ],
       popularity: false,
+      stock: 5,
     },
     {
       id: uuidv4(),
@@ -621,6 +634,7 @@ export const AllProducts = {
         { size: 'xxxl', isAvailable: true },
       ],
       popularity: false,
+      stock: 8,
     },
     {
       id: uuidv4(),
@@ -655,6 +669,7 @@ export const AllProducts = {
         { size: 'xxxl', isAvailable: true },
       ],
       popularity: false,
+      stock: 8,
     },
     {
       id: uuidv4(),
@@ -689,6 +704,7 @@ export const AllProducts = {
         { size: 'xxxl', isAvailable: true },
       ],
       popularity: false,
+      stock: 15,
     },
     {
       id: uuidv4(),
@@ -723,6 +739,7 @@ export const AllProducts = {
         { size: 'xxxl', isAvailable: true },
       ],
       popularity: false,
+      stock: 13,
     },
     {
       id: uuidv4(),
@@ -757,6 +774,7 @@ export const AllProducts = {
         { size: 'xxxl', isAvailable: true },
       ],
       popularity: false,
+      stock: 14,
     },
     {
       id: uuidv4(),
@@ -791,6 +809,7 @@ export const AllProducts = {
         { size: 'xxxl', isAvailable: true },
       ],
       popularity: false,
+      stock: 10,
     },
     {
       id: uuidv4(),
@@ -825,6 +844,7 @@ export const AllProducts = {
         { size: 'xxxl', isAvailable: true },
       ],
       popularity: false,
+      stock: 3,
     },
     {
       id: uuidv4(),
@@ -853,6 +873,7 @@ export const AllProducts = {
         { size: '46seu', isAvailable: true },
       ],
       popularity: true,
+      stock: 5,
     },
     {
       id: uuidv4(),
@@ -882,6 +903,7 @@ export const AllProducts = {
         { size: '46seu', isAvailable: true },
       ],
       popularity: true,
+      stock: 8,
     },
     {
       id: uuidv4(),
@@ -910,6 +932,7 @@ export const AllProducts = {
         { size: '46seu', isAvailable: true },
       ],
       popularity: true,
+      stock: 9,
     },
   ],
   women: [
@@ -945,6 +968,7 @@ export const AllProducts = {
         { size: 'xl', isAvailable: false },
       ],
       popularity: true,
+      stock: 10,
     },
     {
       id: uuidv4(),
@@ -970,6 +994,7 @@ export const AllProducts = {
         { size: 'm', isAvailable: true },
       ],
       popularity: true,
+      stock: 12,
     },
     {
       id: uuidv4(),
@@ -1000,6 +1025,7 @@ export const AllProducts = {
         { size: 'l', isAvailable: true },
       ],
       popularity: true,
+      stock: 20,
     },
     {
       id: uuidv4(),
@@ -1032,6 +1058,7 @@ export const AllProducts = {
         { size: '4', isAvailable: true },
       ],
       popularity: true,
+      stock: 10,
     },
     {
       id: uuidv4(),
@@ -1063,6 +1090,7 @@ export const AllProducts = {
         { size: '8', isAvailable: true },
       ],
       popularity: true,
+      stock: 12,
     },
   ],
 };

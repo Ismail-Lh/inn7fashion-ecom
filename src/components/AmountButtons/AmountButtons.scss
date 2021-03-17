@@ -1,0 +1,20 @@
+.amount-btns {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  padding: 1rem 0;
+  margin-right: 2rem;
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  button {
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

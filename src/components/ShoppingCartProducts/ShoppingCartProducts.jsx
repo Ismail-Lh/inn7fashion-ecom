@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { RemoveButton } from '..';
+import { AmountButtons, RemoveButton } from '..';
 import { useCartContext } from '../../contexts/cart_context';
 import { useProductsContext } from '../../contexts/products_context';
 import { formatPrice, finalItemPrice } from '../../utils/helpers';
@@ -9,7 +9,7 @@ import { formatPrice, finalItemPrice } from '../../utils/helpers';
 import './ShoppingCartProducts.scss';
 
 const ShoppingCartProducts = () => {
-  const { cart } = useCartContext();
+  const { cart, toggleCartAmount } = useCartContext();
   const { categories, getSingleProduct } = useProductsContext();
 
   return (
@@ -33,6 +33,7 @@ const ShoppingCartProducts = () => {
             size,
             discountPer,
             sku,
+            amount,
           }) => (
             <div className='product' key={id}>
               <div className='product__image'>
@@ -55,7 +56,13 @@ const ShoppingCartProducts = () => {
                 <p>{formatPrice(finalItemPrice(price, discountPer))}</p>
               </div>
 
-              <div className='product__qty'></div>
+              <div className='product__qty'>
+                <AmountButtons
+                  amount={amount}
+                  increaseAmount={() => toggleCartAmount(id, 'inc')}
+                  decreaseAmount={() => toggleCartAmount(id, 'dec')}
+                />
+              </div>
 
               <div className='product__actions'>
                 <RemoveButton id={id} />

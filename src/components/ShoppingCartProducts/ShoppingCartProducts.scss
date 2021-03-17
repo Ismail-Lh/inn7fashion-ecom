@@ -19,7 +19,7 @@
 
     .products {
       display: grid;
-      grid-template-rows: 22rem;
+      grid-template-rows: 23rem;
 
       .product {
         &__image {
@@ -70,6 +70,13 @@
         &__price {
           font-size: 1.8rem;
           font-weight: 300;
+        }
+
+        &__qty {
+          .amount-btns {
+            padding: 0;
+            justify-items: flex-start;
+          }
         }
 
         &__actions {

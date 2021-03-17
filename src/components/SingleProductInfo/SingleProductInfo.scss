@@ -12,25 +12,30 @@
     }
 
     &-3 {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr auto;
       align-items: center;
 
-      & .wishlist {
-        display: flex;
-        align-items: flex-end;
-
-        i {
-          font-size: 2.5rem;
-          margin-right: 1rem;
-          cursor: pointer;
-        }
-
-        p {
-          text-transform: uppercase;
-          font-weight: 300;
-          font-size: 1.7rem;
-        }
+      .amount-btns {
+        width: 100%;
       }
+
+      // & .wishlist {
+      //   display: flex;
+      //   align-items: flex-end;
+
+      //   i {
+      //     font-size: 2.5rem;
+      //     margin-right: 1rem;
+      //     cursor: pointer;
+      //   }
+
+      //   p {
+      //     text-transform: uppercase;
+      //     font-weight: 300;
+      //     font-size: 1.7rem;
+      //   }
+      // }
     }
 
     &-4 {

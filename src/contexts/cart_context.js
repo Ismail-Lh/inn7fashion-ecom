@@ -8,8 +8,9 @@ import {
   SHOW_CART_MODEL,
   HIDE_CART_MODEL,
   REMOVE_PRODUCT_FROM_CART,
-  GET_CART_SUBTOTAL,
+  COUNT_CART_TOTALS,
   CLEAR_CART,
+  TOGGLE_CART_AMOUNT,
 } from '../actions';
 
 const initialState = {
@@ -17,6 +18,7 @@ const initialState = {
   size: '',
   show_cart: false,
   subtotal: 0,
+  total_items: 0,
 };
 
 const CartContext = createContext();
@@ -24,8 +26,8 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(CartReducer, initialState);
 
-  const addToCart = product => {
-    dispatch({ type: ADD_PRODUCT_TO_CART, payload: product });
+  const addToCart = (product, amount) => {
+    dispatch({ type: ADD_PRODUCT_TO_CART, payload: { amount, product } });
   };
 
   const selectSize = size => {
@@ -48,9 +50,13 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: CLEAR_CART });
   };
 
+  const toggleCartAmount = (id, value) => {
+    dispatch({ type: TOGGLE_CART_AMOUNT, payload: { id, value } });
+  };
+
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(state.cart));
-    dispatch({ type: GET_CART_SUBTOTAL });
+    dispatch({ type: COUNT_CART_TOTALS });
   }, [state.cart]);
 
   return (
@@ -63,6 +69,7 @@ export const CartProvider = ({ children }) => {
         hideCart,
         removeItem,
         clearCart,
+        toggleCartAmount,
       }}>
       {children}
     </CartContext.Provider>
