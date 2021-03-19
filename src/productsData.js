@@ -113,6 +113,34 @@ import caden_black_2 from './assets/men/the last conspiracy/caden/black/2.jpg';
 import caden_black_3 from './assets/men/the last conspiracy/caden/black/3.jpg';
 import caden_black_4 from './assets/men/the last conspiracy/caden/black/4.jpg';
 
+// -------------------- The 10sei0otto Products ----------------------
+import sei0otto_coats_black_1 from './assets/men/10sei0otto/10sei0otto coats/black/1.jpg';
+import sei0otto_coats_black_2 from './assets/men/10sei0otto/10sei0otto coats/black/2.jpg';
+
+import sei0otto_jackets_black_1 from './assets/men/10sei0otto/10sei0otto jackets/black/1.jpg';
+import sei0otto_jackets_black_2 from './assets/men/10sei0otto/10sei0otto jackets/black/2.jpg';
+
+import sei0otto_pants_grey_1 from './assets/men/10sei0otto/10sei0otto pants/grey/1.jpg';
+import sei0otto_pants_grey_2 from './assets/men/10sei0otto/10sei0otto pants/grey/2.jpg';
+
+import sei0otto_tshirt_black_1 from './assets/men/10sei0otto/10sei0otto t-shirt/black/1.jpg';
+import sei0otto_tshirt_black_2 from './assets/men/10sei0otto/10sei0otto t-shirt/black/2.jpg';
+
+import sei0otto_tshirt_brown_1 from './assets/men/10sei0otto/10sei0otto t-shirt/brown/1.jpg';
+import sei0otto_tshirt_brown_2 from './assets/men/10sei0otto/10sei0otto t-shirt/brown/2.jpg';
+
+import sei0otto_tshirt_grey_1 from './assets/men/10sei0otto/10sei0otto t-shirt/grey/1.jpg';
+import sei0otto_tshirt_grey_2 from './assets/men/10sei0otto/10sei0otto t-shirt/grey/2.jpg';
+
+import sei0otto_tshirt_stone_1 from './assets/men/10sei0otto/10sei0otto t-shirt/stone/1.jpg';
+import sei0otto_tshirt_stone_2 from './assets/men/10sei0otto/10sei0otto t-shirt/stone/2.jpg';
+
+import pants_black_1 from './assets/men/10sei0otto/pants/black/1.jpg';
+import pants_black_2 from './assets/men/10sei0otto/pants/black/2.jpg';
+
+import vest_mustard_1 from './assets/men/10sei0otto/vest/mustard/1.jpg';
+import vest_mustard_2 from './assets/men/10sei0otto/vest/mustard/2.jpg';
+
 // Women Products
 import dce_jacket_black_1 from './assets/women/139dec/139dec jacket/black/1.jpg';
 import dce_jacket_black_2 from './assets/women/139dec/139dec jacket/black/2.jpg';
@@ -934,6 +962,242 @@ export const AllProducts = {
       popularity: true,
       stock: 9,
     },
+    {
+      id: uuidv4(),
+      name: '10sei0otto coats',
+      designer: '10sei0otto',
+      images: [sei0otto_coats_black_1, sei0otto_coats_black_2],
+      color: 'black',
+      sku: '1300COAT~BLACK',
+      desc: 'Wool Overcoat by 10SEI0OTTO in Black',
+      details: [
+        'Shawl lapels',
+        'Standard fit',
+        'Button closure',
+        'Front patch pockets',
+        'Cotton cuff detail',
+        'Finished hem',
+        'Model is wearing size M',
+      ],
+      price: 95600,
+      discountPer: 25,
+      sizes: [
+        { size: 'm', isAvailable: true },
+        { size: 'l', isAvailable: false },
+      ],
+      popularity: false,
+      stock: 20,
+    },
+    {
+      id: uuidv4(),
+      name: '10sei0otto jackets',
+      designer: '10sei0otto',
+      images: [sei0otto_jackets_black_1, sei0otto_jackets_black_2],
+      color: 'black',
+      sku: 'ABEL-BRISTOL~BLACK',
+      desc: 'Asymmetric Wool Jacket by 10SEI0OTTO in Black',
+      details: [
+        'High collar',
+        'Standard fit',
+        'Asymmetric two- zip closure',
+        'Side slit pockets',
+        'Finished hem',
+        'Model is wearing size L',
+      ],
+      price: 73500,
+      discountPer: 20,
+      sizes: [
+        { size: 'l', isAvailable: true },
+        { size: 'xl', isAvailable: false },
+        { size: 'xxl', isAvailable: true },
+      ],
+      popularity: false,
+      stock: 10,
+    },
+    {
+      id: uuidv4(),
+      name: '10sei0otto pants',
+      designer: '10sei0otto',
+      images: [sei0otto_pants_grey_1, sei0otto_pants_grey_2],
+      color: 'grey',
+      sku: 'EDO~GREY',
+      desc: 'Dyed Cotton Pants by 10SEI0OTTO in Grey',
+      details: [
+        'Natural waist rise',
+        'Relaxed fit',
+        'Concealed buttons closure',
+        'Side round pockets',
+        'Hand-dyed details at knees',
+        'Dye-effect may vary',
+        'Asymmetric cuffs',
+        'Model wearing size XS',
+      ],
+      price: 35900,
+      discountPer: 10,
+      sizes: [
+        { size: 'xs', isAvailable: true },
+        { size: 'm', isAvailable: false },
+        { size: 'l', isAvailable: true },
+        { size: 'xl', isAvailable: true },
+      ],
+      popularity: false,
+      stock: 10,
+    },
+    {
+      id: uuidv4(),
+      name: '10sei0otto t-shirt',
+      designer: '10sei0otto',
+      images: [sei0otto_tshirt_black_1, sei0otto_tshirt_black_2],
+      color: 'black',
+      sku: 'T-SHIRT-LS~BLACK',
+      desc: 'Cotton T-Shirt by 10SEI0OTTO in Black',
+      details: [
+        'Crewneck',
+        'Slim fit',
+        'Tonal seam details',
+        'Raw-edge trim cuffs and hem',
+        'Model is wearing size',
+      ],
+      price: 18500,
+      sizes: [
+        { size: 's', isAvailable: true },
+        { size: 'm', isAvailable: false },
+        { size: 'l', isAvailable: false },
+        { size: 'xl', isAvailable: true },
+        { size: 'xxl', isAvailable: false },
+      ],
+      popularity: false,
+      stock: 14,
+    },
+    {
+      id: uuidv4(),
+      name: '10sei0otto t-shirt',
+      designer: '10sei0otto',
+      images: [sei0otto_tshirt_brown_1, sei0otto_tshirt_brown_2],
+      color: 'brown',
+      sku: 'T-SHIRT-LS~BROWN',
+      desc: 'Cotton T-Shirt by 10SEI0OTTO in Black',
+      details: [
+        'Crewneck',
+        'Slim fit',
+        'Tonal seam details',
+        'Raw-edge trim cuffs and hem',
+        'Model is wearing size',
+      ],
+      price: 18500,
+      sizes: [
+        { size: 's', isAvailable: true },
+        { size: 'm', isAvailable: false },
+        { size: 'l', isAvailable: false },
+        { size: 'xl', isAvailable: true },
+        { size: 'xxl', isAvailable: false },
+      ],
+      popularity: false,
+      stock: 14,
+    },
+    {
+      id: uuidv4(),
+      name: '10sei0otto t-shirt',
+      designer: '10sei0otto',
+      images: [sei0otto_tshirt_grey_1, sei0otto_tshirt_grey_2],
+      color: 'grey',
+      sku: 'T-SHIRT-LS~GREY',
+      desc: 'Cotton T-Shirt by 10SEI0OTTO in Grey',
+      details: [
+        'Crewneck',
+        'Slim fit',
+        'Tonal seam details',
+        'Raw-edge trim cuffs and hem',
+        'Model is wearing size',
+      ],
+      price: 18500,
+      sizes: [
+        { size: 's', isAvailable: true },
+        { size: 'm', isAvailable: false },
+        { size: 'l', isAvailable: false },
+        { size: 'xl', isAvailable: true },
+        { size: 'xxl', isAvailable: false },
+      ],
+      popularity: false,
+      stock: 14,
+    },
+    {
+      id: uuidv4(),
+      name: '10sei0otto t-shirt',
+      designer: '10sei0otto',
+      images: [sei0otto_tshirt_stone_1, sei0otto_tshirt_stone_2],
+      color: 'stone',
+      sku: 'T-SHIRT-LS~STONE',
+      desc: 'Cotton T-Shirt by 10SEI0OTTO in Stone',
+      details: [
+        'Crewneck',
+        'Slim fit',
+        'Tonal seam details',
+        'Raw-edge trim cuffs and hem',
+        'Model is wearing size',
+      ],
+      price: 18500,
+      sizes: [
+        { size: 's', isAvailable: true },
+        { size: 'm', isAvailable: false },
+        { size: 'l', isAvailable: false },
+        { size: 'xl', isAvailable: true },
+        { size: 'xxl', isAvailable: false },
+      ],
+      popularity: false,
+      stock: 14,
+    },
+    {
+      id: uuidv4(),
+      name: 'pants',
+      designer: '10sei0otto',
+      images: [pants_black_1, pants_black_2],
+      color: 'black',
+      sku: '3219TD~BLACK',
+      desc: 'Pants by 10SEI0OTTO in Black',
+      details: [
+        'Low rise',
+        'Slim fit',
+        'Button and zipper closure',
+        'Two side seam pockets',
+        'Two back seam pockets',
+        'Contrasting seam details',
+      ],
+      price: 43500,
+      discountPer: 50,
+      sizes: [
+        { size: 'xs', isAvailable: true },
+        { size: 'm', isAvailable: false },
+        { size: 'l', isAvailable: false },
+        { size: 'xl', isAvailable: false },
+      ],
+      popularity: false,
+      stock: 9,
+    },
+    {
+      id: uuidv4(),
+      name: 'vest',
+      designer: '10sei0otto',
+      collection: 'SS20 New Collection',
+      images: [vest_mustard_1, vest_mustard_2],
+      color: 'mustard',
+      sku: '3212S~MUSTARD',
+      desc: 'Leather Vest by 10SEI0OTTO in Mustard',
+      details: [
+        'Low standing collar',
+        'Standard fit',
+        'Two- zip closure',
+        'Chest slit pockets',
+        'Side flap pockets',
+        'Scar stitching details',
+        'Straight and finished hem',
+      ],
+      price: 132500,
+      discountPer: 55,
+      sizes: [{ size: 'm', isAvailable: true }],
+      popularity: false,
+      stock: 5,
+    },
   ],
   women: [
     {
@@ -1095,14 +1359,19 @@ export const AllProducts = {
   ],
 };
 
-// name
-
 // Designers
 export const designers = {
   men: [
     {
       order: '#',
-      designer: [{ desig: '10SEI0OTTO', desc: '', desigId: uuidv4() }],
+      designer: [
+        {
+          desig: '10SEI0OTTO',
+          desc:
+            '10SEI0OTTO (dieciseizerotto) is an exclusive modern and sophisticated brand, quality, and craftsmanship oriented. The brainchild of Tiziano Rillo, a fashion passionate creative, and Paolo Barelli, leather industry expert. The brand aims to a modern and contemporary fashion market appreciating unique and sophisticated products. Every single 10SEI0OTTO item is handmade in Italy by an expert artisan.',
+          desigId: uuidv4(),
+        },
+      ],
       id: uuidv4(),
     },
     {
