@@ -130,15 +130,38 @@
 
       &-item {
         margin-right: 0.7rem;
+        position: relative;
+        padding: 0 0.5rem 1rem 0;
 
-        a {
+        &:hover {
+          .dropDown {
+            display: inline-block;
+            opacity: 1;
+          }
+        }
+
+        .dropDown {
+          h4 {
+            color: #282828;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+          }
+
+          &__item:not(:last-of-type) {
+            margin-bottom: 0.3rem;
+          }
+
+          &__link {
+            color: #282828;
+          }
+        }
+
+        & .link {
           color: #a9a9a9;
-          border-bottom: 1px solid transparent;
-          transition: all 0.2s ease-in;
+          transition: color 0.2s ease-in;
 
           &:hover {
             color: #fff;
-            border-bottom: 1px solid #a9a9a9;
           }
         }
       }

@@ -1,0 +1,49 @@
+.dropDown {
+  position: absolute;
+  top: 3.9rem;
+  left: 0;
+  background: #fff;
+  padding: 2rem 3rem;
+  width: 20rem;
+  display: none;
+  opacity: 0;
+  transition: all 0.3s ease;
+
+  a {
+    color: #282828;
+  }
+
+  &__list {
+    z-index: 1000;
+  }
+
+  & .overlay {
+    position: fixed;
+    top: 12.4rem;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #28282896;
+    z-index: -10;
+
+    &:hover {
+      .dropDown {
+        display: inline-block;
+        opacity: 0;
+      }
+    }
+  }
+
+  & .triangle {
+    position: absolute;
+    top: -14px;
+    right: 169px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 20px solid white;
+  }
+}

@@ -5,8 +5,8 @@ import './Navbar.scss';
 import logo from '../../assets/logo.png';
 import bag from '../../assets/bag.png';
 
-import { navLinks } from '../../utils/constants';
-import { MobileMenu, CartModel } from '..';
+import { navLinks, dropDownLinks } from '../../utils/constants';
+import { MobileMenu, CartModel, DropDownMenu } from '..';
 import { useProductsContext } from '../../contexts/products_context';
 import { useCartContext } from '../../contexts/cart_context';
 
@@ -63,7 +63,19 @@ const Navbar = () => {
           <ul className='nav__links-1'>
             {navLinks.map(({ id, link, url }) => (
               <li key={id} className='nav__links-1-item'>
-                <Link to={`/${categories}/${url}`}>{link}</Link>
+                <Link to={`/${categories}/${url}`} className='link'>
+                  {link}
+                </Link>
+                {dropDownLinks[categories][link] && (
+                  <DropDownMenu>
+                    <h4>{link}</h4>
+                    {dropDownLinks[categories][link].map((item, idx) => (
+                      <li key={idx} className='dropDown__item'>
+                        <Link to=''>{item}</Link>
+                      </li>
+                    ))}
+                  </DropDownMenu>
+                )}
               </li>
             ))}
           </ul>
