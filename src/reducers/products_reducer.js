@@ -4,6 +4,7 @@ import {
   GET_SINGLE_PRODUCT,
   GET_DESIGNER_PRODUCTS,
   GET_DESIGNER,
+  GET_PRODUCTS_BY_CATEGORY,
 } from '../actions';
 
 const ProductsReducer = (state, action) => {
@@ -35,7 +36,7 @@ const ProductsReducer = (state, action) => {
     const products = allProducts[0][categories].map(products => products);
 
     const designerProducts = products.filter(
-      products => products.designer.toLowerCase() === designer.toLowerCase()
+      product => product.designer.toLowerCase() === designer.toLowerCase()
     );
 
     return { ...state, designer_products: designerProducts };
@@ -45,6 +46,18 @@ const ProductsReducer = (state, action) => {
     const { designer } = action.payload;
 
     return { ...state, designer_data: designer };
+  }
+  if (action.type === GET_PRODUCTS_BY_CATEGORY) {
+    const { category, allProducts, categories } = action.payload;
+
+    const products = allProducts[0][categories].map(products => products);
+
+    const productsCategory = products.filter(
+      product =>
+        category && product.category.toLowerCase() === category.toLowerCase()
+    );
+
+    return { ...state, products_category: productsCategory };
   }
 
   throw new Error(`No Matching "${action.type}" - action type`);

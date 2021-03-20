@@ -11,7 +11,11 @@ import { useProductsContext } from '../../contexts/products_context';
 import { useCartContext } from '../../contexts/cart_context';
 
 const Navbar = () => {
-  const { updateCategories, categories } = useProductsContext();
+  const {
+    updateCategories,
+    categories,
+    getProductsByCategory,
+  } = useProductsContext();
   const { show_cart, showCart, cart } = useCartContext();
   const [showMenu, setShowMenu] = useState(false);
 
@@ -63,7 +67,10 @@ const Navbar = () => {
           <ul className='nav__links-1'>
             {navLinks.map(({ id, link, url }) => (
               <li key={id} className='nav__links-1-item'>
-                <Link to={`/${categories}/${url}`} className='link'>
+                <Link
+                  to={`/${categories}/${url}`}
+                  className='link'
+                  onClick={() => getProductsByCategory(link)}>
                   {link}
                 </Link>
                 {dropDownLinks[categories][link] && (

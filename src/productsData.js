@@ -173,6 +173,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: 'isaac sellam epicurien-wax pants',
       designer: 'isaac sellam',
+      category: 'clothing',
       images: [
         isaac_sellam_epicurien_wax_pants_stone_white_1,
         isaac_sellam_epicurien_wax_pants_stone_white_2,
@@ -210,6 +211,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: 'isaac sellam epicurien-wax pants',
       designer: 'isaac sellam',
+      category: 'clothing',
       images: [
         isaac_sellam_epicurien_wax_pants_dark_grey_1,
         isaac_sellam_epicurien_wax_pants_dark_grey_2,
@@ -247,6 +249,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: 'isaac sellam epicurien-wax pants',
       designer: 'isaac sellam',
+      category: 'clothing',
       images: [
         isaac_sellam_epicurien_wax_pants_bronze_1,
         isaac_sellam_epicurien_wax_pants_bronze_2,
@@ -284,6 +287,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: 'isaac sellam epicurien-wax pants',
       designer: 'isaac sellam',
+      category: 'clothing',
       images: [
         isaac_sellam_epicurien_wax_pants_white_1,
         isaac_sellam_epicurien_wax_pants_white_2,
@@ -320,6 +324,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: 'isaac sellam epicurien-wax pants',
       designer: 'isaac sellam',
+      category: 'clothing',
       images: [
         isaac_sellam_epicurien_wax_pants_petrole_1,
         isaac_sellam_epicurien_wax_pants_petrole_2,
@@ -357,6 +362,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: 'epicurien-wax',
       designer: 'isaac sellam',
+      category: 'clothing',
       images: [
         epicurien_wax_black_1,
         epicurien_wax_black_2,
@@ -393,6 +399,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: 'arpenteur leather jacket',
       designer: 'isaac sellam',
+      category: 'clothing',
       collection: '2020 Fall/Winter collection',
       images: [
         arpenteur_leather_jacket_black_1,
@@ -430,6 +437,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: 'arpenteur leather jacket',
       designer: 'isaac sellam',
+      category: 'clothing',
       collection: '2020 Fall/Winter collection',
       images: [
         arpenteur_leather_jacket_black_1,
@@ -467,6 +475,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: 'arrete tshirt',
       designer: 'isaac sellam',
+      category: 'clothing',
       collection: '2020 Fall/Winter collection',
       images: [
         arrete_tshirt_black_1,
@@ -502,6 +511,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: 'arrete tshirt',
       designer: 'isaac sellam',
+      category: 'clothing',
       collection: '2020 Fall/Winter collection',
       images: [
         arrete_tshirt_dark_grey_1,
@@ -537,6 +547,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: 'arrete tshirt',
       designer: 'isaac sellam',
+      category: 'clothing',
       collection: '2020 Fall/Winter collection',
       images: [
         arrete_tshirt_red_1,
@@ -572,6 +583,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: 'arrete tshirt',
       designer: 'isaac sellam',
+      category: 'clothing',
       collection: '2020 Fall/Winter collection',
       images: [
         arrete_tshirt_white_1,
@@ -607,6 +619,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: 'debloque',
       designer: 'isaac sellam',
+      category: 'clothing',
       images: [
         debloque_white_1,
         debloque_white_2,
@@ -633,6 +646,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: 'debloque tshirt',
       designer: 'isaac sellam',
+      category: 'clothing',
       collection: '2020 Fall/Winter collection',
       images: [
         debloque_tshirt_black_1,
@@ -668,6 +682,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: 'debloque tshirt',
       designer: 'isaac sellam',
+      category: 'clothing',
       collection: '2020 Fall/Winter collection',
       images: [
         debloque_tshirt_dark_grey_1,
@@ -703,6 +718,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: 'debloque tshirt',
       designer: 'isaac sellam',
+      category: 'clothing',
       collection: '2020 Fall/Winter collection',
       images: [
         debloque_tshirt_red_1,
@@ -738,6 +754,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: 'ecorne tshirt',
       designer: 'isaac sellam',
+      category: 'clothing',
       collection: '2020 Fall/Winter collection',
       images: [
         ecorne_tshirt_black_1,
@@ -773,6 +790,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: 'ecorne tshirt',
       designer: 'isaac sellam',
+      category: 'clothing',
       collection: '2020 Fall/Winter collection',
       images: [
         ecorne_tshirt_dark_grey_1,
@@ -808,6 +826,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: 'ecorne tshirt',
       designer: 'isaac sellam',
+      category: 'clothing',
       collection: '2020 Fall/Winter collection',
       images: [
         ecorne_tshirt_red_1,
@@ -843,6 +862,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: 'ecorne tshirt',
       designer: 'isaac sellam',
+      category: 'clothing',
       collection: '2020 Fall/Winter collection',
       images: [
         ecorne_tshirt_white_1,
@@ -878,6 +898,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: 'carson',
       designer: 'the last conspiracy',
+      category: 'footwear',
       images: [carson_black_1, carson_black_2, carson_black_3, carson_black_4],
       color: 'black',
       sku: 'tlc2484~black',
@@ -907,6 +928,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: 'riley',
       designer: 'the last conspiracy',
+      category: 'footwear',
       images: [riley_black_1, riley_black_2, riley_black_3, riley_black_4],
       color: 'black',
       sku: 'tlc2484~black',
@@ -937,6 +959,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: 'caden',
       designer: 'the last conspiracy',
+      category: 'footwear',
       images: [caden_black_1, caden_black_2, caden_black_3, caden_black_4],
       color: 'black',
       sku: 'tlc2484~black',
@@ -966,6 +989,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: '10sei0otto coats',
       designer: '10sei0otto',
+      category: 'clothing',
       images: [sei0otto_coats_black_1, sei0otto_coats_black_2],
       color: 'black',
       sku: '1300COAT~BLACK',
@@ -992,6 +1016,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: '10sei0otto jackets',
       designer: '10sei0otto',
+      category: 'clothing',
       images: [sei0otto_jackets_black_1, sei0otto_jackets_black_2],
       color: 'black',
       sku: 'ABEL-BRISTOL~BLACK',
@@ -1018,6 +1043,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: '10sei0otto pants',
       designer: '10sei0otto',
+      category: 'clothing',
       images: [sei0otto_pants_grey_1, sei0otto_pants_grey_2],
       color: 'grey',
       sku: 'EDO~GREY',
@@ -1047,6 +1073,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: '10sei0otto t-shirt',
       designer: '10sei0otto',
+      category: 'clothing',
       images: [sei0otto_tshirt_black_1, sei0otto_tshirt_black_2],
       color: 'black',
       sku: 'T-SHIRT-LS~BLACK',
@@ -1073,6 +1100,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: '10sei0otto t-shirt',
       designer: '10sei0otto',
+      category: 'clothing',
       images: [sei0otto_tshirt_brown_1, sei0otto_tshirt_brown_2],
       color: 'brown',
       sku: 'T-SHIRT-LS~BROWN',
@@ -1099,6 +1127,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: '10sei0otto t-shirt',
       designer: '10sei0otto',
+      category: 'clothing',
       images: [sei0otto_tshirt_grey_1, sei0otto_tshirt_grey_2],
       color: 'grey',
       sku: 'T-SHIRT-LS~GREY',
@@ -1125,6 +1154,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: '10sei0otto t-shirt',
       designer: '10sei0otto',
+      category: 'clothing',
       images: [sei0otto_tshirt_stone_1, sei0otto_tshirt_stone_2],
       color: 'stone',
       sku: 'T-SHIRT-LS~STONE',
@@ -1151,6 +1181,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: 'pants',
       designer: '10sei0otto',
+      category: 'clothing',
       images: [pants_black_1, pants_black_2],
       color: 'black',
       sku: '3219TD~BLACK',
@@ -1178,6 +1209,7 @@ export const AllProducts = {
       id: uuidv4(),
       name: 'vest',
       designer: '10sei0otto',
+      category: 'clothing',
       collection: 'SS20 New Collection',
       images: [vest_mustard_1, vest_mustard_2],
       color: 'mustard',

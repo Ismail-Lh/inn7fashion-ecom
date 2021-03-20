@@ -6,9 +6,10 @@ import {
   GET_SINGLE_PRODUCT,
   GET_DESIGNER_PRODUCTS,
   GET_DESIGNER,
+  GET_PRODUCTS_BY_CATEGORY,
 } from '../actions';
 
-import { getLocalStorage } from '../utils/helpers';
+import { getLocalStorage, setLocalStorage } from '../utils/helpers';
 
 import ProductsReducer from '../reducers/products_reducer';
 import { AllProducts, designers } from '../productsData';
@@ -20,6 +21,7 @@ const initialState = {
   single_product: getLocalStorage('singleProduct'),
   designer_products: getLocalStorage('designerProducts'),
   designer_data: getLocalStorage('designerData'),
+  products_category: getLocalStorage('productsCategory'),
 };
 
 const ProductsContext = createContext();
@@ -74,24 +76,32 @@ export const ProductsProvider = ({ children }) => {
     });
   };
 
+  const getProductsByCategory = category => {
+    dispatch({
+      type: GET_PRODUCTS_BY_CATEGORY,
+      payload: {
+        category,
+        allProducts: state.all_products,
+        categories: state.categories,
+      },
+    });
+  };
+
   useEffect(() => {
     getPopularProducts(state.categories);
 
-    localStorage.setItem('categories', JSON.stringify(state.categories));
-
-    localStorage.setItem('singleProduct', JSON.stringify(state.single_product));
-
-    localStorage.setItem(
-      'designerProducts',
-      JSON.stringify(state.designer_products)
-    );
-
-    localStorage.setItem('designerData', JSON.stringify(state.designer_data));
+    setLocalStorage('categories', state.categories);
+    setLocalStorage('singleProduct', state.single_product);
+    setLocalStorage('designerProducts', state.designer_products);
+    setLocalStorage('designerData', state.designer_data);
+    setLocalStorage('productsCategory', state.products_category);
   }, [
     state.categories,
     state.designer_products,
     state.single_product,
     state.designer_data,
+    state.products_category,
+    getPopularProducts,
   ]);
 
   return (
@@ -101,6 +111,7 @@ export const ProductsProvider = ({ children }) => {
         updateCategories,
         getSingleProduct,
         getDesignerProducts,
+        getProductsByCategory,
       }}>
       {children}
     </ProductsContext.Provider>

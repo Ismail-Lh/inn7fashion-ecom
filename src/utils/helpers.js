@@ -20,7 +20,13 @@ export const getLocalStorage = key => {
     return storage ? JSON.parse(localStorage.getItem(key)) : {};
   } else if (key === 'cart') {
     return storage ? JSON.parse(localStorage.getItem(key)) : [];
+  } else if (key === 'productsCategory') {
+    return storage ? JSON.parse(localStorage.getItem(key)) : [];
   }
+};
+
+export const setLocalStorage = (key, value) => {
+  localStorage.setItem(key, JSON.stringify(value));
 };
 
 export const finalItemPrice = (price, discountPer) => {
