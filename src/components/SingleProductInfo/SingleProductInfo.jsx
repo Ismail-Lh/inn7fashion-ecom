@@ -5,8 +5,8 @@ import './SingleProductInfo.scss';
 
 import { useProductsContext } from '../../contexts/products_context';
 import { useCartContext } from '../../contexts/cart_context';
-import { formatPrice } from '../../utils/helpers';
-import { Button, AmountButtons } from '..';
+
+import { Button, AmountButtons, ProductPrice } from '..';
 
 const SingleProductInfo = () => {
   const { single_product: product, categories } = useProductsContext();
@@ -31,13 +31,11 @@ const SingleProductInfo = () => {
   const [showError, setShowError] = useState(false);
   const [amount, setAmount] = useState(1);
 
-  const salePrice = (price * discountPer) / 100;
-
   const handelClick = () => {
     if (size.length <= 0) {
       setShowError(true);
     } else {
-      addToCart(product, amount);
+      addToCart(product, amount, id, size);
       setShowError(false);
     }
   };
@@ -72,8 +70,7 @@ const SingleProductInfo = () => {
           <Link to={`/${categories}/${designer}`}>{designer}</Link>
         </h2>
         <h2 className='single-product_info-price'>
-          <span>{formatPrice(price)}</span>{' '}
-          <span>{formatPrice(salePrice)}</span>
+          <ProductPrice price={price} discountPer={discountPer} />
         </h2>
       </div>
 

@@ -30,11 +30,5 @@ export const finalItemPrice = (price, discountPer) => {
 
   finalPrice = (price * discountPer) / 100;
 
-  // if (!discountPer) {
-  //   finalPrice = (price * discountPer) / 100;
-  // } else {
-  //   finalPrice = price;
-  // }
-
   return finalPrice;
 };

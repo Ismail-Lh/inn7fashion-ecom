@@ -17,23 +17,43 @@ const CartReducer = (state, action) => {
   }
 
   if (action.type === ADD_PRODUCT_TO_CART) {
-    const { product, amount } = action.payload;
+    const { product, amount, id, size } = action.payload;
 
-    const newItem = {
-      id: product.id,
-      name: product.name,
-      designer: product.designer,
-      sku: product.sku,
-      color: product.color,
-      price: product.price,
-      discountPer: product.discountPer,
-      image: product.images[0],
-      size: state.size,
-      amount,
-      max: product.stock,
-    };
+    const tempItem = state.cart.find(item => item.id === id + size);
 
-    return { ...state, cart: [...state.cart, newItem] };
+    if (tempItem) {
+      const tempCart = state.cart.map(cartItem => {
+        if (cartItem.id === id + size) {
+          let newAmount = cartItem.amount + amount;
+
+          if (newAmount > cartItem.max) {
+            newAmount = cartItem.max;
+          }
+
+          return { ...cartItem, amount: newAmount };
+        } else {
+          return cartItem;
+        }
+      });
+
+      return { ...state, cart: tempCart };
+    } else {
+      const newItem = {
+        id: id + size,
+        name: product.name,
+        designer: product.designer,
+        sku: product.sku,
+        color: product.color,
+        price: product.price,
+        discountPer: product.discountPer,
+        image: product.images[0],
+        size,
+        amount,
+        max: product.stock,
+      };
+
+      return { ...state, cart: [...state.cart, newItem] };
+    }
   }
 
   if (action.type === SHOW_CART_MODEL) {
@@ -52,10 +72,11 @@ const CartReducer = (state, action) => {
   }
 
   if (action.type === COUNT_CART_TOTALS) {
-    const prices = state.cart.map(
-      ({ price, discountPer, amount }) =>
-        finalItemPrice(price, discountPer) * amount
-    );
+    const prices = state.cart.map(({ price, discountPer, amount }) => {
+      if (!discountPer) return price * amount;
+
+      return finalItemPrice(price, discountPer) * amount;
+    });
     const subTotal = prices.reduce((acc, curr) => acc + curr, 0);
 
     return { ...state, subtotal: formatPrice(subTotal) };

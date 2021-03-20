@@ -31,7 +31,9 @@ const CartModelItem = ({
         <p className='name'>{name}</p>
         <p className='designer'>{designer}</p>
         <p className='price'>
-          {formatPrice(finalItemPrice(price, discountPer))}
+          {discountPer
+            ? formatPrice(finalItemPrice(price, discountPer))
+            : formatPrice(price)}
         </p>
         <p className='size'>
           <small>Size :</small> <span>{size}</span>

@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
 import './CardItem.scss';
-import { formatPrice } from '../../utils/helpers';
+
 import { useProductsContext } from '../../contexts/products_context';
+import ProductPrice from '../ProductPrice/ProductPrice';
 
 const CardItem = ({
   name,
@@ -18,7 +19,6 @@ const CardItem = ({
 }) => {
   const { categories, getSingleProduct } = useProductsContext();
 
-  const salePrice = (price * discountPer) / 100;
   const url = `${categories}/${designer}/${name}`;
 
   return (
@@ -54,7 +54,7 @@ const CardItem = ({
       <h3 className='card__name'>{name}</h3>
       <p className='card__designer'>{designer}</p>
       <p className='card__price'>
-        <span>{formatPrice(price)}</span> <span>{formatPrice(salePrice)}</span>{' '}
+        <ProductPrice price={price} discountPer={discountPer} />
       </p>
     </div>
   );

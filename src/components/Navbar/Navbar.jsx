@@ -71,7 +71,9 @@ const Navbar = () => {
                     <h4>{link}</h4>
                     {dropDownLinks[categories][link].map((item, idx) => (
                       <li key={idx} className='dropDown__item'>
-                        <Link to=''>{item}</Link>
+                        <Link to={`/${categories}/${link}/${item}`}>
+                          {item}
+                        </Link>
                       </li>
                     ))}
                   </DropDownMenu>

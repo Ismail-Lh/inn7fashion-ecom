@@ -1,0 +1,14 @@
+.price {
+  font-weight: 400;
+  font-size: 1.8rem;
+
+  &__old {
+    opacity: 0.7;
+    text-decoration: line-through;
+  }
+
+  &__new {
+    color: red;
+    margin-left: 0.7rem;
+  }
+}

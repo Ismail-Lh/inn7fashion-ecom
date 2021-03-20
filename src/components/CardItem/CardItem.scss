@@ -86,20 +86,4 @@
     font-weight: 600;
     font-size: 1.4rem;
   }
-
-  &__price {
-    font-weight: 400;
-
-    span {
-      &:first-of-type {
-        text-decoration: line-through;
-        opacity: 0.7;
-      }
-
-      &:last-of-type {
-        color: red;
-        margin-left: 0.7rem;
-      }
-    }
-  }
 }

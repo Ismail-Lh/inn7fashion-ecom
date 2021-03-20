@@ -13,6 +13,7 @@ export { default as Sort } from './Sort/Sort';
 export { default as RemoveButton } from './RemoveButton/RemoveButton';
 export { default as AmountButtons } from './AmountButtons/AmountButtons';
 export { default as DropDownMenu } from './DropDownMenu/DropDownMenu';
+export { default as ProductPrice } from './ProductPrice/ProductPrice';
 
 // Home Page
 export { default as Hero } from './Hero/Hero';

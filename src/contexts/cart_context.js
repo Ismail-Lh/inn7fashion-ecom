@@ -26,8 +26,11 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(CartReducer, initialState);
 
-  const addToCart = (product, amount) => {
-    dispatch({ type: ADD_PRODUCT_TO_CART, payload: { amount, product } });
+  const addToCart = (product, amount, id, size) => {
+    dispatch({
+      type: ADD_PRODUCT_TO_CART,
+      payload: { amount, product, id, size },
+    });
   };
 
   const selectSize = size => {

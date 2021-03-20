@@ -53,7 +53,11 @@ const ShoppingCartProducts = () => {
                 </div>
               </div>
               <div className='product__price'>
-                <p>{formatPrice(finalItemPrice(price, discountPer))}</p>
+                <p>
+                  {discountPer
+                    ? formatPrice(finalItemPrice(price, discountPer))
+                    : formatPrice(price)}
+                </p>
               </div>
 
               <div className='product__qty'>
