@@ -12,29 +12,22 @@ const ProductsReducer = (state, action) => {
   if (action.type === GET_ALL_PRODUCTS) {
     const { men, women } = action.payload;
 
-    return { ...state, all_products: [...men, ...women] };
+    return { ...state, all_products: { men: [...men], women: [...women] } };
   }
 
-  // if (action.type === GET_POPULAR_PRODUCTS) {
-  //   const {
-  //     allProducts,
-  //     categories,
-  //     menProducts,
-  //     womenProducts,
-  //   } = action.payload;
+  if (action.type === UPDATE_CATEGORIES) {
+    return { ...state, categories: action.payload };
+  }
 
-  //   const products = [...menProducts, ...womenProducts];
+  if (action.type === GET_POPULAR_PRODUCTS) {
+    const { categories, allProducts } = action.payload;
 
-  //   // const popularProducts = allProducts.map(products =>
-  //   //   products[categories].filter(product => product.popularity === true)
-  //   // );
+    const popularProducts = allProducts[categories]
+      .map(products => products)
+      .filter(product => product.popularity === true);
 
-  //   return { ...state,  };
-  // }
-
-  // if (action.type === UPDATE_CATEGORIES) {
-  //   return { ...state, categories: action.payload };
-  // }
+    return { ...state, popular_products: popularProducts };
+  }
 
   // if (action.type === GET_SINGLE_PRODUCT) {
   //   const { allProducts, categories, id } = action.payload;

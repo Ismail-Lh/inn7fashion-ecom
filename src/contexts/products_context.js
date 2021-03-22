@@ -18,7 +18,7 @@ import ProductsReducer from '../reducers/products_reducer';
 import { AllProducts, designers } from '../productsData';
 
 const initialState = {
-  all_products: [],
+  all_products: getLocalStorage('allProducts'),
   popular_products: [],
   categories: getLocalStorage('categories'),
   single_product: getLocalStorage('singleProduct'),
@@ -42,21 +42,18 @@ export const ProductsProvider = ({ children }) => {
     });
   }, [men, women]);
 
-  // const getPopularProducts = categories => {
-  //   dispatch({
-  //     type: GET_POPULAR_PRODUCTS,
-  //     payload: {
-  //       allProducts: state.all_products,
-  //       categories,
-  //     },
-  //   });
-  // };
+  const updateCategories = e => {
+    const value = e.target.dataset.categories;
 
-  // const updateCategories = e => {
-  //   const value = e.target.dataset.categories;
+    dispatch({ type: UPDATE_CATEGORIES, payload: value });
+  };
 
-  //   dispatch({ type: UPDATE_CATEGORIES, payload: value });
-  // };
+  const getPopularProducts = categories => {
+    dispatch({
+      type: GET_POPULAR_PRODUCTS,
+      payload: { categories, allProducts: state.all_products },
+    });
+  };
 
   // const getSingleProduct = (id, categories) => {
   //   dispatch({
@@ -100,27 +97,29 @@ export const ProductsProvider = ({ children }) => {
   //   });
   // };
 
-  // useEffect(() => {
-  //   getPopularProducts(state.categories);
+  useEffect(() => {
+    getPopularProducts(state.categories);
 
-  //   setLocalStorage('categories', state.categories);
-  //   setLocalStorage('singleProduct', state.single_product);
-  //   setLocalStorage('designerProducts', state.designer_products);
-  //   setLocalStorage('designerData', state.designer_data);
-  //   setLocalStorage('productsCategory', state.products_category);
-  // }, [
-  //   state.categories,
-  //   state.designer_products,
-  //   state.single_product,
-  //   state.designer_data,
-  //   state.products_category,
-  // ]);
+    setLocalStorage('categories', state.categories);
+    setLocalStorage('allProducts', state.all_products);
+    //   setLocalStorage('singleProduct', state.single_product);
+    //   setLocalStorage('designerProducts', state.designer_products);
+    //   setLocalStorage('designerData', state.designer_data);
+    //   setLocalStorage('productsCategory', state.products_category);
+  }, [
+    state.all_products,
+    state.categories,
+    //   state.designer_products,
+    //   state.single_product,
+    //   state.designer_data,
+    //   state.products_category,
+  ]);
 
   return (
     <ProductsContext.Provider
       value={{
         ...state,
-        // updateCategories,
+        updateCategories,
         // getSingleProduct,
         // getDesignerProducts,
         // getProductsByCategory,

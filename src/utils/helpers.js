@@ -10,7 +10,9 @@ export const formatPrice = price => {
 export const getLocalStorage = key => {
   let storage = localStorage.getItem(key);
 
-  if (key === 'singleProduct') {
+  if (key === 'allProducts') {
+    return storage ? JSON.parse(localStorage.getItem(key)) : {};
+  } else if (key === 'singleProduct') {
     return storage ? JSON.parse(localStorage.getItem(key)) : {};
   } else if (key === 'categories') {
     return storage ? JSON.parse(localStorage.getItem(key)) : 'men';

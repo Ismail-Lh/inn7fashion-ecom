@@ -7,7 +7,7 @@ import { CardItem } from '..';
 import { useProductsContext } from '../../contexts/products_context';
 
 const PopularProducts = () => {
-  const { popular_products } = useProductsContext();
+  // const { popular_products } = useProductsContext();
 
   const [breakPoints, setbreakPoints] = useState([
     { width: 1, itemsToShow: 1 },
@@ -36,7 +36,7 @@ const PopularProducts = () => {
     <div className='cards'>
       <h1>most popular</h1>
       <div>
-        <Carousel
+        {/* <Carousel
           itemsToScroll={1}
           pagination={false}
           renderArrow={arrow}
@@ -44,7 +44,7 @@ const PopularProducts = () => {
           {popular_products.map(products =>
             products.map(product => <CardItem key={product.id} {...product} />)
           )}
-        </Carousel>
+        </Carousel> */}
       </div>
     </div>
   );
