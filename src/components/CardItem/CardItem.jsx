@@ -53,9 +53,8 @@ const CardItem = ({
 
       <h3 className='card__name'>{name}</h3>
       <p className='card__designer'>{designer}</p>
-      <p className='card__price'>
-        <ProductPrice price={price} discountPer={discountPer} />
-      </p>
+
+      <ProductPrice price={price} discountPer={discountPer} />
     </div>
   );
 };

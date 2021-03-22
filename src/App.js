@@ -9,6 +9,7 @@ import {
   DesignersPage,
   DesignerProductsPage,
   ShoppingCartPage,
+  CategoryProductsPage,
 } from './pages';
 
 function App() {
@@ -43,6 +44,10 @@ function App() {
 
         <Route exact path='/checkout/cart'>
           <ShoppingCartPage />
+        </Route>
+
+        <Route exact path='/:categories/:category'>
+          <CategoryProductsPage />
         </Route>
       </Switch>
 

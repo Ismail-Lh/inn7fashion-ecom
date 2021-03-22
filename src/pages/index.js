@@ -5,3 +5,4 @@ export { default as SingleProductPage } from './SingleProductPage';
 export { default as DesignersPage } from './DesignersPage';
 export { default as DesignerProductsPage } from './DesignerProductsPage';
 export { default as ShoppingCartPage } from './ShoppingCartPage';
+export { default as CategoryProductsPage } from './CategoryProductsPage';

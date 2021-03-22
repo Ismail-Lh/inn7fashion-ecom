@@ -70,7 +70,7 @@ const Navbar = () => {
                 <Link
                   to={`/${categories}/${url}`}
                   className='link'
-                  onClick={() => getProductsByCategory(link)}>
+                  onClick={() => getProductsByCategory(link, categories)}>
                   {link}
                 </Link>
                 {dropDownLinks[categories][link] && (

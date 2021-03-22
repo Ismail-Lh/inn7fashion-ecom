@@ -1,11 +1,10 @@
 import React from 'react';
-
-import './DesignerProducts.scss';
-
+import { CardItem } from '..';
 import { useFiltersContext } from '../../contexts/filters_context';
-import { CardItem } from '../';
 
-const DesignerProducts = () => {
+import './ProductsItems.scss';
+
+const ProductsItems = () => {
   const { filtered_products: products } = useFiltersContext();
   return (
     <div className='products__grid'>
@@ -16,4 +15,4 @@ const DesignerProducts = () => {
   );
 };
 
-export default DesignerProducts;
+export default ProductsItems;

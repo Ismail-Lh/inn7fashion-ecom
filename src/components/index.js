@@ -14,6 +14,8 @@ export { default as RemoveButton } from './RemoveButton/RemoveButton';
 export { default as AmountButtons } from './AmountButtons/AmountButtons';
 export { default as DropDownMenu } from './DropDownMenu/DropDownMenu';
 export { default as ProductPrice } from './ProductPrice/ProductPrice';
+export { default as ProductsContainer } from './ProductsContainer/ProductsContainer';
+export { default as ProductsItems } from './ProductsItems/ProductsItems';
 
 // Home Page
 export { default as Hero } from './Hero/Hero';
@@ -30,7 +32,6 @@ export { default as DesignersLinks } from './DesignersLinks/DesignersLinks';
 // DesignerProducts Page
 export { default as DesignerProductsContainer } from './DesignerProductsContainer/DesignerProductsContainer';
 export { default as DesignerInfo } from './DesignerInfo/DesignerInfo';
-export { default as DesignerProducts } from './DesignerProducts/DesignerProducts';
 
 // Cart
 export { default as CartModel } from './CartModel/CartModel';
@@ -40,3 +41,6 @@ export { default as CartModelItem } from './CartModelItem/CartModelItem';
 export { default as ShoppingCartContainer } from './ShoppingCartContainer/ShoppingCartContainer';
 export { default as ShoppingCartProducts } from './ShoppingCartProducts/ShoppingCartProducts';
 export { default as ShoppingCartCheckout } from './ShoppingCartCheckout/ShoppingCartCheckout';
+
+// Category Products Pages
+export { default as CategoryProductsContainer } from './CategoryProductsContainer/CategoryProductsContainer';

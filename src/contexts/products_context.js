@@ -101,7 +101,6 @@ export const ProductsProvider = ({ children }) => {
     state.single_product,
     state.designer_data,
     state.products_category,
-    getPopularProducts,
   ]);
 
   return (

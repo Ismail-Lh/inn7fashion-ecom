@@ -10,6 +10,7 @@ import './DesignersContainer.scss';
 
 const DesignersContainer = () => {
   const { categories, getDesignerProducts } = useProductsContext();
+
   return (
     <div className='designers'>
       <Links>
