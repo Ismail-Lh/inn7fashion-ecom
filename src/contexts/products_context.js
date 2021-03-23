@@ -15,7 +15,7 @@ import { getLocalStorage, setLocalStorage } from '../utils/helpers';
 import useFirebaseData from '../hooks/useFirebaseData';
 
 import ProductsReducer from '../reducers/products_reducer';
-import { AllProducts, designers } from '../productsData';
+import { designers } from '../productsData';
 
 const initialState = {
   all_products: getLocalStorage('allProducts'),
@@ -48,10 +48,9 @@ export const ProductsProvider = ({ children }) => {
     dispatch({ type: UPDATE_CATEGORIES, payload: value });
   };
 
-  const getPopularProducts = categories => {
+  const getPopularProducts = () => {
     dispatch({
       type: GET_POPULAR_PRODUCTS,
-      payload: { categories, allProducts: state.all_products },
     });
   };
 
@@ -64,20 +63,14 @@ export const ProductsProvider = ({ children }) => {
 
   const getDesignerProducts = designer => {
     dispatch({
-      type: GET_DESIGNER_PRODUCTS,
-      payload: {
-        allProducts: state.all_products,
-        categories: state.categories,
-        designer: designer.desig,
-      },
+      type: GET_DESIGNER,
+      payload: designer,
     });
 
     dispatch({
-      type: GET_DESIGNER,
+      type: GET_DESIGNER_PRODUCTS,
       payload: {
-        designers,
-        categories: state.categories,
-        designer,
+        designer: designer.desig,
       },
     });
   };
@@ -94,7 +87,7 @@ export const ProductsProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    getPopularProducts(state.categories);
+    getPopularProducts();
 
     setLocalStorage('allProducts', state.all_products);
     setLocalStorage('categories', state.categories);

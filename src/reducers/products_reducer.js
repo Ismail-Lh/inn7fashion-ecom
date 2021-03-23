@@ -20,9 +20,9 @@ const ProductsReducer = (state, action) => {
   }
 
   if (action.type === GET_POPULAR_PRODUCTS) {
-    const { categories, allProducts } = action.payload;
+    const { categories, all_products } = state;
 
-    const popularProducts = allProducts[categories]
+    const popularProducts = all_products[categories]
       .map(products => products)
       .filter(product => product.popularity === true);
 
@@ -40,26 +40,29 @@ const ProductsReducer = (state, action) => {
     return { ...state, single_product: singleProduct };
   }
 
-  if (action.type === GET_DESIGNER_PRODUCTS) {
-    const { allProducts, categories, designer } = action.payload;
-    const products = allProducts[0][categories].map(products => products);
+  if (action.type === GET_DESIGNER) {
+    const designer = action.payload;
 
-    const designerProducts = products.filter(
-      product => product.designer.toLowerCase() === designer.toLowerCase()
-    );
+    return { ...state, designer_data: designer };
+  }
+
+  if (action.type === GET_DESIGNER_PRODUCTS) {
+    const { all_products, categories } = state;
+    const { designer } = action.payload;
+
+    const designerProducts = all_products[categories]
+      .map(products => products)
+      .filter(
+        product => product.designer.toLowerCase() === designer.toLowerCase()
+      );
 
     return { ...state, designer_products: designerProducts };
   }
 
-  if (action.type === GET_DESIGNER) {
-    const { designer } = action.payload;
-
-    return { ...state, designer_data: designer };
-  }
   if (action.type === GET_PRODUCTS_BY_CATEGORY) {
     const { category, allProducts, categories } = action.payload;
 
-    const products = allProducts[0][categories].map(products => products);
+    const products = allProducts[categories].map(products => products);
 
     const productsCategory = products.filter(
       product =>
