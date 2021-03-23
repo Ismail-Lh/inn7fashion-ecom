@@ -25,7 +25,7 @@ const SingleProductInfo = () => {
     discountPer,
     id,
     stock,
-  } = product;
+  } = product[0];
 
   const [size, setSize] = useState('');
   const [showError, setShowError] = useState(false);
@@ -109,11 +109,6 @@ const SingleProductInfo = () => {
           decreaseAmount={dec}
         />
         <Button handelClick={handelClick}>add to bag</Button>
-
-        {/* <div className='wishlist'>
-          <i className='far fa-heart' />
-          <p>wishlist</p>
-        </div> */}
       </div>
       <Link to='/' className='link'>
         do you have a question?
@@ -145,3 +140,10 @@ const SingleProductInfo = () => {
 };
 
 export default SingleProductInfo;
+
+// {
+//   /* <div className='wishlist'>
+//           <i className='far fa-heart' />
+//           <p>wishlist</p>
+//         </div> */
+// }

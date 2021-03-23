@@ -29,43 +29,45 @@ const ProductsReducer = (state, action) => {
     return { ...state, popular_products: popularProducts };
   }
 
-  // if (action.type === GET_SINGLE_PRODUCT) {
-  //   const { allProducts, categories, id } = action.payload;
-  //   const products = allProducts[0][categories].map(products => products);
+  if (action.type === GET_SINGLE_PRODUCT) {
+    const { categories, all_products } = state;
+    const id = action.payload;
 
-  //   const singleProduct = products.filter(p => p.id === id);
+    const singleProduct = all_products[categories]
+      .map(products => products)
+      .filter(product => product.id === id);
 
-  //   return { ...state, single_product: singleProduct[0] };
-  // }
+    return { ...state, single_product: singleProduct };
+  }
 
-  // if (action.type === GET_DESIGNER_PRODUCTS) {
-  //   const { allProducts, categories, designer } = action.payload;
-  //   const products = allProducts[0][categories].map(products => products);
+  if (action.type === GET_DESIGNER_PRODUCTS) {
+    const { allProducts, categories, designer } = action.payload;
+    const products = allProducts[0][categories].map(products => products);
 
-  //   const designerProducts = products.filter(
-  //     product => product.designer.toLowerCase() === designer.toLowerCase()
-  //   );
+    const designerProducts = products.filter(
+      product => product.designer.toLowerCase() === designer.toLowerCase()
+    );
 
-  //   return { ...state, designer_products: designerProducts };
-  // }
+    return { ...state, designer_products: designerProducts };
+  }
 
-  // if (action.type === GET_DESIGNER) {
-  //   const { designer } = action.payload;
+  if (action.type === GET_DESIGNER) {
+    const { designer } = action.payload;
 
-  //   return { ...state, designer_data: designer };
-  // }
-  // if (action.type === GET_PRODUCTS_BY_CATEGORY) {
-  //   const { category, allProducts, categories } = action.payload;
+    return { ...state, designer_data: designer };
+  }
+  if (action.type === GET_PRODUCTS_BY_CATEGORY) {
+    const { category, allProducts, categories } = action.payload;
 
-  //   const products = allProducts[0][categories].map(products => products);
+    const products = allProducts[0][categories].map(products => products);
 
-  //   const productsCategory = products.filter(
-  //     product =>
-  //       category && product.category.toLowerCase() === category.toLowerCase()
-  //   );
+    const productsCategory = products.filter(
+      product =>
+        category && product.category.toLowerCase() === category.toLowerCase()
+    );
 
-  //   return { ...state, products_category: productsCategory };
-  // }
+    return { ...state, products_category: productsCategory };
+  }
 
   throw new Error(`No Matching "${action.type}" - action type`);
 };

@@ -55,64 +55,61 @@ export const ProductsProvider = ({ children }) => {
     });
   };
 
-  // const getSingleProduct = (id, categories) => {
-  //   dispatch({
-  //     type: GET_SINGLE_PRODUCT,
-  //     payload: {
-  //       allProducts: state.all_products,
-  //       id,
-  //       categories,
-  //     },
-  //   });
-  // };
+  const getSingleProduct = id => {
+    dispatch({
+      type: GET_SINGLE_PRODUCT,
+      payload: id,
+    });
+  };
 
-  // const getDesignerProducts = designer => {
-  //   dispatch({
-  //     type: GET_DESIGNER_PRODUCTS,
-  //     payload: {
-  //       allProducts: state.all_products,
-  //       categories: state.categories,
-  //       designer: designer.desig,
-  //     },
-  //   });
+  const getDesignerProducts = designer => {
+    dispatch({
+      type: GET_DESIGNER_PRODUCTS,
+      payload: {
+        allProducts: state.all_products,
+        categories: state.categories,
+        designer: designer.desig,
+      },
+    });
 
-  //   dispatch({
-  //     type: GET_DESIGNER,
-  //     payload: {
-  //       designers,
-  //       categories: state.categories,
-  //       designer,
-  //     },
-  //   });
-  // };
+    dispatch({
+      type: GET_DESIGNER,
+      payload: {
+        designers,
+        categories: state.categories,
+        designer,
+      },
+    });
+  };
 
-  // const getProductsByCategory = category => {
-  //   dispatch({
-  //     type: GET_PRODUCTS_BY_CATEGORY,
-  //     payload: {
-  //       category,
-  //       allProducts: state.all_products,
-  //       categories: state.categories,
-  //     },
-  //   });
-  // };
+  const getProductsByCategory = category => {
+    dispatch({
+      type: GET_PRODUCTS_BY_CATEGORY,
+      payload: {
+        category,
+        allProducts: state.all_products,
+        categories: state.categories,
+      },
+    });
+  };
 
   useEffect(() => {
     getPopularProducts(state.categories);
 
-    setLocalStorage('categories', state.categories);
     setLocalStorage('allProducts', state.all_products);
-    //   setLocalStorage('singleProduct', state.single_product);
-    //   setLocalStorage('designerProducts', state.designer_products);
-    //   setLocalStorage('designerData', state.designer_data);
-    //   setLocalStorage('productsCategory', state.products_category);
+    setLocalStorage('categories', state.categories);
+    setLocalStorage('singleProduct', state.single_product);
+    setLocalStorage('designerProducts', state.designer_products);
+    setLocalStorage('designerData', state.designer_data);
+    setLocalStorage('productsCategory', state.products_category);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     state.all_products,
     state.categories,
-    //   state.designer_products,
-    //   state.single_product,
-    //   state.designer_data,
-    //   state.products_category,
+    state.designer_products,
+    state.single_product,
+    state.designer_data,
+    state.products_category,
   ]);
 
   return (
@@ -120,9 +117,9 @@ export const ProductsProvider = ({ children }) => {
       value={{
         ...state,
         updateCategories,
-        // getSingleProduct,
-        // getDesignerProducts,
-        // getProductsByCategory,
+        getSingleProduct,
+        getDesignerProducts,
+        getProductsByCategory,
       }}>
       {children}
     </ProductsContext.Provider>

@@ -5,7 +5,7 @@ import './SingleProductImages.scss';
 
 const SingleProductImages = () => {
   const { single_product: product } = useProductsContext();
-  const { images } = product;
+  const { images } = product[0];
 
   const [idx, setIdx] = useState(0);
 

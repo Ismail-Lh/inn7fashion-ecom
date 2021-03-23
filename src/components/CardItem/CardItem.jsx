@@ -26,7 +26,7 @@ const CardItem = ({
       <Link
         to={`/products/${url}`}
         className='card__img'
-        onClick={() => getSingleProduct(id, categories)}>
+        onClick={() => getSingleProduct(id)}>
         <img
           src={images[0]}
           alt={`${designer}-${name}-1`}
@@ -49,9 +49,8 @@ const CardItem = ({
             </p>
           ))}
         </div>
+        <h3 className='card__name'>{name}</h3>
       </Link>
-
-      <h3 className='card__name'>{name}</h3>
       <p className='card__designer'>{designer}</p>
 
       <ProductPrice price={price} discountPer={discountPer} />
