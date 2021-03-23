@@ -7,10 +7,22 @@ import {
   CLEAR_FILTERS,
 } from '../actions';
 
+import { finalItemPrice } from '../utils/helpers';
+
 const FiltersReducer = (state, action) => {
   if (action.type === LOAD_PRODUCTS) {
-    const prices = action.payload.map(({ price }) => price);
-    const percentages = action.payload.map(({ discountPer }) => discountPer);
+    const products = action.payload;
+
+    const prices = products.map(({ price, discountPer }) => {
+      let finalPrice;
+      if (!discountPer) return price;
+
+      finalPrice = finalItemPrice(price, discountPer);
+
+      return finalPrice;
+    });
+
+    const percentages = products.map(({ discountPer }) => discountPer);
 
     let maxPrice = Math.max(...prices);
     let minPrice = Math.min(...prices);

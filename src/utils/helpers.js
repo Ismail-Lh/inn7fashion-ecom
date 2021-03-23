@@ -36,7 +36,7 @@ export const finalItemPrice = (price, discountPer) => {
 
   if (!discountPer) finalPrice = price;
 
-  finalPrice = (price * discountPer) / 100;
+  finalPrice = price - (price * discountPer) / 100;
 
   return finalPrice;
 };

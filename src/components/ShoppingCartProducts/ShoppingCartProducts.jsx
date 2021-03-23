@@ -40,7 +40,10 @@ const ShoppingCartProducts = () => {
                 <Link
                   to={`/products/${categories}/${designer}/${name}`}
                   onClick={() => getSingleProduct(id, categories)}>
-                  <img src={image} alt={name} />
+                  <img
+                    src={`/images/${categories}/${designer}/${name}/${color}/1.jpg`}
+                    alt={name}
+                  />
                 </Link>
                 <div className='product__info'>
                   <p className='product__name'>{name}</p>

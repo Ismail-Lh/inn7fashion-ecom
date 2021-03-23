@@ -16,6 +16,7 @@ const CardItem = ({
   images,
   sizes,
   id,
+  color,
 }) => {
   const { categories, getSingleProduct } = useProductsContext();
 
@@ -28,12 +29,16 @@ const CardItem = ({
         className='card__img'
         onClick={() => getSingleProduct(id)}>
         <img
-          src={images[0]}
+          src={`/images/${categories}/${designer}/${name}/${color}/${
+            images.indexOf(images[0]) + 1
+          }.jpg`}
           alt={`${designer}-${name}-1`}
           className='card__img-1'
         />
         <img
-          src={images[1]}
+          src={`/images/${categories}/${designer}/${name}/${color}/${
+            images.indexOf(images[1]) + 1
+          }.jpg`}
           alt={`${designer}-${name}-2`}
           className='card__img-2'
         />

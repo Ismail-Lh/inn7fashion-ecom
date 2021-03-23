@@ -14,6 +14,7 @@ const CartModelItem = ({
   price,
   size,
   image,
+  color,
   discountPer,
 }) => {
   const { categories, getSingleProduct } = useProductsContext();
@@ -25,7 +26,10 @@ const CartModelItem = ({
         to={`/products/${categories}/${designer}/${name}`}
         onClick={() => getSingleProduct(id, categories)}
         className='cartModel__img'>
-        <img src={image} alt={name} />
+        <img
+          src={`/images/${categories}/${designer}/${name}/${color}/1.jpg`}
+          alt={name}
+        />
       </Link>
       <div className='cartModel__info'>
         <p className='name'>{name}</p>

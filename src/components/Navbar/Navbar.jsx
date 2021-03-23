@@ -56,7 +56,7 @@ const Navbar = () => {
               <i className='fas fa-heart' />
             </Link>
 
-            <Link to='/cart' className='cart' onMouseEnter={showCart}>
+            <Link to='/checkout/cart' className='cart' onMouseEnter={showCart}>
               <div className='cart__length'>{cart.length}</div>
               <img src={bag} alt='bag' />
             </Link>

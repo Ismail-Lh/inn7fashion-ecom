@@ -26,7 +26,6 @@ const Filters = () => {
             name='percentage'
             min={min_percentage}
             max={max_percentage}
-            step='5'
             value={percentage}
             onChange={updateFilters}
           />

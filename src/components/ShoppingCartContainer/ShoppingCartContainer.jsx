@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 import './ShoppingCartContainer.scss';
 import { ShoppingCartCheckout, ShoppingCartProducts } from '../';
 import { useCartContext } from '../../contexts/cart_context';
+import { useProductsContext } from '../../contexts/products_context';
 
 const ShoppingCartContainer = () => {
+  const { updateCategories } = useProductsContext();
   const { cart } = useCartContext();
   return (
     <>
@@ -16,8 +18,15 @@ const ShoppingCartContainer = () => {
             <p>Go to</p>
             <div className='goTo__links'>
               <Link to='/'>Home Page</Link>
-              <Link to='/men'>Shop Men</Link>
-              <Link to='/women'>Shop Women</Link>
+              <Link to='/men' data-categories='men' onClick={updateCategories}>
+                Shop Men
+              </Link>
+              <Link
+                to='/women'
+                data-categories='women'
+                onClick={updateCategories}>
+                Shop Women
+              </Link>
             </div>
           </div>
         </div>
