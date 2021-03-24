@@ -15,7 +15,7 @@ import { getLocalStorage, setLocalStorage } from '../utils/helpers';
 import useFirebaseData from '../hooks/useFirebaseData';
 
 import ProductsReducer from '../reducers/products_reducer';
-import { designers } from '../productsData';
+// import { designers } from '../productsData';
 
 const initialState = {
   all_products: getLocalStorage('allProducts'),

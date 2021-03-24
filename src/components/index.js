@@ -16,6 +16,7 @@ export { default as DropDownMenu } from './DropDownMenu/DropDownMenu';
 export { default as ProductPrice } from './ProductPrice/ProductPrice';
 export { default as ProductsContainer } from './ProductsContainer/ProductsContainer';
 export { default as ProductsItems } from './ProductsItems/ProductsItems';
+export { default as Spinner } from './Spinner/Spinner';
 
 // Home Page
 export { default as Hero } from './Hero/Hero';

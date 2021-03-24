@@ -130,7 +130,7 @@ const SingleProductInfo = () => {
       <div className='single-product_info-5'>
         <p className='single-product_info-desc'>{desc}</p>
         <ul className='single-product_info-details'>
-          {details.map((detail, idx) => (
+          {details?.map((detail, idx) => (
             <li key={idx}>{detail}</li>
           ))}
         </ul>

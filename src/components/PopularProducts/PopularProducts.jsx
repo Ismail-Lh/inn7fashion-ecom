@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Carousel, { consts } from 'react-elastic-carousel';
 
 import './PopularProducts.scss';
 
-import { CardItem } from '..';
+import { CardItem, Spinner } from '..';
 import { useProductsContext } from '../../contexts/products_context';
 
 const PopularProducts = () => {
   const { popular_products: products } = useProductsContext();
+  const [loading, setLoading] = useState(true);
 
   const [breakPoints, setbreakPoints] = useState([
     { width: 1, itemsToShow: 1 },
@@ -34,18 +35,24 @@ const PopularProducts = () => {
 
   return (
     <div className='cards'>
-      <h1>most popular</h1>
-      <div>
-        <Carousel
-          itemsToScroll={1}
-          pagination={false}
-          renderArrow={arrow}
-          breakPoints={breakPoints}>
-          {products.map(product => (
-            <CardItem {...product} key={product.id} />
-          ))}
-        </Carousel>
-      </div>
+      {loading ? (
+        <Spinner loading={loading} setLoading={setLoading} />
+      ) : (
+        <>
+          <h1>most popular</h1>
+          <div>
+            <Carousel
+              itemsToScroll={1}
+              pagination={false}
+              renderArrow={arrow}
+              breakPoints={breakPoints}>
+              {products.map(product => (
+                <CardItem {...product} key={product.id} />
+              ))}
+            </Carousel>
+          </div>
+        </>
+      )}
     </div>
   );
 };

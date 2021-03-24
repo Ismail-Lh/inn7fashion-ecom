@@ -12,7 +12,10 @@ const ProductsReducer = (state, action) => {
   if (action.type === GET_ALL_PRODUCTS) {
     const { men, women } = action.payload;
 
-    return { ...state, all_products: { men: [...men], women: [...women] } };
+    return {
+      ...state,
+      all_products: { men: [...men], women: [...women] },
+    };
   }
 
   if (action.type === UPDATE_CATEGORIES) {
@@ -53,7 +56,7 @@ const ProductsReducer = (state, action) => {
     const designerProducts = all_products[categories]
       .map(products => products)
       .filter(
-        product => product.designer.toLowerCase() === designer.toLowerCase()
+        product => product?.designer?.toLowerCase() === designer.toLowerCase()
       );
 
     return { ...state, designer_products: designerProducts };
@@ -65,8 +68,7 @@ const ProductsReducer = (state, action) => {
     const products = allProducts[categories].map(products => products);
 
     const productsCategory = products.filter(
-      product =>
-        category && product.category.toLowerCase() === category.toLowerCase()
+      product => product?.category?.toLowerCase() === category.toLowerCase()
     );
 
     return { ...state, products_category: productsCategory };

@@ -7,16 +7,15 @@ import { useProductsContext } from '../../contexts/products_context';
 
 const SingleProductContainer = () => {
   const { single_product: product, categories } = useProductsContext();
+  const { name, designer } = product[0];
 
   return (
     <div className='single_product'>
       <Links>
         <Link to='/'>home /</Link>
         <Link to={`/${categories}`}>{categories} /</Link>
-        <Link to={`/${categories}/designers/${product.designer}`}>
-          {product.designer} /
-        </Link>
-        <p>{product.name}</p>
+        <Link to={`/${categories}/designers/${designer}`}>{designer} /</Link>
+        <p>{name}</p>
       </Links>
       <div className='single_product-grid'>
         <SingleProductImages />

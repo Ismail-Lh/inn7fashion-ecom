@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 
 import { useFirebaseContext } from '../contexts/firebase_context';
-import { useProductsContext } from '../contexts/products_context';
 
 const useFirebaseData = category => {
   const [data, setData] = useState([]);
