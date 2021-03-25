@@ -9,9 +9,11 @@ import { navLinks, dropDownLinks } from '../../utils/constants';
 import { MobileMenu, CartModel, DropDownMenu } from '..';
 import { useProductsContext } from '../../contexts/products_context';
 import { useCartContext } from '../../contexts/cart_context';
+import { useFiltersContext } from '../../contexts/filters_context';
 
 const Navbar = () => {
   const { updateGender, gender } = useProductsContext();
+  const { getProductsByCategory } = useFiltersContext();
   const { show_cart, showCart, cart } = useCartContext();
   const [showMenu, setShowMenu] = useState(false);
 
@@ -63,7 +65,10 @@ const Navbar = () => {
           <ul className='nav__links-1'>
             {navLinks.map(({ id, link, url }) => (
               <li key={id} className='nav__links-1-item'>
-                <Link to={`/${gender}/${url}`} className='link'>
+                <Link
+                  to={`/${gender}/${url}`}
+                  className='link'
+                  onClick={() => getProductsByCategory(link)}>
                   {link}
                 </Link>
                 {dropDownLinks[gender][link] && (

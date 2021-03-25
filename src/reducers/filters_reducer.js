@@ -5,6 +5,8 @@ import {
   UPDATE_FILTERS,
   FILTER_PRODUCTS,
   CLEAR_FILTERS,
+  GET_DESIGNER_PRODUCTS,
+  GET_PRODUCTS_BY_CATEGORY,
 } from '../actions';
 
 import { finalItemPrice } from '../utils/helpers';
@@ -44,6 +46,18 @@ const FiltersReducer = (state, action) => {
         percentage: maxPercentage,
       },
     };
+  }
+
+  if (action.type === GET_DESIGNER_PRODUCTS) {
+    const { designer, products } = action.payload;
+
+    const designerProducts = products?.filter(
+      product => product?.designer?.toLowerCase() === designer.toLowerCase()
+    );
+
+    console.log(designerProducts);
+
+    return { ...state, filtered_products: designerProducts };
   }
 
   if (action.type === UPDATE_SORT) {
@@ -94,6 +108,16 @@ const FiltersReducer = (state, action) => {
     }
 
     return { ...state, filtered_products: tempProducts };
+  }
+
+  if (action.type === GET_PRODUCTS_BY_CATEGORY) {
+    const { category, products } = action.payload;
+
+    const productsByCategory = products?.filter(
+      product => product.category.toLowerCase() === category.toLowerCase()
+    );
+
+    return { ...state, filtered_products: productsByCategory };
   }
 
   if (action.type === CLEAR_FILTERS) {

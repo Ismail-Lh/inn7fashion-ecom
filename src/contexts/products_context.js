@@ -5,7 +5,6 @@ import {
   GET_POPULAR_PRODUCTS,
   UPDATE_GENDER,
   GET_SINGLE_PRODUCT,
-  GET_DESIGNER_PRODUCTS,
   GET_DESIGNER,
   GET_PRODUCTS_BY_GENDER,
 } from '../actions';
@@ -23,7 +22,6 @@ const initialState = {
   products_by_gender: getLocalStorage('productsByGender'),
   popular_products: [],
   single_product: getLocalStorage('singleProduct'),
-  designer_products: getLocalStorage('designerProducts'),
   designer_data: getLocalStorage('designerData'),
 };
 
@@ -45,8 +43,6 @@ export const ProductsProvider = ({ children }) => {
   const updateGender = e => {
     const { gender } = e.target.dataset;
 
-    console.log(gender);
-
     dispatch({ type: UPDATE_GENDER, payload: gender });
 
     dispatch({ type: GET_PRODUCTS_BY_GENDER });
@@ -65,17 +61,10 @@ export const ProductsProvider = ({ children }) => {
     });
   };
 
-  const getDesignerProducts = designer => {
+  const getDesigner = designer => {
     dispatch({
       type: GET_DESIGNER,
       payload: designer,
-    });
-
-    dispatch({
-      type: GET_DESIGNER_PRODUCTS,
-      payload: {
-        designer: designer.desig,
-      },
     });
   };
 
@@ -86,14 +75,12 @@ export const ProductsProvider = ({ children }) => {
     setLocalStorage('gender', state.gender);
     setLocalStorage('productsByGender', state.products_by_gender);
     setLocalStorage('singleProduct', state.single_product);
-    setLocalStorage('designerProducts', state.designer_products);
     setLocalStorage('designerData', state.designer_data);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     state.all_products,
     state.gender,
     state.products_by_gender,
-    state.designer_products,
     state.single_product,
     state.designer_data,
   ]);
@@ -104,7 +91,7 @@ export const ProductsProvider = ({ children }) => {
         ...state,
         updateGender,
         getSingleProduct,
-        getDesignerProducts,
+        getDesigner,
       }}>
       {children}
     </ProductsContext.Provider>

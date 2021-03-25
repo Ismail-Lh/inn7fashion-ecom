@@ -3,7 +3,6 @@ import {
   GET_POPULAR_PRODUCTS,
   UPDATE_GENDER,
   GET_SINGLE_PRODUCT,
-  GET_DESIGNER_PRODUCTS,
   GET_DESIGNER,
   GET_PRODUCTS_BY_GENDER,
 } from '../actions';
@@ -55,19 +54,6 @@ const ProductsReducer = (state, action) => {
     const designer = action.payload;
 
     return { ...state, designer_data: designer };
-  }
-
-  if (action.type === GET_DESIGNER_PRODUCTS) {
-    const { products_by_gender } = state;
-    const { designer } = action.payload;
-
-    const designerProducts = products_by_gender
-      .map(products => products)
-      .filter(
-        product => product?.designer?.toLowerCase() === designer.toLowerCase()
-      );
-
-    return { ...state, designer_products: designerProducts };
   }
 
   throw new Error(`No Matching "${action.type}" - action type`);

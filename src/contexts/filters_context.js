@@ -9,6 +9,8 @@ import {
   UPDATE_FILTERS,
   FILTER_PRODUCTS,
   CLEAR_FILTERS,
+  GET_DESIGNER_PRODUCTS,
+  GET_PRODUCTS_BY_CATEGORY,
 } from '../actions';
 
 const initialState = {
@@ -28,7 +30,10 @@ const initialState = {
 const FiltersContext = createContext();
 
 export const FiltersProvider = ({ children }) => {
-  const { products_by_gender: products } = useProductsContext();
+  const {
+    products_by_gender: products,
+    designer_data: designer,
+  } = useProductsContext();
   const [state, dispatch] = useReducer(FiltersReducer, initialState);
 
   const updateSort = e => {
@@ -49,6 +54,20 @@ export const FiltersProvider = ({ children }) => {
     dispatch({ type: CLEAR_FILTERS });
   };
 
+  const getProductsByCategory = category => {
+    dispatch({
+      type: GET_PRODUCTS_BY_CATEGORY,
+      payload: { category, products },
+    });
+  };
+
+  const getDesignerProducts = designer => {
+    dispatch({
+      type: GET_DESIGNER_PRODUCTS,
+      payload: { designer, products },
+    });
+  };
+
   useEffect(() => {
     dispatch({ type: LOAD_PRODUCTS, payload: products });
   }, [products]);
@@ -60,7 +79,14 @@ export const FiltersProvider = ({ children }) => {
 
   return (
     <FiltersContext.Provider
-      value={{ ...state, updateSort, updateFilters, clearFilters }}>
+      value={{
+        ...state,
+        updateSort,
+        updateFilters,
+        clearFilters,
+        getProductsByCategory,
+        getDesignerProducts,
+      }}>
       {children}
     </FiltersContext.Provider>
   );

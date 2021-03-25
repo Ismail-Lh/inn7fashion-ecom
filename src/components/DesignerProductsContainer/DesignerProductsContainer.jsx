@@ -9,7 +9,6 @@ import { useFiltersContext } from '../../contexts/filters_context';
 
 const DesignerProductsContainer = () => {
   const { gender, designer_data: designer } = useProductsContext();
-  const { filtered_products: products } = useFiltersContext();
   const [loading, setLoading] = useState(true);
 
   return (
@@ -25,7 +24,7 @@ const DesignerProductsContainer = () => {
             <p>{designer.desig}</p>
           </Links>
           <DesignerInfo />
-          <ProductsContainer products={products} />
+          <ProductsContainer />
         </>
       )}
     </div>

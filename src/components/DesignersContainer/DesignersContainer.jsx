@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
 import { useProductsContext } from '../../contexts/products_context';
+import { useFiltersContext } from '../../contexts/filters_context';
 import { designers } from '../../productsData';
 import { Links } from '..';
 
 import './DesignersContainer.scss';
 
 const DesignersContainer = () => {
-  const { gender, getDesignerProducts } = useProductsContext();
+  const { gender, getDesigner } = useProductsContext();
+  const { getDesignerProducts } = useFiltersContext();
 
   return (
     <div className='designers'>
@@ -34,7 +36,10 @@ const DesignersContainer = () => {
                         .trim()
                         .toLowerCase()}`}
                       key={item.desigId}
-                      onClick={() => getDesignerProducts(item)}>
+                      onClick={() => {
+                        getDesigner(item);
+                        getDesignerProducts(item.desig);
+                      }}>
                       {item.desig}
                     </Link>
                   </li>
