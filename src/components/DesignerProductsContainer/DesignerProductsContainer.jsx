@@ -5,9 +5,11 @@ import './DesignerProductsContainer.scss';
 
 import { useProductsContext } from '../../contexts/products_context';
 import { DesignerInfo, Links, ProductsContainer, Spinner } from '..';
+import { useFiltersContext } from '../../contexts/filters_context';
 
 const DesignerProductsContainer = () => {
-  const { categories, designer_data: designer } = useProductsContext();
+  const { gender, designer_data: designer } = useProductsContext();
+  const { filtered_products: products } = useFiltersContext();
   const [loading, setLoading] = useState(true);
 
   return (
@@ -18,12 +20,12 @@ const DesignerProductsContainer = () => {
         <>
           <Links>
             <Link to='/'>home /</Link>
-            <Link to={`/${categories}`}>{categories} /</Link>
-            <Link to={`/${categories}/designers`}>designers /</Link>
+            <Link to={`/${gender}`}>{gender} /</Link>
+            <Link to={`/${gender}/designers`}>designers /</Link>
             <p>{designer.desig}</p>
           </Links>
           <DesignerInfo />
-          <ProductsContainer />
+          <ProductsContainer products={products} />
         </>
       )}
     </div>

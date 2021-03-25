@@ -9,20 +9,20 @@ import { Links } from '..';
 import './DesignersContainer.scss';
 
 const DesignersContainer = () => {
-  const { categories, getDesignerProducts } = useProductsContext();
+  const { gender, getDesignerProducts } = useProductsContext();
 
   return (
     <div className='designers'>
       <Links>
         <Link to='/'>home /</Link>
-        <Link to={`/${categories}`}>{categories} /</Link>
+        <Link to={`/${gender}`}>{gender} /</Link>
         <p>designers</p>
       </Links>
 
       <h1 className='designers__title'>designer</h1>
 
       <div className='designers__grid'>
-        {designers[categories].map(({ order, designer, id }) => {
+        {designers[gender].map(({ order, designer, id }) => {
           return (
             <div className='designers__grid-items' key={id}>
               <h2>{order}</h2>
@@ -30,7 +30,7 @@ const DesignersContainer = () => {
                 {designer.map(item => (
                   <li key={uuidv4()}>
                     <Link
-                      to={`/${categories}/designers/${item.desig
+                      to={`/${gender}/designers/${item.desig
                         .trim()
                         .toLowerCase()}`}
                       key={item.desigId}

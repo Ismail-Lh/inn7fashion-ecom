@@ -11,11 +11,7 @@ import { useProductsContext } from '../../contexts/products_context';
 import { useCartContext } from '../../contexts/cart_context';
 
 const Navbar = () => {
-  const {
-    updateCategories,
-    categories,
-    getProductsByCategory,
-  } = useProductsContext();
+  const { updateGender, gender } = useProductsContext();
   const { show_cart, showCart, cart } = useCartContext();
   const [showMenu, setShowMenu] = useState(false);
 
@@ -67,20 +63,15 @@ const Navbar = () => {
           <ul className='nav__links-1'>
             {navLinks.map(({ id, link, url }) => (
               <li key={id} className='nav__links-1-item'>
-                <Link
-                  to={`/${categories}/${url}`}
-                  className='link'
-                  onClick={() => getProductsByCategory(link, categories)}>
+                <Link to={`/${gender}/${url}`} className='link'>
                   {link}
                 </Link>
-                {dropDownLinks[categories][link] && (
+                {dropDownLinks[gender][link] && (
                   <DropDownMenu>
                     <h4>{link}</h4>
-                    {dropDownLinks[categories][link].map((item, idx) => (
+                    {dropDownLinks[gender][link].map((item, idx) => (
                       <li key={idx} className='dropDown__item'>
-                        <Link to={`/${categories}/${link}/${item}`}>
-                          {item}
-                        </Link>
+                        <Link to={`/${gender}/${link}/${item}`}>{item}</Link>
                       </li>
                     ))}
                   </DropDownMenu>
@@ -90,17 +81,14 @@ const Navbar = () => {
           </ul>
 
           <div className='nav__links-2'>
-            <Link
-              to='/women'
-              data-categories='women'
-              onClick={updateCategories}>
+            <Link to='/women' data-gender='women' onClick={updateGender}>
               women
             </Link>
             <Link
               to='/men'
-              data-categories='men'
+              data-gender='men'
               className='active'
-              onClick={updateCategories}>
+              onClick={updateGender}>
               men
             </Link>
           </div>

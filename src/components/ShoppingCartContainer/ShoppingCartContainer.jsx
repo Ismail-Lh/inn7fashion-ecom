@@ -7,7 +7,7 @@ import { useCartContext } from '../../contexts/cart_context';
 import { useProductsContext } from '../../contexts/products_context';
 
 const ShoppingCartContainer = () => {
-  const { updateCategories } = useProductsContext();
+  const { updateGender } = useProductsContext();
   const { cart } = useCartContext();
   return (
     <>
@@ -18,13 +18,10 @@ const ShoppingCartContainer = () => {
             <p>Go to</p>
             <div className='goTo__links'>
               <Link to='/'>Home Page</Link>
-              <Link to='/men' data-categories='men' onClick={updateCategories}>
+              <Link to='/men' data-gender='men' onClick={updateGender}>
                 Shop Men
               </Link>
-              <Link
-                to='/women'
-                data-categories='women'
-                onClick={updateCategories}>
+              <Link to='/women' data-gender='women' onClick={updateGender}>
                 Shop Women
               </Link>
             </div>

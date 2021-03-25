@@ -9,7 +9,7 @@ import { useCartContext } from '../../contexts/cart_context';
 import { Button, AmountButtons, ProductPrice } from '..';
 
 const SingleProductInfo = () => {
-  const { single_product: product, categories } = useProductsContext();
+  const { single_product: product, gender } = useProductsContext();
   const { addToCart, selectSize } = useCartContext();
 
   const {
@@ -67,7 +67,7 @@ const SingleProductInfo = () => {
       <div className='single-product_info-1'>
         <h1 className='single-product_info-name'>{name}</h1>
         <h2 className='single-product_info-designer'>
-          <Link to={`/${categories}/${designer}`}>{designer}</Link>
+          <Link to={`/${gender}/${designer}`}>{designer}</Link>
         </h2>
         <h2 className='single-product_info-price'>
           <ProductPrice price={price} discountPer={discountPer} />

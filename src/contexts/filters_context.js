@@ -28,7 +28,7 @@ const initialState = {
 const FiltersContext = createContext();
 
 export const FiltersProvider = ({ children }) => {
-  const { designer_products: products } = useProductsContext();
+  const { products_by_gender: products } = useProductsContext();
   const [state, dispatch] = useReducer(FiltersReducer, initialState);
 
   const updateSort = e => {

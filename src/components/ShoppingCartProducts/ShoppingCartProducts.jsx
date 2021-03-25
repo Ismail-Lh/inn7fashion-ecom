@@ -10,7 +10,7 @@ import './ShoppingCartProducts.scss';
 
 const ShoppingCartProducts = () => {
   const { cart, toggleCartAmount } = useCartContext();
-  const { categories, getSingleProduct } = useProductsContext();
+  const { gender, getSingleProduct } = useProductsContext();
 
   return (
     <div className='shoppingCart__products'>
@@ -38,10 +38,10 @@ const ShoppingCartProducts = () => {
             <div className='product' key={id}>
               <div className='product__image'>
                 <Link
-                  to={`/products/${categories}/${designer}/${name}`}
-                  onClick={() => getSingleProduct(id, categories)}>
+                  to={`/products/${gender}/${designer}/${name}`}
+                  onClick={() => getSingleProduct(id, gender)}>
                   <img
-                    src={`/images/${categories}/${designer}/${name}/${color}/1.jpg`}
+                    src={`/images/${gender}/${designer}/${name}/${color}/1.jpg`}
                     alt={name}
                   />
                 </Link>

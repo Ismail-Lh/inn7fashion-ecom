@@ -3,11 +3,11 @@ import React, { createContext, useContext, useEffect, useReducer } from 'react';
 import {
   GET_ALL_PRODUCTS,
   GET_POPULAR_PRODUCTS,
-  UPDATE_CATEGORIES,
+  UPDATE_GENDER,
   GET_SINGLE_PRODUCT,
   GET_DESIGNER_PRODUCTS,
   GET_DESIGNER,
-  GET_PRODUCTS_BY_CATEGORY,
+  GET_PRODUCTS_BY_GENDER,
 } from '../actions';
 
 import { getLocalStorage, setLocalStorage } from '../utils/helpers';
@@ -19,12 +19,12 @@ import ProductsReducer from '../reducers/products_reducer';
 
 const initialState = {
   all_products: getLocalStorage('allProducts'),
+  gender: getLocalStorage('gender'),
+  products_by_gender: getLocalStorage('productsByGender'),
   popular_products: [],
-  categories: getLocalStorage('categories'),
   single_product: getLocalStorage('singleProduct'),
   designer_products: getLocalStorage('designerProducts'),
   designer_data: getLocalStorage('designerData'),
-  products_category: getLocalStorage('productsCategory'),
 };
 
 const ProductsContext = createContext();
@@ -42,10 +42,14 @@ export const ProductsProvider = ({ children }) => {
     });
   }, [men, women]);
 
-  const updateCategories = e => {
-    const value = e.target.dataset.categories;
+  const updateGender = e => {
+    const { gender } = e.target.dataset;
 
-    dispatch({ type: UPDATE_CATEGORIES, payload: value });
+    console.log(gender);
+
+    dispatch({ type: UPDATE_GENDER, payload: gender });
+
+    dispatch({ type: GET_PRODUCTS_BY_GENDER });
   };
 
   const getPopularProducts = () => {
@@ -75,44 +79,32 @@ export const ProductsProvider = ({ children }) => {
     });
   };
 
-  const getProductsByCategory = category => {
-    dispatch({
-      type: GET_PRODUCTS_BY_CATEGORY,
-      payload: {
-        category,
-        allProducts: state.all_products,
-        categories: state.categories,
-      },
-    });
-  };
-
   useEffect(() => {
     getPopularProducts();
 
     setLocalStorage('allProducts', state.all_products);
-    setLocalStorage('categories', state.categories);
+    setLocalStorage('gender', state.gender);
+    setLocalStorage('productsByGender', state.products_by_gender);
     setLocalStorage('singleProduct', state.single_product);
     setLocalStorage('designerProducts', state.designer_products);
     setLocalStorage('designerData', state.designer_data);
-    setLocalStorage('productsCategory', state.products_category);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     state.all_products,
-    state.categories,
+    state.gender,
+    state.products_by_gender,
     state.designer_products,
     state.single_product,
     state.designer_data,
-    state.products_category,
   ]);
 
   return (
     <ProductsContext.Provider
       value={{
         ...state,
-        updateCategories,
+        updateGender,
         getSingleProduct,
         getDesignerProducts,
-        getProductsByCategory,
       }}>
       {children}
     </ProductsContext.Provider>

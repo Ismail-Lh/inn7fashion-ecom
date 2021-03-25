@@ -14,7 +14,7 @@ export const getLocalStorage = key => {
     return storage ? JSON.parse(localStorage.getItem(key)) : {};
   } else if (key === 'singleProduct') {
     return storage ? JSON.parse(localStorage.getItem(key)) : {};
-  } else if (key === 'categories') {
+  } else if (key === 'gender') {
     return storage ? JSON.parse(localStorage.getItem(key)) : 'men';
   } else if (key === 'designerProducts') {
     return storage ? JSON.parse(localStorage.getItem(key)) : [];
@@ -22,7 +22,7 @@ export const getLocalStorage = key => {
     return storage ? JSON.parse(localStorage.getItem(key)) : {};
   } else if (key === 'cart') {
     return storage ? JSON.parse(localStorage.getItem(key)) : [];
-  } else if (key === 'productsCategory') {
+  } else if (key === 'productsByGender') {
     return storage ? JSON.parse(localStorage.getItem(key)) : [];
   }
 };

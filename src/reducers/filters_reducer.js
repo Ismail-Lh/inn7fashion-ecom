@@ -13,7 +13,7 @@ const FiltersReducer = (state, action) => {
   if (action.type === LOAD_PRODUCTS) {
     const products = action.payload;
 
-    const prices = products.map(({ price, discountPer }) => {
+    const prices = products?.map(({ price, discountPer }) => {
       let finalPrice;
       if (!discountPer) return price;
 
@@ -22,7 +22,7 @@ const FiltersReducer = (state, action) => {
       return finalPrice;
     });
 
-    const percentages = products.map(({ discountPer }) => discountPer);
+    const percentages = products?.map(({ discountPer }) => discountPer);
 
     let maxPrice = Math.max(...prices);
     let minPrice = Math.min(...prices);

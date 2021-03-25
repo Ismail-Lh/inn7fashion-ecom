@@ -17,17 +17,17 @@ const CartModelItem = ({
   color,
   discountPer,
 }) => {
-  const { categories, getSingleProduct } = useProductsContext();
+  const { gender, getSingleProduct } = useProductsContext();
 
   return (
     <div className='cartModel__item'>
       <RemoveButton id={id} />
       <Link
-        to={`/products/${categories}/${designer}/${name}`}
-        onClick={() => getSingleProduct(id, categories)}
+        to={`/products/${gender}/${designer}/${name}`}
+        onClick={() => getSingleProduct(id, gender)}
         className='cartModel__img'>
         <img
-          src={`/images/${categories}/${designer}/${name}/${color}/1.jpg`}
+          src={`/images/${gender}/${designer}/${name}/${color}/1.jpg`}
           alt={name}
         />
       </Link>
