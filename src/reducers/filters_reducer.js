@@ -1,5 +1,6 @@
 import {
   LOAD_PRODUCTS,
+  GET_FILTERS_VALUE,
   UPDATE_SORT,
   SORT_PRODUCTS,
   UPDATE_FILTERS,
@@ -11,40 +12,38 @@ import {
 
 import { finalItemPrice } from '../utils/helpers';
 
+// const getFiltersValue = products => {
+//   const prices = products?.map(({ price, discountPer }) => {
+//     let finalPrice;
+//     if (!discountPer) return price;
+
+//     finalPrice = finalItemPrice(price, discountPer);
+
+//     return finalPrice;
+//   });
+
+//   const percentages = products?.map(({ discountPer }) => discountPer);
+
+//   let maxPrice = Math.max(...prices);
+//   let minPrice = Math.min(...prices);
+
+//   let maxPercentage = Math.max(...percentages);
+//   let minPercentage = Math.min(...percentages);
+
+//   console.log(products);
+//   console.log(maxPrice, minPrice, maxPercentage, minPercentage);
+
+//   return { maxPrice, minPrice, maxPercentage, minPercentage };
+// };
+
 const FiltersReducer = (state, action) => {
   if (action.type === LOAD_PRODUCTS) {
     const products = action.payload;
 
-    const prices = products?.map(({ price, discountPer }) => {
-      let finalPrice;
-      if (!discountPer) return price;
-
-      finalPrice = finalItemPrice(price, discountPer);
-
-      return finalPrice;
-    });
-
-    const percentages = products?.map(({ discountPer }) => discountPer);
-
-    let maxPrice = Math.max(...prices);
-    let minPrice = Math.min(...prices);
-
-    let maxPercentage = Math.max(...percentages);
-    let minPercentage = Math.min(...percentages);
-
     return {
       ...state,
-      all_products: [...action.payload],
-      filtered_products: [...action.payload],
-      filters: {
-        ...state.filters,
-        max_price: maxPrice,
-        min_price: minPrice,
-        price: maxPrice,
-        max_percentage: maxPercentage,
-        min_percentage: minPercentage,
-        percentage: maxPercentage,
-      },
+      all_products: [...products],
+      filtered_products: [...products],
     };
   }
 
@@ -55,9 +54,30 @@ const FiltersReducer = (state, action) => {
       product => product?.designer?.toLowerCase() === designer.toLowerCase()
     );
 
-    console.log(designerProducts);
+    // const {
+    //   maxPrice,
+    //   minPrice,
+    //   maxPercentage,
+    //   minPercentage,
+    // } = getFiltersValue(designerProducts);
 
-    return { ...state, filtered_products: designerProducts };
+    return {
+      ...state,
+      filtered_products: designerProducts,
+    };
+  }
+
+  if (action.type === GET_PRODUCTS_BY_CATEGORY) {
+    const { category, products } = action.payload;
+
+    const productsByCategory = products?.filter(
+      product => product.category?.toLowerCase() === category.toLowerCase()
+    );
+
+    return {
+      ...state,
+      filtered_products: productsByCategory,
+    };
   }
 
   if (action.type === UPDATE_SORT) {
@@ -108,16 +128,6 @@ const FiltersReducer = (state, action) => {
     }
 
     return { ...state, filtered_products: tempProducts };
-  }
-
-  if (action.type === GET_PRODUCTS_BY_CATEGORY) {
-    const { category, products } = action.payload;
-
-    const productsByCategory = products?.filter(
-      product => product.category.toLowerCase() === category.toLowerCase()
-    );
-
-    return { ...state, filtered_products: productsByCategory };
   }
 
   if (action.type === CLEAR_FILTERS) {

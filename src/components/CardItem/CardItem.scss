@@ -5,6 +5,8 @@
   &__img {
     cursor: pointer;
     position: relative;
+    height: 29.6rem;
+    width: 100%;
 
     &-2 {
       position: absolute;
@@ -48,7 +50,7 @@
       padding: 1rem 0;
       position: absolute;
       left: 0;
-      bottom: 6px;
+      bottom: 0;
       width: 100%;
       opacity: 0;
       z-index: -111;
@@ -79,6 +81,7 @@
   &__name {
     font-size: 1.7rem;
     font-weight: 300;
+    color: #282828;
   }
 
   &__designer {
