@@ -14,8 +14,16 @@ export const getLocalStorage = key => {
     return storage ? JSON.parse(storage) : {};
   }
 
+  if (key === 'productsByGender') {
+    return storage ? JSON.parse(storage) : [];
+  }
+
   if (key === 'gender') {
     return storage ? JSON.parse(storage) : 'men';
+  }
+
+  if (key === 'productsCategory') {
+    return storage ? JSON.parse(storage) : 'clothing';
   }
 
   if (key === 'filteredProducts') {
@@ -28,6 +36,10 @@ export const getLocalStorage = key => {
 
   if (key === 'singleProduct') {
     return storage ? JSON.parse(storage) : {};
+  }
+
+  if (key === 'productsByCategory') {
+    return storage ? JSON.parse(storage) : [];
   }
 
   if (key === 'designerData') {

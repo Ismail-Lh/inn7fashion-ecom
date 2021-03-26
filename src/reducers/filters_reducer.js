@@ -11,6 +11,7 @@ import {
   GET_PRODUCTS_BY_GENDER,
   GET_POPULAR_PRODUCTS,
   GET_SINGLE_PRODUCT,
+  UPDATE_CATEGORY,
 } from '../actions';
 
 import { finalItemPrice } from '../utils/helpers';
@@ -45,11 +46,11 @@ const FiltersReducer = (state, action) => {
 
     const productsByGender = allProducts[gender]?.map(products => products);
 
-    return { ...state, filtered_products: productsByGender };
+    return { ...state, products_by_gender: productsByGender };
   }
 
   if (action.type === GET_POPULAR_PRODUCTS) {
-    const { filtered_products: products } = state;
+    const { products_by_gender: products } = state;
 
     const popularProducts = products
       ?.map(products => products)
@@ -59,7 +60,7 @@ const FiltersReducer = (state, action) => {
   }
 
   if (action.type === GET_SINGLE_PRODUCT) {
-    const { filtered_products: products } = state;
+    const { products_by_gender: products } = state;
     const id = action.payload;
 
     const singleProduct = products
@@ -70,7 +71,7 @@ const FiltersReducer = (state, action) => {
   }
 
   if (action.type === GET_DESIGNER_PRODUCTS) {
-    const { filtered_products: products } = state;
+    const { products_by_gender: products } = state;
     const designer = action.payload;
 
     const designerProducts = products?.filter(
@@ -83,19 +84,23 @@ const FiltersReducer = (state, action) => {
     };
   }
 
+  if (action.type === UPDATE_CATEGORY) {
+    return { ...state, products_category: action.payload };
+  }
+
   if (action.type === GET_PRODUCTS_BY_CATEGORY) {
-    // const { category, products } = action.payload;
+    const { products_category: category, products_by_gender: products } = state;
 
-    // const productsByCategory = products?.filter(
-    //   product => product.category?.toLowerCase() === category.toLowerCase()
-    // );
+    const productsByCategory = products?.filter(
+      product => product.category?.toLowerCase() === category.toLowerCase()
+    );
 
-    // return {
-    //   ...state,
-    //   filtered_products: productsByCategory,
-    // };
+    console.log(productsByCategory);
 
-    return { ...state };
+    return {
+      ...state,
+      products_by_category: productsByCategory,
+    };
   }
 
   if (action.type === UPDATE_SORT) {

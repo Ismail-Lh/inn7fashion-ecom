@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import './CategoryProductsContainer.scss';
 
 import { ProductsContainer, Spinner } from '..';
-import { useProductsContext } from '../../contexts/products_context';
+import { useFiltersContext } from '../../contexts/filters_context';
 
 const CategoryProductsContainer = () => {
-  const { products_category: products } = useProductsContext();
+  const { products_by_category: products } = useFiltersContext();
   const [loading, setLoading] = useState(true);
 
   return (
