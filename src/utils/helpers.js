@@ -11,19 +11,31 @@ export const getLocalStorage = key => {
   let storage = localStorage.getItem(key);
 
   if (key === 'allProducts') {
-    return storage ? JSON.parse(localStorage.getItem(key)) : {};
-  } else if (key === 'singleProduct') {
-    return storage ? JSON.parse(localStorage.getItem(key)) : {};
-  } else if (key === 'gender') {
-    return storage ? JSON.parse(localStorage.getItem(key)) : 'men';
-  } else if (key === 'designerProducts') {
-    return storage ? JSON.parse(localStorage.getItem(key)) : [];
-  } else if (key === 'designerData') {
-    return storage ? JSON.parse(localStorage.getItem(key)) : {};
-  } else if (key === 'cart') {
-    return storage ? JSON.parse(localStorage.getItem(key)) : [];
-  } else if (key === 'productsByGender') {
-    return storage ? JSON.parse(localStorage.getItem(key)) : [];
+    return storage ? JSON.parse(storage) : {};
+  }
+
+  if (key === 'gender') {
+    return storage ? JSON.parse(storage) : 'men';
+  }
+
+  if (key === 'filteredProducts') {
+    return storage ? JSON.parse(storage) : [];
+  }
+
+  if (key === 'singleProduct') {
+    return storage ? JSON.parse(storage) : {};
+  }
+
+  if (key === 'designerProducts') {
+    return storage ? JSON.parse(storage) : [];
+  }
+
+  if (key === 'designerData') {
+    return storage ? JSON.parse(storage) : {};
+  }
+
+  if (key === 'cart') {
+    return storage ? JSON.parse(storage) : [];
   }
 };
 

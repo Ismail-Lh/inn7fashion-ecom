@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useFiltersContext } from '../../contexts/filters_context';
 import { useProductsContext } from '../../contexts/products_context';
 
 import './SingleProductImages.scss';
 
-const SingleProductImages = () => {
-  const { single_product: product, gender } = useProductsContext();
+const SingleProductImages = ({ product }) => {
+  const { gender } = useProductsContext();
+
   const { images, designer, name, color } = product[0];
 
   const [idx, setIdx] = useState(1);

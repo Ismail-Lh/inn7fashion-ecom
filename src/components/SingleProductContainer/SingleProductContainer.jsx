@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom';
 import './SingleProductContainer.scss';
 import { SingleProductImages, SingleProductInfo, Links } from '..';
 import { useProductsContext } from '../../contexts/products_context';
+import { useFiltersContext } from '../../contexts/filters_context';
 
 const SingleProductContainer = () => {
-  const { single_product: product, gender } = useProductsContext();
+  const { gender } = useProductsContext();
+  const { single_product: product } = useFiltersContext();
   const { name, designer } = product[0];
 
   return (
@@ -18,8 +20,8 @@ const SingleProductContainer = () => {
         <p>{name}</p>
       </Links>
       <div className='single_product-grid'>
-        <SingleProductImages />
-        <SingleProductInfo />
+        <SingleProductImages product={product} />
+        <SingleProductInfo product={product} />
       </div>
     </div>
   );

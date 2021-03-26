@@ -4,10 +4,10 @@ import Carousel, { consts } from 'react-elastic-carousel';
 import './PopularProducts.scss';
 
 import { CardItem, Spinner } from '..';
-import { useProductsContext } from '../../contexts/products_context';
+import { useFiltersContext } from '../../contexts/filters_context';
 
 const PopularProducts = () => {
-  const { popular_products: products } = useProductsContext();
+  const { popular_products: products } = useFiltersContext();
   const [loading, setLoading] = useState(true);
 
   const [breakPoints, setbreakPoints] = useState([
@@ -46,7 +46,7 @@ const PopularProducts = () => {
               pagination={false}
               renderArrow={arrow}
               breakPoints={breakPoints}>
-              {products.map(product => (
+              {products?.map(product => (
                 <CardItem {...product} key={product.id} />
               ))}
             </Carousel>

@@ -8,6 +8,9 @@ import {
   CLEAR_FILTERS,
   GET_DESIGNER_PRODUCTS,
   GET_PRODUCTS_BY_CATEGORY,
+  GET_PRODUCTS_BY_GENDER,
+  GET_POPULAR_PRODUCTS,
+  GET_SINGLE_PRODUCT,
 } from '../actions';
 
 import { finalItemPrice } from '../utils/helpers';
@@ -37,47 +40,62 @@ import { finalItemPrice } from '../utils/helpers';
 // };
 
 const FiltersReducer = (state, action) => {
-  if (action.type === LOAD_PRODUCTS) {
-    const products = action.payload;
+  if (action.type === GET_PRODUCTS_BY_GENDER) {
+    const { gender, products: allProducts } = action.payload;
 
-    return {
-      ...state,
-      all_products: [...products],
-      filtered_products: [...products],
-    };
+    const productsByGender = allProducts[gender]?.map(products => products);
+
+    return { ...state, filtered_products: productsByGender };
+  }
+
+  if (action.type === GET_POPULAR_PRODUCTS) {
+    const { filtered_products: products } = state;
+
+    const popularProducts = products
+      ?.map(products => products)
+      ?.filter(product => product.popularity === true);
+
+    return { ...state, popular_products: popularProducts };
+  }
+
+  if (action.type === GET_SINGLE_PRODUCT) {
+    const { filtered_products: products } = state;
+    const id = action.payload;
+
+    const singleProduct = products
+      ?.map(products => products)
+      ?.filter(product => product.id === id);
+
+    return { ...state, single_product: singleProduct };
   }
 
   if (action.type === GET_DESIGNER_PRODUCTS) {
-    const { designer, products } = action.payload;
+    const { filtered_products: products } = state;
+    const designer = action.payload;
 
     const designerProducts = products?.filter(
       product => product?.designer?.toLowerCase() === designer.toLowerCase()
     );
 
-    // const {
-    //   maxPrice,
-    //   minPrice,
-    //   maxPercentage,
-    //   minPercentage,
-    // } = getFiltersValue(designerProducts);
-
     return {
       ...state,
-      filtered_products: designerProducts,
+      designer_products: designerProducts,
     };
   }
 
   if (action.type === GET_PRODUCTS_BY_CATEGORY) {
-    const { category, products } = action.payload;
+    // const { category, products } = action.payload;
 
-    const productsByCategory = products?.filter(
-      product => product.category?.toLowerCase() === category.toLowerCase()
-    );
+    // const productsByCategory = products?.filter(
+    //   product => product.category?.toLowerCase() === category.toLowerCase()
+    // );
 
-    return {
-      ...state,
-      filtered_products: productsByCategory,
-    };
+    // return {
+    //   ...state,
+    //   filtered_products: productsByCategory,
+    // };
+
+    return { ...state };
   }
 
   if (action.type === UPDATE_SORT) {
@@ -85,24 +103,26 @@ const FiltersReducer = (state, action) => {
   }
 
   if (action.type === SORT_PRODUCTS) {
-    const { sort, filtered_products } = state;
-    let tempProducts = [...filtered_products];
+    // const { sort, filtered_products } = state;
+    // let tempProducts = [...filtered_products];
 
-    if (sort === 'price-lowest') {
-      tempProducts = tempProducts.sort((curr, next) => curr.price - next.price);
-    } else if (sort === 'price-highest') {
-      tempProducts = tempProducts.sort((curr, next) => next.price - curr.price);
-    } else if (sort === 'name-a') {
-      tempProducts = tempProducts.sort((curr, next) =>
-        curr.name.localeCompare(next.name)
-      );
-    } else if (sort === 'name-z') {
-      tempProducts = tempProducts.sort((curr, next) =>
-        next.name.localeCompare(curr.name)
-      );
-    }
+    // if (sort === 'price-lowest') {
+    //   tempProducts = tempProducts.sort((curr, next) => curr.price - next.price);
+    // } else if (sort === 'price-highest') {
+    //   tempProducts = tempProducts.sort((curr, next) => next.price - curr.price);
+    // } else if (sort === 'name-a') {
+    //   tempProducts = tempProducts.sort((curr, next) =>
+    //     curr.name.localeCompare(next.name)
+    //   );
+    // } else if (sort === 'name-z') {
+    //   tempProducts = tempProducts.sort((curr, next) =>
+    //     next.name.localeCompare(curr.name)
+    //   );
+    // }
 
-    return { ...state, filtered_products: tempProducts };
+    // return { ...state, filtered_products: tempProducts };
+
+    return { ...state };
   }
 
   if (action.type === UPDATE_FILTERS) {
@@ -112,22 +132,24 @@ const FiltersReducer = (state, action) => {
   }
 
   if (action.type === FILTER_PRODUCTS) {
-    const { all_products } = state;
-    const { price, percentage } = state.filters;
+    // const { all_products } = state;
+    // const { price, percentage } = state.filters;
 
-    let tempProducts = [...all_products];
+    // let tempProducts = [...all_products];
 
-    if (price) {
-      tempProducts = tempProducts.filter(product => product.price <= price);
-    }
+    // if (price) {
+    //   tempProducts = tempProducts.filter(product => product.price <= price);
+    // }
 
-    if (percentage) {
-      tempProducts = tempProducts.filter(
-        product => product.discountPer <= +percentage
-      );
-    }
+    // if (percentage) {
+    //   tempProducts = tempProducts.filter(
+    //     product => product.discountPer <= +percentage
+    //   );
+    // }
 
-    return { ...state, filtered_products: tempProducts };
+    // return { ...state, filtered_products: tempProducts };
+
+    return { ...state };
   }
 
   if (action.type === CLEAR_FILTERS) {

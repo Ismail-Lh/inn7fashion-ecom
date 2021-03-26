@@ -63,7 +63,7 @@ const Navbar = () => {
 
         <div className='nav__links'>
           <ul className='nav__links-1'>
-            {navLinks.map(({ id, link, url }) => (
+            {navLinks?.map(({ id, link, url }) => (
               <li key={id} className='nav__links-1-item'>
                 <Link
                   to={`/${gender}/${url}`}
@@ -74,7 +74,7 @@ const Navbar = () => {
                 {dropDownLinks[gender][link] && (
                   <DropDownMenu>
                     <h4>{link}</h4>
-                    {dropDownLinks[gender][link].map((item, idx) => (
+                    {dropDownLinks[gender][link]?.map((item, idx) => (
                       <li key={idx} className='dropDown__item'>
                         <Link to={`/${gender}/${link}/${item}`}>{item}</Link>
                       </li>

@@ -7,9 +7,11 @@ import { useProductsContext } from '../../contexts/products_context';
 import { useCartContext } from '../../contexts/cart_context';
 
 import { Button, AmountButtons, ProductPrice } from '..';
+import { useFiltersContext } from '../../contexts/filters_context';
 
-const SingleProductInfo = () => {
-  const { single_product: product, gender } = useProductsContext();
+const SingleProductInfo = ({ product }) => {
+  const { gender } = useProductsContext();
+
   const { addToCart, selectSize } = useCartContext();
 
   const {

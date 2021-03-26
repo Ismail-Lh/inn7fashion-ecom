@@ -7,6 +7,7 @@ import './CardItem.scss';
 
 import { useProductsContext } from '../../contexts/products_context';
 import ProductPrice from '../ProductPrice/ProductPrice';
+import { useFiltersContext } from '../../contexts/filters_context';
 
 const CardItem = ({
   name,
@@ -18,7 +19,8 @@ const CardItem = ({
   id,
   color,
 }) => {
-  const { gender, getSingleProduct } = useProductsContext();
+  const { gender } = useProductsContext();
+  const { getSingleProduct } = useFiltersContext();
 
   const url = `${gender}/${designer}/${name}`;
 

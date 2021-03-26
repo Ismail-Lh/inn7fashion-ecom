@@ -1,10 +1,4 @@
-import React, {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useReducer,
-} from 'react';
+import React, { createContext, useContext, useEffect, useReducer } from 'react';
 import FiltersReducer from '../reducers/filters_reducer';
 import { useProductsContext } from './products_context';
 
@@ -18,11 +12,18 @@ import {
   CLEAR_FILTERS,
   GET_DESIGNER_PRODUCTS,
   GET_PRODUCTS_BY_CATEGORY,
+  GET_PRODUCTS_BY_GENDER,
+  GET_POPULAR_PRODUCTS,
+  GET_SINGLE_PRODUCT,
 } from '../actions';
 
+import { getLocalStorage, setLocalStorage } from '../utils/helpers';
+
 const initialState = {
-  all_products: [],
-  filtered_products: [],
+  filtered_products: getLocalStorage('filteredProducts'),
+  popular_products: [],
+  single_product: getLocalStorage('singleProduct'),
+  designer_products: getLocalStorage('designerProducts'),
   sort: 'price-lowest',
   filters: {
     max_price: 0,
@@ -37,24 +38,41 @@ const initialState = {
 const FiltersContext = createContext();
 
 export const FiltersProvider = ({ children }) => {
-  const { products_by_gender: products } = useProductsContext();
+  const {
+    all_products: products,
+    gender,
+    designer_data: designer,
+  } = useProductsContext();
   const [state, dispatch] = useReducer(FiltersReducer, initialState);
 
   useEffect(() => {
-    dispatch({ type: LOAD_PRODUCTS, payload: products });
-  }, []);
+    dispatch({ type: GET_PRODUCTS_BY_GENDER, payload: { gender, products } });
+  }, [gender, products]);
+
+  useEffect(() => {
+    dispatch({
+      type: GET_POPULAR_PRODUCTS,
+    });
+  }, [gender]);
+
+  const getSingleProduct = id => {
+    dispatch({
+      type: GET_SINGLE_PRODUCT,
+      payload: id,
+    });
+  };
 
   const getDesignerProducts = designer => {
     dispatch({
       type: GET_DESIGNER_PRODUCTS,
-      payload: { designer, products },
+      payload: designer,
     });
   };
 
   const getProductsByCategory = category => {
     dispatch({
       type: GET_PRODUCTS_BY_CATEGORY,
-      payload: { category, products },
+      payload: category,
     });
   };
 
@@ -77,6 +95,17 @@ export const FiltersProvider = ({ children }) => {
   };
 
   useEffect(() => {
+    setLocalStorage('filteredProducts', state.filtered_products);
+    setLocalStorage('singleProduct', state.single_product);
+    setLocalStorage('designerProducts', state.designer_products);
+  }, [
+    state.filtered_products,
+    state.designer_products,
+    state.single_product,
+    gender,
+  ]);
+
+  useEffect(() => {
     dispatch({ type: FILTER_PRODUCTS });
     dispatch({ type: SORT_PRODUCTS, payload: state.sort });
   }, [state.sort, state.filters, products]);
@@ -90,6 +119,7 @@ export const FiltersProvider = ({ children }) => {
         clearFilters,
         getProductsByCategory,
         getDesignerProducts,
+        getSingleProduct,
       }}>
       {children}
     </FiltersContext.Provider>
