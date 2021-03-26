@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useEffect, useReducer } from 'react';
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useReducer,
+} from 'react';
 import FiltersReducer from '../reducers/filters_reducer';
 import { useProductsContext } from './products_context';
 
@@ -96,14 +102,12 @@ export const FiltersProvider = ({ children }) => {
 
   useEffect(() => {
     setLocalStorage('filteredProducts', state.filtered_products);
-    setLocalStorage('singleProduct', state.single_product);
     setLocalStorage('designerProducts', state.designer_products);
-  }, [
-    state.filtered_products,
-    state.designer_products,
-    state.single_product,
-    gender,
-  ]);
+  }, [state.filtered_products, state.designer_products, gender]);
+
+  useEffect(() => {
+    setLocalStorage('singleProduct', state.single_product);
+  }, [state.single_product, state.filtered_products]);
 
   useEffect(() => {
     dispatch({ type: FILTER_PRODUCTS });

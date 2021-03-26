@@ -22,12 +22,12 @@ export const getLocalStorage = key => {
     return storage ? JSON.parse(storage) : [];
   }
 
-  if (key === 'singleProduct') {
-    return storage ? JSON.parse(storage) : {};
-  }
-
   if (key === 'designerProducts') {
     return storage ? JSON.parse(storage) : [];
+  }
+
+  if (key === 'singleProduct') {
+    return storage ? JSON.parse(storage) : {};
   }
 
   if (key === 'designerData') {

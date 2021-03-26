@@ -44,15 +44,9 @@ export const ProductsProvider = ({ children }) => {
   useEffect(() => {
     setLocalStorage('allProducts', state.all_products);
     setLocalStorage('gender', state.gender);
-    setLocalStorage('singleProduct', state.single_product);
     setLocalStorage('designerData', state.designer_data);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [
-    state.all_products,
-    state.gender,
-    state.single_product,
-    state.designer_data,
-  ]);
+  }, [state.all_products, state.gender, state.designer_data]);
 
   return (
     <ProductsContext.Provider
