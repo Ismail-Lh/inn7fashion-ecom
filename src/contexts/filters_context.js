@@ -20,6 +20,7 @@ import {
   GET_POPULAR_PRODUCTS,
   GET_SINGLE_PRODUCT,
   UPDATE_CATEGORY,
+  GET_FILTERS_VALUE,
 } from '../actions';
 
 import { getLocalStorage, setLocalStorage } from '../utils/helpers';
@@ -109,10 +110,19 @@ export const FiltersProvider = ({ children }) => {
   }, [gender, state.products_by_gender]);
 
   // Set filtered & designer products to localStorage
+
   useEffect(() => {
     setLocalStorage('filteredProducts', state.filtered_products);
+    dispatch({ type: GET_FILTERS_VALUE });
+  }, [
+    state.products_category,
+    state.products_by_category,
+    state.designer_products,
+  ]);
+
+  useEffect(() => {
     setLocalStorage('designerProducts', state.designer_products);
-  }, [state.filtered_products, state.designer_products, gender]);
+  }, [state.designer_products, gender]);
 
   // Set single product info to localStorage
   useEffect(() => {

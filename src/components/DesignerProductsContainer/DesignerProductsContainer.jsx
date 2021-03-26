@@ -9,7 +9,7 @@ import { useFiltersContext } from '../../contexts/filters_context';
 
 const DesignerProductsContainer = () => {
   const { gender, designer_data: designer } = useProductsContext();
-  const { designer_products: products } = useFiltersContext();
+  const { filtered_products: products } = useFiltersContext();
   const [loading, setLoading] = useState(true);
 
   return (

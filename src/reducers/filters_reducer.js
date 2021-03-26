@@ -46,7 +46,10 @@ const FiltersReducer = (state, action) => {
 
     const productsByGender = allProducts[gender]?.map(products => products);
 
-    return { ...state, products_by_gender: productsByGender };
+    return {
+      ...state,
+      products_by_gender: productsByGender,
+    };
   }
 
   if (action.type === GET_POPULAR_PRODUCTS) {
@@ -81,6 +84,7 @@ const FiltersReducer = (state, action) => {
     return {
       ...state,
       designer_products: designerProducts,
+      filtered_products: designerProducts,
     };
   }
 
@@ -95,11 +99,48 @@ const FiltersReducer = (state, action) => {
       product => product.category?.toLowerCase() === category.toLowerCase()
     );
 
-    console.log(productsByCategory);
-
     return {
       ...state,
       products_by_category: productsByCategory,
+      filtered_products: productsByCategory,
+    };
+  }
+
+  if (action.type === GET_FILTERS_VALUE) {
+    const { filtered_products: products } = state;
+
+    const prices = products?.map(({ price, discountPer }) => {
+      let finalPrice;
+      if (!discountPer) return price;
+
+      finalPrice = finalItemPrice(price, discountPer);
+
+      return finalPrice;
+    });
+
+    const percentages = products?.map(({ discountPer }) => {
+      if (discountPer === undefined) discountPer = 100;
+
+      return discountPer;
+    });
+
+    let maxPrice = Math.max(...prices);
+    let minPrice = Math.min(...prices);
+
+    let maxPercentage = Math.max(...percentages);
+    let minPercentage = Math.min(...percentages);
+
+    return {
+      ...state,
+      filters: {
+        ...state.filters,
+        max_price: maxPrice,
+        min_price: minPrice,
+        price: maxPrice,
+        max_percentage: maxPercentage,
+        min_percentage: minPercentage,
+        percentage: maxPercentage,
+      },
     };
   }
 

@@ -6,7 +6,7 @@ import { ProductsContainer, Spinner } from '..';
 import { useFiltersContext } from '../../contexts/filters_context';
 
 const CategoryProductsContainer = () => {
-  const { products_by_category: products } = useFiltersContext();
+  const { filtered_products: products } = useFiltersContext();
   const [loading, setLoading] = useState(true);
 
   return (
