@@ -19,9 +19,11 @@ const ProductsContext = createContext();
 export const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(ProductsReducer, initialState);
 
+  // Get products from firebase hooks
   const { men } = useFirebaseData('men');
   const { women } = useFirebaseData('women');
 
+  // Get allProducts function
   useEffect(() => {
     dispatch({
       type: GET_ALL_PRODUCTS,
@@ -29,11 +31,13 @@ export const ProductsProvider = ({ children }) => {
     });
   }, [men, women]);
 
+  // Update gender function
   const updateGender = e => {
     const { gender } = e.target.dataset;
     dispatch({ type: UPDATE_GENDER, payload: gender });
   };
 
+  // Get designer function
   const getDesigner = designer => {
     dispatch({
       type: GET_DESIGNER,
@@ -41,6 +45,7 @@ export const ProductsProvider = ({ children }) => {
     });
   };
 
+  // Set allProducts, gender & designerData to localStorage
   useEffect(() => {
     setLocalStorage('allProducts', state.all_products);
     setLocalStorage('gender', state.gender);

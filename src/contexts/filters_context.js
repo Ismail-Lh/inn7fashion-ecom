@@ -27,12 +27,11 @@ import { getLocalStorage, setLocalStorage } from '../utils/helpers';
 
 const initialState = {
   products_by_gender: getLocalStorage('productsByGender'),
-  filtered_products: getLocalStorage('filteredProducts'),
+  products: getLocalStorage('products'),
+  filtered_products: [],
   popular_products: [],
   single_product: getLocalStorage('singleProduct'),
-  designer_products: getLocalStorage('designerProducts'),
   products_category: 'clothing',
-  products_by_category: getLocalStorage('productsByCategory'),
   sort: 'price-lowest',
   filters: {
     max_price: 0,
@@ -50,6 +49,20 @@ export const FiltersProvider = ({ children }) => {
   const { all_products: products, gender } = useProductsContext();
   const [state, dispatch] = useReducer(FiltersReducer, initialState);
 
+  // Get products by gender
+  useEffect(() => {
+    dispatch({ type: GET_PRODUCTS_BY_GENDER, payload: { gender, products } });
+
+    dispatch({
+      type: GET_POPULAR_PRODUCTS,
+    });
+  }, [gender, products]);
+
+  // Get popular products based an their gender
+  useEffect(() => {
+    setLocalStorage('productsByGender', state.products_by_gender);
+  }, [gender, state.products_by_gender]);
+
   // Get single product info action
   const getSingleProduct = id => {
     dispatch({
@@ -58,7 +71,12 @@ export const FiltersProvider = ({ children }) => {
     });
   };
 
-  // Get designer products action
+  // Set single product info to localStorage
+  useEffect(() => {
+    setLocalStorage('singleProduct', state.single_product);
+  }, [state.single_product, state.filtered_products]);
+
+  // Get designer products function
   const getDesignerProducts = designer => {
     dispatch({
       type: GET_DESIGNER_PRODUCTS,
@@ -66,6 +84,7 @@ export const FiltersProvider = ({ children }) => {
     });
   };
 
+  // Get products by their category (clothing, footwear, bags, accessories)
   const getProductsByCategory = category => {
     dispatch({ type: UPDATE_CATEGORY, payload: category });
 
@@ -74,14 +93,12 @@ export const FiltersProvider = ({ children }) => {
     });
   };
 
-  // Update Sort action
-  const updateSort = e => {
-    const { value } = e.target;
+  // Set products to localStorage
+  useEffect(() => {
+    setLocalStorage('products', state.products);
+  }, [state.products_category, state.products, state.products_by_gender]);
 
-    dispatch({ type: UPDATE_SORT, payload: value });
-  };
-
-  // Update Filters action
+  // Update Filters function
   const updateFilters = e => {
     let { name, value } = e.target;
 
@@ -90,53 +107,32 @@ export const FiltersProvider = ({ children }) => {
     dispatch({ type: UPDATE_FILTERS, payload: { name, value } });
   };
 
-  // Clear Filters action
+  // Filter products function
+  useEffect(() => {
+    dispatch({ type: FILTER_PRODUCTS });
+  }, [state.filters.price, state.filters.percentage, state.products]);
+
+  // Get filters value function
+  useEffect(() => {
+    dispatch({ type: GET_FILTERS_VALUE });
+  }, [state.products]);
+
+  // Clear Filters function
   const clearFilters = () => {
     dispatch({ type: CLEAR_FILTERS });
   };
 
-  // Get products by gender
+  // Update Sort function
+  const updateSort = e => {
+    const { value } = e.target;
+
+    dispatch({ type: UPDATE_SORT, payload: value });
+  };
+
+  // Sort products function
   useEffect(() => {
-    dispatch({ type: GET_PRODUCTS_BY_GENDER, payload: { gender, products } });
-  }, [gender, products]);
-
-  // Get popular products based an their gender
-  useEffect(() => {
-    dispatch({
-      type: GET_POPULAR_PRODUCTS,
-    });
-
-    setLocalStorage('productsByGender', state.products_by_gender);
-  }, [gender, state.products_by_gender]);
-
-  // Set filtered & designer products to localStorage
-
-  useEffect(() => {
-    setLocalStorage('filteredProducts', state.filtered_products);
-    dispatch({ type: GET_FILTERS_VALUE });
-  }, [
-    state.products_category,
-    state.products_by_category,
-    state.designer_products,
-  ]);
-
-  useEffect(() => {
-    setLocalStorage('designerProducts', state.designer_products);
-  }, [state.designer_products, gender]);
-
-  // Set single product info to localStorage
-  useEffect(() => {
-    setLocalStorage('singleProduct', state.single_product);
-  }, [state.single_product, state.filtered_products]);
-
-  useEffect(() => {
-    setLocalStorage('productsByCategory', state.products_by_category);
-  }, [state.products_by_category, state.products_category]);
-
-  useEffect(() => {
-    dispatch({ type: FILTER_PRODUCTS });
     dispatch({ type: SORT_PRODUCTS, payload: state.sort });
-  }, [state.sort, state.filters, products]);
+  }, [state.sort]);
 
   return (
     <FiltersContext.Provider

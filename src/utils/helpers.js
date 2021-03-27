@@ -14,23 +14,15 @@ export const getLocalStorage = key => {
     return storage ? JSON.parse(storage) : {};
   }
 
-  if (key === 'productsByGender') {
-    return storage ? JSON.parse(storage) : [];
-  }
-
   if (key === 'gender') {
     return storage ? JSON.parse(storage) : 'men';
   }
 
-  if (key === 'productsCategory') {
-    return storage ? JSON.parse(storage) : 'clothing';
-  }
-
-  if (key === 'filteredProducts') {
+  if (key === 'productsByGender') {
     return storage ? JSON.parse(storage) : [];
   }
 
-  if (key === 'designerProducts') {
+  if (key === 'products') {
     return storage ? JSON.parse(storage) : [];
   }
 
@@ -38,8 +30,8 @@ export const getLocalStorage = key => {
     return storage ? JSON.parse(storage) : {};
   }
 
-  if (key === 'productsByCategory') {
-    return storage ? JSON.parse(storage) : [];
+  if (key === 'productsCategory') {
+    return storage ? JSON.parse(storage) : 'clothing';
   }
 
   if (key === 'designerData') {
@@ -56,11 +48,7 @@ export const setLocalStorage = (key, value) => {
 };
 
 export const finalItemPrice = (price, discountPer) => {
-  let finalPrice;
+  if (!discountPer) return price;
 
-  if (!discountPer) finalPrice = price;
-
-  finalPrice = price - (price * discountPer) / 100;
-
-  return finalPrice;
+  return price - (price * discountPer) / 100;
 };

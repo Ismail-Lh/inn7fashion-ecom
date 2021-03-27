@@ -1,6 +1,7 @@
 import { GET_ALL_PRODUCTS, UPDATE_GENDER, GET_DESIGNER } from '../actions';
 
 const ProductsReducer = (state, action) => {
+  // Get allProducts action
   if (action.type === GET_ALL_PRODUCTS) {
     const { men, women } = action.payload;
 
@@ -10,10 +11,12 @@ const ProductsReducer = (state, action) => {
     };
   }
 
+  // Update gender action
   if (action.type === UPDATE_GENDER) {
     return { ...state, gender: action.payload };
   }
 
+  // Get designer action
   if (action.type === GET_DESIGNER) {
     const designer = action.payload;
 
