@@ -2,6 +2,10 @@
   padding: 2rem 5rem;
   color: #282828;
 
+  @media (max-width: 375px) {
+    padding: 2rem 3rem;
+  }
+
   &__title {
     text-transform: uppercase;
   }
@@ -11,6 +15,21 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
     margin-top: 1rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+    }
+
+    @media (max-width: 425px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+    }
+
+    @media (max-width: 375px) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
 
     &-items {
       h2 {
