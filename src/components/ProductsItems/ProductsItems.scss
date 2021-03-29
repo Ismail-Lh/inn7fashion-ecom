@@ -5,5 +5,39 @@
     column-gap: 2.5rem;
     row-gap: 4rem;
     text-align: center;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 2rem;
+      row-gap: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 1.5rem;
+      row-gap: 3rem;
+    }
+
+    @media (max-width: 425px) {
+      grid-template-columns: 1fr;
+      column-gap: 0;
+      row-gap: 0;
+    }
+
+    @media (max-width: 320px) {
+      row-gap: 1rem;
+    }
+
+    & .card {
+      &__img {
+        @media (max-width: 1024px) {
+          height: 74%;
+        }
+
+        @media (max-width: 1024px) {
+          height: 79%;
+        }
+      }
+    }
   }
 }

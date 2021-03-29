@@ -3,6 +3,10 @@
   grid-template-columns: max-content auto;
   gap: 2rem;
 
+  @media (max-width: 425px) {
+    grid-template-columns: none;
+  }
+
   & .sort {
     grid-column: 2 / -1;
   }

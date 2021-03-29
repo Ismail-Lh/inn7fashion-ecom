@@ -1,6 +1,10 @@
 .sort {
   margin-left: auto;
 
+  @media (max-width: 425px) {
+    margin-left: 0;
+  }
+
   & label {
     text-transform: uppercase;
     font-size: 1.8rem;

@@ -6,8 +6,16 @@
   font-weight: 300;
   margin-bottom: 2.5rem;
 
+  @media (max-width: 425px) {
+    margin-bottom: 1rem;
+  }
+
   a {
     margin-right: 0.4rem;
     color: inherit;
+
+    @media (max-width: 320px) {
+      margin-right: 2px;
+    }
   }
 }

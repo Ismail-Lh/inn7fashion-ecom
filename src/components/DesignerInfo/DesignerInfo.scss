@@ -8,8 +8,18 @@
       margin-top: 1rem;
       margin-bottom: 4rem;
       width: 65%;
-      // font-weight: 300;
       font-size: 1.7rem;
+
+      @media (max-width: 768px) {
+        margin-bottom: 3rem;
+        width: 80%;
+      }
+
+      @media (max-width: 425px) {
+        margin-bottom: 2rem;
+        width: 100%;
+        font-size: 1.5rem;
+      }
     }
   }
 }

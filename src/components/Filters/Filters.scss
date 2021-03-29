@@ -2,12 +2,16 @@
   &__title {
     text-transform: uppercase;
     font-size: 2.8rem;
-    margin-bottom: 2rem;
   }
 
+  &__title,
   &__percentage,
   &__collection {
     margin-bottom: 2rem;
+
+    @media (max-width: 425px) {
+      margin-bottom: 1rem;
+    }
   }
 
   &__collection {
