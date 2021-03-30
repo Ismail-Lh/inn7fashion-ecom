@@ -4,18 +4,21 @@ import { Link } from 'react-router-dom';
 import './DesignerProductsContainer.scss';
 
 import { useProductsContext } from '../../contexts/products_context';
-import { DesignerInfo, Links, ProductsContainer, Spinner } from '..';
-import { useFiltersContext } from '../../contexts/filters_context';
+import {
+  DesignerInfo,
+  Links,
+  ProductsContainer,
+  Spinner,
+  Pagination,
+} from '..';
 
 const DesignerProductsContainer = () => {
-  const { gender, designer_data: designer } = useProductsContext();
-  const { filtered_products: products } = useFiltersContext();
-  const [loading, setLoading] = useState(true);
+  const { gender, designer_data: designer, loading } = useProductsContext();
 
   return (
     <div className='designer__container'>
       {loading ? (
-        <Spinner loading={loading} setLoading={setLoading} />
+        <Spinner />
       ) : (
         <>
           <Links>
@@ -25,7 +28,7 @@ const DesignerProductsContainer = () => {
             <p>{designer.desig}</p>
           </Links>
           <DesignerInfo />
-          <ProductsContainer products={products} />
+          <ProductsContainer />
         </>
       )}
     </div>

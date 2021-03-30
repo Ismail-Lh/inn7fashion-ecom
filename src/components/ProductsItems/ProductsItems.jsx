@@ -3,7 +3,7 @@ import { CardItem } from '..';
 
 import './ProductsItems.scss';
 
-const ProductsItems = ({ products }) => {
+const ProductsItems = ({ currentProducts: products }) => {
   return (
     <div className='products__grid'>
       {products?.map(product => (

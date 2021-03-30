@@ -2,32 +2,42 @@ import { useEffect, useState } from 'react';
 
 import { useFirebaseContext } from '../contexts/firebase_context';
 
-const useFirebaseData = category => {
-  const [data, setData] = useState([]);
+const useFirebaseData = gender => {
   const { firebase } = useFirebaseContext();
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     try {
-      firebase
-        .firestore()
-        .collection(category)
-        .get()
-        .then(snapshot => {
-          const allData = snapshot.docs.map(doc => ({
-            ...doc.data(),
-            docId: doc.id,
-          }));
+      const firebaseData = async () => {
+        setLoading(true);
 
-          setData(allData);
-        });
+        const res = firebase.firestore().collection(gender).orderBy('id');
+
+        const content = await res.get();
+
+        const allData = content.docs.map(doc => ({
+          ...doc.data(),
+          docId: doc.id,
+        }));
+
+        setData(allData);
+
+        setLoading(false);
+      };
+
+      firebaseData();
+
+      // cleanup
+      return () => {
+        setData([]);
+      };
     } catch (error) {
       console.error(error);
     }
   }, []);
 
-  // console.log(data);
-
-  return { [category]: data };
+  return { [gender]: data, loading };
 };
 
 export default useFirebaseData;

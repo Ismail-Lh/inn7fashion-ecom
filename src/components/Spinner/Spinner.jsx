@@ -1,13 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import './Spinner.scss';
 
 import PuffLoader from 'react-spinners/PuffLoader';
+import { useProductsContext } from '../../contexts/products_context';
 
-const Spinner = ({ loading, setLoading }) => {
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 2500);
-  }, []);
+const Spinner = () => {
+  const { loading } = useProductsContext();
 
   return (
     <div className='spinner'>

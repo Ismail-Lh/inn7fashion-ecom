@@ -5,10 +5,11 @@ import './PopularProducts.scss';
 
 import { CardItem, Spinner } from '..';
 import { useFiltersContext } from '../../contexts/filters_context';
+import { useProductsContext } from '../../contexts/products_context';
 
 const PopularProducts = () => {
   const { popular_products: products } = useFiltersContext();
-  const [loading, setLoading] = useState(true);
+  const { loading } = useProductsContext();
 
   const [breakPoints, setbreakPoints] = useState([
     { width: 1, itemsToShow: 1 },
@@ -36,7 +37,7 @@ const PopularProducts = () => {
   return (
     <div className='cards'>
       {loading ? (
-        <Spinner loading={loading} setLoading={setLoading} />
+        <Spinner />
       ) : (
         <>
           <h1>most popular</h1>

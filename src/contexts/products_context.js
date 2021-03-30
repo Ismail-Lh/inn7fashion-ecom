@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useEffect, useReducer } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from 'react';
 
 import { GET_ALL_PRODUCTS, UPDATE_GENDER, GET_DESIGNER } from '../actions';
 
@@ -10,6 +16,7 @@ import ProductsReducer from '../reducers/products_reducer';
 
 const initialState = {
   all_products: getLocalStorage('allProducts'),
+  loading: false,
   gender: getLocalStorage('gender'),
   designer_data: getLocalStorage('designerData'),
 };
@@ -20,14 +27,14 @@ export const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(ProductsReducer, initialState);
 
   // Get products from firebase hooks
-  const { men } = useFirebaseData('men');
+  const { men, loading } = useFirebaseData('men');
   const { women } = useFirebaseData('women');
 
   // Get allProducts function
   useEffect(() => {
     dispatch({
       type: GET_ALL_PRODUCTS,
-      payload: { men, women },
+      payload: { men, women, loading },
     });
   }, [men, women]);
 

@@ -3,11 +3,12 @@ import { GET_ALL_PRODUCTS, UPDATE_GENDER, GET_DESIGNER } from '../actions';
 const ProductsReducer = (state, action) => {
   // Get allProducts action
   if (action.type === GET_ALL_PRODUCTS) {
-    const { men, women } = action.payload;
+    const { men, women, loading } = action.payload;
 
     return {
       ...state,
       all_products: { men: [...men], women: [...women] },
+      loading,
     };
   }
 
