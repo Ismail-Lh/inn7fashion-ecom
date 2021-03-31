@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { useProductsContext } from '../../contexts/products_context';
 import { useFiltersContext } from '../../contexts/filters_context';
-import { designers } from '../../productsData';
+import { designers } from '../../designersData';
 import { Links } from '..';
 
 import './DesignersContainer.scss';

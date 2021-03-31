@@ -86,13 +86,17 @@ const Navbar = () => {
           </ul>
 
           <div className='nav__links-2'>
-            <Link to='/women' data-gender='women' onClick={updateGender}>
+            <Link
+              to='/women'
+              data-gender='women'
+              className={`${gender === 'women' ? 'active' : ''}`}
+              onClick={updateGender}>
               women
             </Link>
             <Link
               to='/men'
               data-gender='men'
-              className='active'
+              className={`${gender === 'men' ? 'active' : ''}`}
               onClick={updateGender}>
               men
             </Link>

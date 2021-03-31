@@ -1,10 +1,4 @@
-import React, {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useReducer,
-} from 'react';
+import React, { createContext, useContext, useEffect, useReducer } from 'react';
 import FiltersReducer from '../reducers/filters_reducer';
 import { useProductsContext } from './products_context';
 
@@ -31,7 +25,7 @@ const initialState = {
   filtered_products: [],
   popular_products: [],
   single_product: getLocalStorage('singleProduct'),
-  products_category: 'clothing',
+  products_category: null,
   sort: 'price-lowest',
   filters: {
     max_price: 0,

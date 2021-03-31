@@ -1,10 +1,4 @@
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useReducer,
-  useState,
-} from 'react';
+import React, { createContext, useContext, useEffect, useReducer } from 'react';
 
 import { GET_ALL_PRODUCTS, UPDATE_GENDER, GET_DESIGNER } from '../actions';
 

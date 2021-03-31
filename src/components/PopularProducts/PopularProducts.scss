@@ -13,16 +13,21 @@
     padding: 3rem 1rem;
   }
 
+  @media (max-width: 412px) {
+    padding: 2rem 0.5rem 1rem 0.5rem;
+    margin-top: 6rem;
+  }
+
   @media (max-width: 375px) {
-    padding: 2rem 0.5rem;
+    margin-top: 5rem;
   }
 
   & .card {
     &__img {
-      height: auto;
+      height: 53.1rem;
 
-      & .sizes {
-        bottom: 2.6rem;
+      @media (max-width: 375px) {
+        height: auto;
       }
     }
   }
