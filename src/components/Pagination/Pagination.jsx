@@ -2,7 +2,12 @@ import React from 'react';
 
 import './Pagination.scss';
 
-const Pagination = ({ productsPerPage, totalProducts, paginate }) => {
+const Pagination = ({
+  productsPerPage,
+  totalProducts,
+  paginate,
+  currentPage,
+}) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalProducts / productsPerPage); i++) {
@@ -14,7 +19,11 @@ const Pagination = ({ productsPerPage, totalProducts, paginate }) => {
       {pageNumbers.map(number => (
         <li
           key={number}
-          className='pagination__item'
+          className={`${
+            currentPage === number
+              ? 'pagination__item active'
+              : 'pagination__item'
+          }`}
           onClick={() => paginate(number)}>
           {number}
         </li>

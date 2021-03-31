@@ -2,11 +2,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 4rem;
 
   &__item {
-    margin-right: 1rem;
     color: #282828;
+    background-color: #ebebeb;
+    font-size: 1.8rem;
+    padding: 1rem 1.5rem;
+    border: 1px solid #fff;
     cursor: pointer;
+  }
+
+  .active {
+    background: #282828;
+    color: #fff;
   }
 }
