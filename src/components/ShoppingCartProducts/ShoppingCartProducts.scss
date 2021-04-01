@@ -3,10 +3,19 @@
     .header,
     .product {
       display: grid;
-      grid-template-columns: 2fr repeat(3, 1fr);
+      grid-template-columns: 3fr repeat(3, 1fr);
       column-gap: 1rem;
       padding: 1rem;
       border-bottom: 1px solid #ebebeb;
+
+      @media (max-width: 768px) {
+        column-gap: 1rem;
+      }
+
+      @media (max-width: 425px) {
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+      }
     }
 
     .header {
@@ -14,12 +23,20 @@
         text-transform: uppercase;
         font-size: 1.8rem;
         font-weight: 300;
+
+        @media (max-width: 425px) {
+          display: none;
+        }
       }
     }
 
     .products {
       display: grid;
       grid-template-rows: 23rem;
+
+      @media (max-width: 425px) {
+        grid-template-rows: auto;
+      }
 
       .product {
         &__image {
@@ -33,6 +50,10 @@
           p:not(:last-of-type) {
             margin-bottom: 0.5rem;
           }
+
+          @media (max-width: 425px) {
+            grid-column: 1 / 5;
+          }
         }
 
         &__info,
@@ -40,6 +61,14 @@
         &__qty,
         &__actions {
           padding-top: 1rem;
+        }
+
+        &__price,
+        &__qty,
+        &__actions {
+          @media (max-width: 425px) {
+            text-align: center;
+          }
         }
 
         &__name {
@@ -76,6 +105,15 @@
           .amount-btns {
             padding: 0;
             justify-items: flex-start;
+            margin-right: 0;
+
+            @media (max-width: 425px) {
+              justify-items: center;
+            }
+          }
+
+          @media (max-width: 425px) {
+            grid-column: 2 / 4;
           }
         }
 
@@ -85,6 +123,10 @@
             margin-left: 1rem;
             text-transform: capitalize;
             font-weight: 300;
+
+            @media (max-width: 768px) {
+              display: none;
+            }
           }
         }
       }

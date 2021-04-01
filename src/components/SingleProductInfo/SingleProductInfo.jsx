@@ -7,7 +7,6 @@ import { useProductsContext } from '../../contexts/products_context';
 import { useCartContext } from '../../contexts/cart_context';
 
 import { Button, AmountButtons, ProductPrice } from '..';
-import { useFiltersContext } from '../../contexts/filters_context';
 
 const SingleProductInfo = ({ product }) => {
   const { gender } = useProductsContext();

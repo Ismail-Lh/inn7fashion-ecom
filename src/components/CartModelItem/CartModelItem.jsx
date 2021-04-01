@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import './CartModelItem.scss';
 
@@ -13,24 +12,20 @@ const CartModelItem = ({
   designer,
   price,
   size,
-  image,
   color,
   discountPer,
 }) => {
-  const { gender, getSingleProduct } = useProductsContext();
+  const { gender } = useProductsContext();
 
   return (
     <div className='cartModel__item'>
       <RemoveButton id={id} />
-      <Link
-        to={`/products/${gender}/${designer}/${name}`}
-        onClick={() => getSingleProduct(id, gender)}
-        className='cartModel__img'>
+      <div className='cartModel__img'>
         <img
           src={`/images/${gender}/${designer}/${name}/${color}/1.jpg`}
           alt={name}
         />
-      </Link>
+      </div>
       <div className='cartModel__info'>
         <p className='name'>{name}</p>
         <p className='designer'>{designer}</p>

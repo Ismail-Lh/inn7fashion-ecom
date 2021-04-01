@@ -22,6 +22,10 @@
     margin-top: 5rem;
   }
 
+  @media (max-width: 350px) {
+    margin-top: 2rem;
+  }
+
   & .card {
     &__img {
       height: 53.1rem;

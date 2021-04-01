@@ -1,59 +1,66 @@
-.shoppingCart {
-  &__checkout {
-    h2 {
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-    }
+.shoppingCart__checkout {
+  @media (max-width: 1024px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    .promotionalCode,
-    .checkout {
-      padding: 3rem 2rem;
-      border: 1px solid #ebebeb;
-    }
+  @media (max-width: 425px) {
+    grid-template-columns: 1fr;
+  }
 
-    .promotionalCode {
-      &__form {
-        input {
-          padding: 1.5rem 1rem;
-          border: 1px solid #ebebeb;
-          width: 75%;
-          text-transform: capitalize;
-        }
+  h2 {
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
 
-        button {
-          background-color: #282828;
-          color: #fff;
-          text-transform: uppercase;
-          height: 4.7rem;
-          width: 25%;
-        }
+  .promotionalCode,
+  .checkout {
+    padding: 3rem 2rem;
+    border: 1px solid #ebebeb;
+  }
+
+  .promotionalCode {
+    &__form {
+      input {
+        padding: 1.5rem 1rem;
+        border: 1px solid #ebebeb;
+        width: 75%;
+        text-transform: capitalize;
       }
-    }
 
-    .checkout {
-      border-top: 0;
-
-      .subtotal,
-      .grandtotal {
+      button {
+        background-color: #282828;
+        color: #fff;
         text-transform: uppercase;
-        font-size: 2rem;
+        height: 4.7rem;
+        width: 25%;
       }
+    }
+  }
 
-      .subtotal {
-        font-weight: 300;
-        margin-bottom: 1rem;
-      }
+  .checkout {
+    border-top: 0;
 
-      .grandtotal {
-        font-weight: bold;
-      }
+    .subtotal,
+    .grandtotal {
+      text-transform: uppercase;
+      font-size: 2rem;
+    }
 
-      .btn {
-        margin-right: 0;
-        margin-top: 1.5rem;
-        padding: 1.5rem 4rem;
-        width: 100%;
-      }
+    .subtotal {
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+
+    .grandtotal {
+      font-weight: bold;
+    }
+
+    .btn {
+      margin-right: 0;
+      margin-top: 1.5rem;
+      padding: 1.5rem 4rem;
+      width: 100%;
     }
   }
 }
