@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { Footer, Navbar } from './components';
+import { Footer, MobileMenu, Navbar } from './components';
 import {
   HomePage,
   MenPage,
@@ -16,6 +16,7 @@ function App() {
   return (
     <Router>
       <Navbar />
+      <MobileMenu />
 
       <Switch>
         <Route exact path='/'>

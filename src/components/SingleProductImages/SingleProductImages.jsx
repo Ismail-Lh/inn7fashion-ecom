@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useFiltersContext } from '../../contexts/filters_context';
 import { useProductsContext } from '../../contexts/products_context';
 
 import './SingleProductImages.scss';

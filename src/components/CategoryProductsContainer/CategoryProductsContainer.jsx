@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './CategoryProductsContainer.scss';
-
 import { ProductsContainer, Spinner } from '..';
 import { useProductsContext } from '../../contexts/products_context';
 

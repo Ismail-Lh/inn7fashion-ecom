@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import './Navbar.scss';
@@ -6,19 +6,15 @@ import logo from '../../assets/logo.png';
 import bag from '../../assets/bag.png';
 
 import { navLinks, dropDownLinks } from '../../utils/constants';
-import { MobileMenu, CartModel, DropDownMenu } from '..';
+import { CartModel, DropDownMenu } from '..';
 import { useProductsContext } from '../../contexts/products_context';
 import { useCartContext } from '../../contexts/cart_context';
 import { useFiltersContext } from '../../contexts/filters_context';
 
 const Navbar = () => {
-  const { updateGender, gender } = useProductsContext();
+  const { updateGender, gender, openSidebar } = useProductsContext();
   const { getProductsByCategory } = useFiltersContext();
   const { show_cart, showCart, cart } = useCartContext();
-  const [showMenu, setShowMenu] = useState(false);
-
-  const toggleMenu = () => setShowMenu(!showMenu);
-  const closeMenu = () => setShowMenu(false);
 
   return (
     <>
@@ -102,13 +98,12 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <div className='mobile__menu-icon' onClick={toggleMenu}>
-            <i className={`${showMenu ? 'fas fa-times' : 'fas fa-bars'}`} />
+          <div className='mobile__menu-icon' onClick={openSidebar}>
+            <i className='fas fa-bars' />
           </div>
         </div>
       </nav>
 
-      {showMenu && <MobileMenu showMenu={showMenu} closeMenu={closeMenu} />}
       {show_cart && <CartModel />}
     </>
   );

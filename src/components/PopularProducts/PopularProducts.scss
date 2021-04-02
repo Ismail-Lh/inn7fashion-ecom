@@ -2,11 +2,9 @@
   color: #282828;
   padding: 3rem 4rem;
   text-align: center;
-  margin-top: 3rem;
 
   @media (max-width: 1024px) {
     padding: 3rem 3rem;
-    margin-top: 0;
   }
 
   @media (max-width: 768px) {
@@ -15,15 +13,6 @@
 
   @media (max-width: 412px) {
     padding: 2rem 0.5rem 1rem 0.5rem;
-    margin-top: 6rem;
-  }
-
-  @media (max-width: 375px) {
-    margin-top: 5rem;
-  }
-
-  @media (max-width: 350px) {
-    margin-top: 2rem;
   }
 
   & .card {

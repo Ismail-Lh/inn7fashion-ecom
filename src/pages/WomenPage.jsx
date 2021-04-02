@@ -12,11 +12,11 @@ const images = { feat_1, feat_2, feat_3, feat_4 };
 
 const WomenPage = () => {
   return (
-    <>
+    <div className='page__women'>
       <FeaturedProduct images={featuredImages(images)} />
       <PopularProducts />
       <InstaShop />
-    </>
+    </div>
   );
 };
 

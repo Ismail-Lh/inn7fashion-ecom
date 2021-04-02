@@ -1,16 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './DesignerProductsContainer.scss';
-
 import { useProductsContext } from '../../contexts/products_context';
-import {
-  DesignerInfo,
-  Links,
-  ProductsContainer,
-  Spinner,
-  Pagination,
-} from '..';
+import { DesignerInfo, Links, ProductsContainer, Spinner } from '..';
 
 const DesignerProductsContainer = () => {
   const { gender, designer_data: designer, loading } = useProductsContext();

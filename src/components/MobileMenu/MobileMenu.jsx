@@ -3,23 +3,37 @@ import { Link } from 'react-router-dom';
 
 import './MobileMenu.scss';
 import { navLinks } from '../../utils/constants';
+import { useProductsContext } from '../../contexts/products_context';
+import { useFiltersContext } from '../../contexts/filters_context';
 
-const MobileMenu = ({ showMenu, closeMenu }) => {
+const MobileMenu = () => {
+  const { gender, closeSidebar, isSideBarOpen } = useProductsContext();
+  const { getProductsByCategory } = useFiltersContext();
+
+  const handelClick = category => {
+    closeSidebar();
+    getProductsByCategory(category);
+  };
+
   return (
-    <>
-      <ul
-        className={`${
-          showMenu
-            ? 'mobile__menu animate__animated animate__fadeInUp'
-            : 'mobile__menu animate__animated animate__fadeOutUp'
-        }`}>
+    <div
+      className={`${
+        isSideBarOpen ? 'mobile__menu show-menu ' : 'mobile__menu '
+      }`}>
+      <ul>
         {navLinks.map(({ id, link, url }) => (
-          <li key={id} className='mobile__menu-link' onClick={closeMenu}>
-            <Link to={`/${url}`}>{link}</Link>
+          <li
+            key={id}
+            className='mobile__menu-link'
+            onClick={() => handelClick(link)}>
+            <Link to={`/${gender}/${url}`}>{link}</Link>
           </li>
         ))}
       </ul>
-    </>
+      <div className='mobile__menu-close' onClick={closeSidebar}>
+        <i className='fas fa-times' />
+      </div>
+    </div>
   );
 };
 

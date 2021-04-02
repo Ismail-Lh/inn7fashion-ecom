@@ -1,18 +1,5 @@
 .instashop {
   padding-bottom: 2rem;
-  margin-top: 4rem;
-
-  @media (max-width: 640px) {
-    margin-top: 13rem;
-  }
-
-  @media (max-width: 411px) {
-    margin-top: 6rem;
-  }
-
-  @media (max-width: 360px) {
-    margin-top: 1rem;
-  }
 
   &__title {
     color: #282828;

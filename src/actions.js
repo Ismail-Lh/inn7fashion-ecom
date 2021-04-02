@@ -3,6 +3,8 @@ export const GET_ALL_PRODUCTS = 'GET_ALL_PRODUCTS';
 export const UPDATE_GENDER = 'UPDATE_GENDER';
 export const UPDATE_CATEGORY = 'UPDATE_CATEGORY';
 export const GET_DESIGNER = 'GET_DESIGNER';
+export const OPEN_SIDEBAR = 'OPEN_SIDEBAR';
+export const CLOSE_SIDEBAR = 'CLOSE_SIDEBAR';
 
 // Filters Context
 export const LOAD_PRODUCTS = 'LOAD_PRODUCTS';

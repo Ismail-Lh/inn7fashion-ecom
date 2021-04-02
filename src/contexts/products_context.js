@@ -1,6 +1,12 @@
 import React, { createContext, useContext, useEffect, useReducer } from 'react';
 
-import { GET_ALL_PRODUCTS, UPDATE_GENDER, GET_DESIGNER } from '../actions';
+import {
+  GET_ALL_PRODUCTS,
+  UPDATE_GENDER,
+  GET_DESIGNER,
+  OPEN_SIDEBAR,
+  CLOSE_SIDEBAR,
+} from '../actions';
 
 import { getLocalStorage, setLocalStorage } from '../utils/helpers';
 
@@ -13,6 +19,7 @@ const initialState = {
   loading: false,
   gender: getLocalStorage('gender'),
   designer_data: getLocalStorage('designerData'),
+  isSideBarOpen: false,
 };
 
 const ProductsContext = createContext();
@@ -46,6 +53,10 @@ export const ProductsProvider = ({ children }) => {
     });
   };
 
+  const openSidebar = () => dispatch({ type: OPEN_SIDEBAR });
+
+  const closeSidebar = () => dispatch({ type: CLOSE_SIDEBAR });
+
   // Set allProducts, gender & designerData to localStorage
   useEffect(() => {
     setLocalStorage('allProducts', state.all_products);
@@ -60,6 +71,8 @@ export const ProductsProvider = ({ children }) => {
         ...state,
         updateGender,
         getDesigner,
+        openSidebar,
+        closeSidebar,
       }}>
       {children}
     </ProductsContext.Provider>

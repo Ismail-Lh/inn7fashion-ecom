@@ -2,6 +2,13 @@
   &_info {
     width: 80%;
 
+    @media (max-width: 768px) {
+      width: 100%;
+      // display: grid;
+      // grid-template-columns: 1fr;
+      // grid-template-row: max-content;
+    }
+
     &-1 {
       padding-bottom: 1rem;
       border-bottom: 1px solid #4545453f;
@@ -16,8 +23,26 @@
       grid-template-columns: 1fr auto;
       align-items: center;
 
+      @media (max-width: 1024px) {
+        grid-template-columns: 40% auto;
+      }
+
       .amount-btns {
         width: 100%;
+      }
+
+      .btn {
+        @media (max-width: 1024px) {
+          padding: 1.5rem 4rem;
+        }
+
+        @media (max-width: 768px) {
+          padding: 1.5rem 3rem;
+        }
+
+        @media (max-width: 375px) {
+          padding: 1rem;
+        }
       }
 
       // & .wishlist {
@@ -46,6 +71,10 @@
       font-weight: 300;
       text-transform: uppercase;
       font-size: 3rem;
+
+      @media (max-width: 375px) {
+        font-size: 2.5rem;
+      }
     }
 
     &-designer {

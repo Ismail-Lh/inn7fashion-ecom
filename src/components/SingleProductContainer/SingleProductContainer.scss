@@ -2,9 +2,31 @@
   color: #282828;
   padding: 1.5rem 6rem;
 
+  @media (max-width: 425px) {
+    padding: 1.5rem 4rem;
+  }
+
+  @media (max-width: 375px) {
+    padding: 1.5rem 3rem;
+  }
+
+  @media (max-width: 320px) {
+    padding: 1.5rem 2rem;
+  }
+
   &-grid {
     display: grid;
     grid-template-columns: 55% 45%;
     column-gap: 5rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 3rem;
+    }
+
+    @media (max-width: 425px) {
+      grid-template-columns: 1fr;
+      row-gap: 2rem;
+    }
   }
 }
