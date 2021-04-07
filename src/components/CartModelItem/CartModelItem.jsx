@@ -22,7 +22,7 @@ const CartModelItem = ({
       <RemoveButton id={id} />
       <div className='cartModel__img'>
         <img
-          src={`/images/${gender}/${designer}/${name}/${color}/1.jpg`}
+          src={`/images/${gender}/${designer}/${name}/${color}/small/1.jpg`}
           alt={name}
         />
       </div>

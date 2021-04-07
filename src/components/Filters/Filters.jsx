@@ -5,7 +5,13 @@ import { formatPrice } from '../../utils/helpers';
 import './Filters.scss';
 
 const Filters = () => {
-  const { filters, updateFilters, clearFilters } = useFiltersContext();
+  const {
+    filters,
+    updateFilters,
+    clearFilters,
+    filtered_products: products,
+  } = useFiltersContext();
+
   const {
     max_price,
     min_price,
@@ -14,6 +20,9 @@ const Filters = () => {
     max_percentage,
     min_percentage,
   } = filters;
+
+  const types = products.map(product => product.type);
+  const productTypes = ['all', ...new Set(types)];
 
   return (
     <div className='filters'>
@@ -54,6 +63,24 @@ const Filters = () => {
             max={max_price}
             onChange={updateFilters}
           />
+        </div>
+
+        <div className='filters__type'>
+          <h4>filter product by type</h4>
+
+          <div>
+            {productTypes.map((type, idx) => (
+              <button
+                type='button'
+                key={idx}
+                name='product_type'
+                onClick={updateFilters}
+                // className={`${category === ctg.toLowerCase() && 'active'}`}
+              >
+                {type}
+              </button>
+            ))}
+          </div>
         </div>
       </form>
 

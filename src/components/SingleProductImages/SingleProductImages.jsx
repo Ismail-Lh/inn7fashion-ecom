@@ -15,7 +15,9 @@ const SingleProductImages = ({ product }) => {
       <div className='single_product-images-1'>
         {images.map((img, i) => (
           <img
-            src={`/images/${gender}/${designer}/${name}/${color}/${i + 1}.jpg`}
+            src={`/images/${gender}/${designer}/${name}/${color}/small/${
+              i + 1
+            }.jpg`}
             alt={img}
             key={i}
             onClick={() => setIdx(i + 1)}
@@ -24,7 +26,7 @@ const SingleProductImages = ({ product }) => {
       </div>
       <div className='single_product-images-2'>
         <img
-          src={`/images/${gender}/${designer}/${name}/${color}/${idx}.jpg`}
+          src={`/images/${gender}/${designer}/${name}/${color}/large/${idx}.jpg`}
           alt={images[idx]}
         />
       </div>

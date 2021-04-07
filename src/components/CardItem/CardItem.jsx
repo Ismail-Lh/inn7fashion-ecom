@@ -31,14 +31,14 @@ const CardItem = ({
         className='card__img'
         onClick={() => getSingleProduct(id)}>
         <img
-          src={`/images/${gender}/${designer}/${name}/${color}/${
+          src={`/images/${gender}/${designer}/${name}/${color}/large/${
             images.indexOf(images[0]) + 1
           }.jpg`}
           alt={`${designer}-${name}-1`}
           className='card__img-1'
         />
         <img
-          src={`/images/${gender}/${designer}/${name}/${color}/${
+          src={`/images/${gender}/${designer}/${name}/${color}/large/${
             images.indexOf(images[1]) + 1
           }.jpg`}
           alt={`${designer}-${name}-2`}

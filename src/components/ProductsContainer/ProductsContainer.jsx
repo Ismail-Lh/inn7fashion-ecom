@@ -5,10 +5,7 @@ import { Filters, Sort, ProductsItems, Pagination } from '..';
 import { useFiltersContext } from '../../contexts/filters_context';
 
 const ProductsContainer = () => {
-  const {
-    filtered_products: products,
-    products_category: category,
-  } = useFiltersContext();
+  const { products, products_category: category } = useFiltersContext();
 
   const [productsPerPage] = useState(12);
   const [currentPage, setCurrentPage] = useState(1);

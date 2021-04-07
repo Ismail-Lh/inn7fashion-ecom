@@ -41,7 +41,7 @@ const ShoppingCartProducts = () => {
                   to={`/products/${gender}/${designer}/${name}`}
                   onClick={() => getSingleProduct(id, gender)}>
                   <img
-                    src={`/images/${gender}/${designer}/${name}/${color}/1.jpg`}
+                    src={`/images/${gender}/${designer}/${name}/${color}/small/1.jpg`}
                     alt={name}
                   />
                 </Link>

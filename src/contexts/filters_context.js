@@ -34,6 +34,7 @@ const initialState = {
     min_percentage: 10,
     max_percentage: 10,
     percentage: 10,
+    product_type: 'all',
   },
 };
 
@@ -90,11 +91,18 @@ export const FiltersProvider = ({ children }) => {
   // Set products to localStorage
   useEffect(() => {
     setLocalStorage('products', state.products);
-  }, [state.products_category, state.products, state.products_by_gender]);
+  }, [
+    state.products_category,
+    state.products,
+    state.products_by_gender,
+    state.filters,
+  ]);
 
   // Update Filters function
   const updateFilters = e => {
     let { name, value } = e.target;
+
+    if (name === 'product_type') value = e.target.textContent;
 
     if (name === 'price') value = +value;
 
@@ -104,7 +112,7 @@ export const FiltersProvider = ({ children }) => {
   // Filter products function
   useEffect(() => {
     dispatch({ type: FILTER_PRODUCTS });
-  }, [state.filters.price, state.filters.percentage, state.products]);
+  }, [state.filters.price, state.filters.product_type]);
 
   // Get filters value function
   useEffect(() => {

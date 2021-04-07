@@ -1889,6 +1889,119 @@ export default function addDataBase(firebase) {
   //   stock: 6,
   // });
 
+  // dataBase.collection('men').add({
+  //   id: uuidv4(),
+  //   name: 'y-3 bucket hat',
+  //   designer: 'y-3',
+  //   category: 'accessories',
+  //   type: 'hats',
+  //   images: [
+  //     'y-3_bucket_hat_khaki_1',
+  //     'y-3_bucket_hat_khaki_2',
+  //     'y-3_bucket_hat_khaki_3',
+  //     'y-3_bucket_hat_khaki_4',
+  //   ],
+  //   color: 'khaki',
+  //   sku: 'GT6385~KHAKI',
+  //   desc: 'Classic Nylon Bucket Hat by Y-3 in Khaki',
+  //   details: [
+  //     'Pull-on style',
+  //     'Embroidered tonal logo',
+  //     'Mesh lining',
+  //     'Adjustable cord with stopper',
+  //     'Inner sweatband',
+  //     'Doubleweave',
+  //   ],
+  //   price: 8500,
+  //   sizes: [{ size: 'One Size', isAvailable: true }],
+  //   popularity: false,
+  //   stock: 6,
+  // });
+
+  // dataBase.collection('men').add({
+  //   id: uuidv4(),
+  //   name: 'y-3 cap',
+  //   designer: 'y-3',
+  //   category: 'accessories',
+  //   type: 'hats',
+  //   images: [
+  //     'y-3_cap_beige_1',
+  //     'y-3_cap_beige_2',
+  //     'y-3_cap_beige_3',
+  //     'y-3_cap_beige_4',
+  //   ],
+  //   color: 'beige',
+  //   sku: 'GT6380~BEIGE',
+  //   desc: 'Square-Label Cap By Y-3 in Cream',
+  //   details: [
+  //     'Y-3 silicon logo patch at front',
+  //     'Eyelets',
+  //     'Curved',
+  //     'Adjustable metal clasp closure',
+  //     'Unisex',
+  //   ],
+  //   price: 7000,
+  //   sizes: [{ size: 'One Size', isAvailable: true }],
+  //   popularity: false,
+  //   stock: 10,
+  // });
+
+  // dataBase.collection('men').add({
+  //   id: uuidv4(),
+  //   name: 'y-3 cap',
+  //   designer: 'y-3',
+  //   category: 'accessories',
+  //   type: 'hats',
+  //   images: [
+  //     'y-3_cap_olive_1',
+  //     'y-3_cap_olive_2',
+  //     'y-3_cap_olive_3',
+  //     'y-3_cap_olive_4',
+  //   ],
+  //   color: 'olive',
+  //   sku: 'GT6382~OLIVE',
+  //   desc: 'Ripstop Logo Cap By Y-3 in Olive Green',
+  //   details: [
+  //     'Y-3 silicon logo patch at front',
+  //     'Eyelets',
+  //     'Curved',
+  //     'Adjustable metal clasp closure',
+  //     'Unisex',
+  //   ],
+  //   price: 7000,
+  //   sizes: [{ size: 'One Size', isAvailable: true }],
+  //   popularity: false,
+  //   stock: 10,
+  // });
+
+  // dataBase.collection('men').add({
+  //   id: uuidv4(),
+  //   name: 'y-3 swim goggles',
+  //   designer: 'y-3',
+  //   category: 'accessories',
+  //   type: 'sunglasses',
+  //   images: [
+  //     'y-3_swim_goggles_black_1',
+  //     'y-3_swim_goggles_black_2',
+  //     'y-3_swim_goggles_black_3',
+  //     'y-3_swim_goggles_black_4',
+  //   ],
+  //   color: 'black',
+  //   sku: 'GT6389~BLACK',
+  //   desc: 'Ripstop Logo Cap By Y-3 in Olive Green',
+  //   details: [
+  //     'Adjustable Silicone Strap',
+  //     'Logo Detail',
+  //     'Wide field of vision',
+  //     'overmolded seal',
+  //     'Mirror polycarbonate lenses',
+  //   ],
+  //   price: 7000,
+  //   sizes: [{ size: 'One Size', isAvailable: true }],
+  //   popularity: false,
+  //   stock: 10,
+  // });
+
   /* Women
       ============================================ */
   // dataBase.collection('women').add({
