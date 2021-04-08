@@ -100,17 +100,17 @@ const FiltersReducer = (state, action) => {
       return finalPrice;
     });
 
-    const percentages = products?.map(({ discountPer }) => {
-      if (discountPer === undefined) discountPer = 100;
+    // const percentages = products?.map(({ discountPer }) => {
+    //   if (discountPer === undefined) discountPer = 100;
 
-      return discountPer;
-    });
+    //   return discountPer;
+    // });
 
     let maxPrice = Math.max(...prices);
     let minPrice = Math.min(...prices);
 
-    let maxPercentage = Math.max(...percentages);
-    let minPercentage = Math.min(...percentages);
+    // let maxPercentage = Math.max(...percentages);
+    // let minPercentage = Math.min(...percentages);
 
     return {
       ...state,
@@ -119,9 +119,9 @@ const FiltersReducer = (state, action) => {
         max_price: maxPrice,
         min_price: minPrice,
         price: maxPrice,
-        max_percentage: maxPercentage,
-        min_percentage: minPercentage,
-        percentage: maxPercentage,
+        // max_percentage: maxPercentage,
+        // min_percentage: minPercentage,
+        // percentage: maxPercentage,
       },
     };
   }
@@ -138,7 +138,7 @@ const FiltersReducer = (state, action) => {
 
   // Filter products action
   if (action.type === FILTER_PRODUCTS) {
-    const { filtered_products: products } = state;
+    const { products } = state;
     const { price, product_type } = state.filters;
 
     let tempProducts = [...products];
@@ -163,7 +163,7 @@ const FiltersReducer = (state, action) => {
     //     ?.filter(product => product.discountPer <= +percentage);
     // }
 
-    return { ...state, products: tempProducts };
+    return { ...state, filtered_products: tempProducts };
   }
 
   // Clear filters action

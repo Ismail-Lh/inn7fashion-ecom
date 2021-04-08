@@ -37,6 +37,7 @@ export const ProductsProvider = ({ children }) => {
       type: GET_ALL_PRODUCTS,
       payload: { men, women, loading },
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [men, women]);
 
   // Update gender function

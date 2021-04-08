@@ -5,16 +5,25 @@ import './Navbar.scss';
 import logo from '../../assets/logo.png';
 import bag from '../../assets/bag.png';
 
-import { navLinks, dropDownLinks } from '../../utils/constants';
-import { CartModel, DropDownMenu } from '..';
+import { navLinks } from '../../utils/constants';
+import { CartModel } from '..';
 import { useProductsContext } from '../../contexts/products_context';
 import { useCartContext } from '../../contexts/cart_context';
 import { useFiltersContext } from '../../contexts/filters_context';
 
 const Navbar = () => {
   const { updateGender, gender, openSidebar } = useProductsContext();
-  const { getProductsByCategory } = useFiltersContext();
+  const {
+    getProductsByCategory,
+    products_category: category,
+    updateCategory,
+  } = useFiltersContext();
   const { show_cart, showCart, cart } = useCartContext();
+
+  const categoryProducts = category => {
+    updateCategory(category);
+    getProductsByCategory();
+  };
 
   return (
     <>
@@ -60,23 +69,35 @@ const Navbar = () => {
         <div className='nav__links'>
           <ul className='nav__links-1'>
             {navLinks?.map(({ id, link, url }) => (
-              <li key={id} className='nav__links-1-item'>
+              <li
+                key={id}
+                className='nav__links-1-item'
+                onClick={() => categoryProducts(link)}>
                 <Link
                   to={`/${gender}/${url}`}
-                  className='link'
-                  onClick={() => getProductsByCategory(link)}>
+                  className={`${
+                    link === category ? 'link link-active' : 'link'
+                  }`}>
                   {link}
                 </Link>
-                {dropDownLinks[gender][link] && (
+                {/* {dropDownLinks[gender][link] && (
                   <DropDownMenu>
                     <h4>{link}</h4>
                     {dropDownLinks[gender][link]?.map((item, idx) => (
-                      <li key={idx} className='dropDown__item'>
-                        <Link to={`/${gender}/${link}/${item}`}>{item}</Link>
+                      <li
+                        key={idx}
+                        className='dropDown__item'
+                        onClick={() => categoryProducts(link)}>
+                        <Link
+                          to={`/${gender}/${link}`}
+                          name='product_type'
+                          onClick={updateFilters}>
+                          {item}
+                        </Link>
                       </li>
                     ))}
                   </DropDownMenu>
-                )}
+                )} */}
               </li>
             ))}
           </ul>

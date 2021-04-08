@@ -158,7 +158,13 @@
 
         & .link {
           color: #a9a9a9;
+          border-bottom: 1px solid transparent;
           transition: color 0.2s ease-in;
+
+          &-active {
+            color: #fff;
+            border-bottom: 1px solid #fff;
+          }
 
           &:hover {
             color: #fff;
@@ -185,6 +191,10 @@
         text-align: center;
         width: 50%;
 
+        &:not(:last-of-type) {
+          border-right: 1px solid #a9a9a9;
+        }
+
         &.active {
           background-color: #a9a9a9;
           color: #282828;
@@ -202,6 +212,7 @@
         right: 0;
         transform: translateY(-50%);
         font-size: 2.5rem;
+        cursor: pointer;
       }
     }
   }

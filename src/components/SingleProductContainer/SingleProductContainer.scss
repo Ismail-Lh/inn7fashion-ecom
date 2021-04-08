@@ -19,12 +19,12 @@
     grid-template-columns: 55% 45%;
     column-gap: 5rem;
 
-    @media (max-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: 3rem;
-    }
+    // @media (max-width: 768px) {
+    //   grid-template-columns: repeat(2, 1fr);
+    //   column-gap: 3rem;
+    // }
 
-    @media (max-width: 425px) {
+    @media (max-width: 768px) {
       grid-template-columns: 1fr;
       row-gap: 2rem;
     }

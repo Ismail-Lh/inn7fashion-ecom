@@ -41,7 +41,11 @@ const initialState = {
 const FiltersContext = createContext();
 
 export const FiltersProvider = ({ children }) => {
-  const { all_products: products, gender } = useProductsContext();
+  const {
+    all_products: products,
+    gender,
+    designer_data: designer,
+  } = useProductsContext();
   const [state, dispatch] = useReducer(FiltersReducer, initialState);
 
   // Get products by gender
@@ -80,29 +84,31 @@ export const FiltersProvider = ({ children }) => {
   };
 
   // Get products by their category (clothing, footwear, bags, accessories)
-  const getProductsByCategory = category => {
+  const updateCategory = category => {
     dispatch({ type: UPDATE_CATEGORY, payload: category });
+  };
 
+  const getProductsByCategory = () =>
     dispatch({
       type: GET_PRODUCTS_BY_CATEGORY,
     });
-  };
 
   // Set products to localStorage
   useEffect(() => {
     setLocalStorage('products', state.products);
-  }, [
-    state.products_category,
-    state.products,
-    state.products_by_gender,
-    state.filters,
-  ]);
+  }, [state.products_category, state.products, state.products_by_gender]);
+
+  // Set the product_type = 'all' when the state of the products_category change
+  useEffect(() => {
+    state.filters = { ...state.filters, product_type: 'all' };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state.products_category]);
 
   // Update Filters function
   const updateFilters = e => {
     let { name, value } = e.target;
 
-    if (name === 'product_type') value = e.target.textContent;
+    if (name === 'product_type') value = e.target.textContent.toLowerCase();
 
     if (name === 'price') value = +value;
 
@@ -112,12 +118,12 @@ export const FiltersProvider = ({ children }) => {
   // Filter products function
   useEffect(() => {
     dispatch({ type: FILTER_PRODUCTS });
-  }, [state.filters.price, state.filters.product_type]);
+  }, [state.filters]);
 
   // Get filters value function
   useEffect(() => {
     dispatch({ type: GET_FILTERS_VALUE });
-  }, [state.products]);
+  }, [state.products_category, designer]);
 
   // Clear Filters function
   const clearFilters = () => {
@@ -143,6 +149,7 @@ export const FiltersProvider = ({ children }) => {
         updateSort,
         updateFilters,
         clearFilters,
+        updateCategory,
         getProductsByCategory,
         getDesignerProducts,
         getSingleProduct,

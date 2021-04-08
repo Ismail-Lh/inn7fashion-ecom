@@ -9,16 +9,17 @@ const Filters = () => {
     filters,
     updateFilters,
     clearFilters,
-    filtered_products: products,
+    products,
   } = useFiltersContext();
 
   const {
     max_price,
     min_price,
     price,
-    percentage,
-    max_percentage,
-    min_percentage,
+    product_type,
+    // percentage,
+    // max_percentage,
+    // min_percentage,
   } = filters;
 
   const types = products.map(product => product.type);
@@ -28,7 +29,7 @@ const Filters = () => {
     <div className='filters'>
       <h1 className='filters__title'>Filters</h1>
       <form className='filters__form' onSubmit={e => e.preventDefault()}>
-        <div className='filters__percentage'>
+        {/* <div className='filters__percentage'>
           <h4>discount percentage : {percentage}%</h4>
           <input
             type='range'
@@ -38,7 +39,7 @@ const Filters = () => {
             value={percentage}
             onChange={updateFilters}
           />
-        </div>
+        </div> */}
 
         {/* <div className='filters__collection'>
           <h4>collection</h4>
@@ -75,8 +76,9 @@ const Filters = () => {
                 key={idx}
                 name='product_type'
                 onClick={updateFilters}
-                // className={`${category === ctg.toLowerCase() && 'active'}`}
-              >
+                className={`${
+                  product_type === type?.toLowerCase() && 'active'
+                }`}>
                 {type}
               </button>
             ))}

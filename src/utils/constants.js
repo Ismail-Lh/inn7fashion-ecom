@@ -5,11 +5,6 @@ import feat_img_4 from '../assets/feat-4.jpg';
 
 export const navLinks = [
   {
-    id: 1,
-    link: 'new in',
-    url: 'new-in',
-  },
-  {
     id: 2,
     link: 'designers',
     url: 'designers',
@@ -34,33 +29,12 @@ export const navLinks = [
     link: 'accessories',
     url: 'accessories',
   },
-  {
-    id: 7,
-    link: 'sale',
-    url: 'sale',
-  },
 ];
 
 export const dropDownLinks = {
   men: {
-    // designers: [
-    //   'VIEW ALL',
-    //   '10SEI0OTTO',
-    //   '11 BY BORIS BIDJAN SABERI',
-    //   '139DCE',
-    //   '50 60 OFF',
-    //   'AITO',
-    //   'ANDREA ZORI',
-    //   'AVANT TOI',
-    //   'BAZZ&LUTRA',
-    //   'BLK DNM',
-    //   'CROQUIS BY JNBY',
-    //   'DAMIR DOMA',
-    //   'ISSAC SELLAM',
-    // ],
     clothing: [
-      'VIEW ALL',
-      'BLAZERS',
+      'blazers',
       'cardigans',
       'coats',
       'denim',
@@ -75,23 +49,9 @@ export const dropDownLinks = {
       'vests',
       'jumpsuits',
     ],
-    footwear: [
-      'view all',
-      'boots',
-      'lace-ups',
-      'loafers',
-      'sandals',
-      'sneakers',
-    ],
-    bags: [
-      'view all',
-      'backpacks',
-      'cases & wallets',
-      'shoulder bags',
-      'pouches',
-    ],
+    footwear: ['boots', 'lace-ups', 'loafers', 'sandals', 'sneakers'],
+    bags: ['backpacks', 'cases & wallets', 'shoulder bags', 'pouches'],
     accessories: [
-      'view all',
       'belts',
       'gloves',
       'hats',
@@ -103,24 +63,8 @@ export const dropDownLinks = {
     ],
   },
   women: {
-    // designers: [
-    //   'VIEW ALL',
-    //   '10SEI0OTTO',
-    //   '11 BY BORIS BIDJAN SABERI',
-    //   '139DCE',
-    //   '50 60 OFF',
-    //   'AITO',
-    //   'ANDREA ZORI',
-    //   'AVANT TOI',
-    //   'BAZZ&LUTRA',
-    //   'BLK DNM',
-    //   'CROQUIS BY JNBY',
-    //   'DAMIR DOMA',
-    //   'ISSAC SELLAM',
-    // ],
     clothing: [
-      'VIEW ALL',
-      'BLAZERS',
+      'blazers',
       'coats',
       'denim',
       'dresses',
@@ -139,7 +83,6 @@ export const dropDownLinks = {
       'vests',
     ],
     footwear: [
-      'view all',
       'boots',
       'flats',
       'lace-ups',
@@ -148,15 +91,8 @@ export const dropDownLinks = {
       'sneakers',
       'wedges',
     ],
-    bags: [
-      'view all',
-      'backpacks',
-      'cases & wallets',
-      'clutches',
-      'shoulder bags',
-    ],
+    bags: ['backpacks', 'cases & wallets', 'clutches', 'shoulder bags'],
     accessories: [
-      'view all',
       'belts',
       'cases & wallets',
       'gloves',

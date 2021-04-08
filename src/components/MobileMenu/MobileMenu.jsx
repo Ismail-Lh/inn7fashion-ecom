@@ -8,11 +8,12 @@ import { useFiltersContext } from '../../contexts/filters_context';
 
 const MobileMenu = () => {
   const { gender, closeSidebar, isSideBarOpen } = useProductsContext();
-  const { getProductsByCategory } = useFiltersContext();
+  const { getProductsByCategory, updateCategory } = useFiltersContext();
 
   const handelClick = category => {
     closeSidebar();
-    getProductsByCategory(category);
+    updateCategory(category);
+    getProductsByCategory();
   };
 
   return (

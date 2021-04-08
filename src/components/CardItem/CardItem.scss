@@ -69,7 +69,7 @@
       z-index: -111;
       transition: opacity 0.2s ease-in;
 
-      @media (max-width: 425px) {
+      @media (max-width: 768px) {
         opacity: 1;
         z-index: 1;
       }
