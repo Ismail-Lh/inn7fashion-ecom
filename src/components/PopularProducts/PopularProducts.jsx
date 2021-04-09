@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Carousel, { consts } from 'react-elastic-carousel';
 
 import './PopularProducts.scss';
@@ -11,7 +11,7 @@ const PopularProducts = () => {
   const { popular_products: products } = useFiltersContext();
   const { loading } = useProductsContext();
 
-  const [breakPoints, setbreakPoints] = useState([
+  const [breakPoints] = useState([
     { width: 1, itemsToShow: 1 },
     { width: 550, itemsToShow: 2 },
     { width: 850, itemsToShow: 1 },

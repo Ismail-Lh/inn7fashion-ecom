@@ -133,28 +133,28 @@
         position: relative;
         padding: 0 0.5rem 1rem 0;
 
-        &:hover {
-          .dropDown {
-            display: inline-block;
-            opacity: 1;
-          }
-        }
+        // &:hover {
+        //   .dropDown {
+        //     display: inline-block;
+        //     opacity: 1;
+        //   }
+        // }
 
-        .dropDown {
-          h4 {
-            color: #282828;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-          }
+        // .dropDown {
+        //   h4 {
+        //     color: #282828;
+        //     text-transform: uppercase;
+        //     margin-bottom: 1rem;
+        //   }
 
-          &__item:not(:last-of-type) {
-            margin-bottom: 0.3rem;
-          }
+        //   &__item:not(:last-of-type) {
+        //     margin-bottom: 0.3rem;
+        //   }
 
-          &__link {
-            color: #282828;
-          }
-        }
+        //   &__link {
+        //     color: #282828;
+        //   }
+        // }
 
         & .link {
           color: #a9a9a9;

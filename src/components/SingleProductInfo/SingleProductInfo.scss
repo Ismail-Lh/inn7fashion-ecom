@@ -33,10 +33,6 @@
 
       .btn {
         @media (max-width: 1024px) {
-          padding: 1.5rem 4rem;
-        }
-
-        @media (max-width: 768px) {
           padding: 1.5rem 3rem;
         }
 
@@ -107,6 +103,10 @@
         display: flex;
         align-items: center;
         margin-top: 1rem;
+
+        @media (max-width: 1024px) {
+          display: block;
+        }
 
         &__value {
           color: #282828;

@@ -31,7 +31,7 @@ function App() {
           <WomenPage />
         </Route>
 
-        <Route exact path='/products/:gender/:designer/:name'>
+        <Route exact path='/products/:gender/:designer/:productName'>
           <SingleProductPage />
         </Route>
 
@@ -47,7 +47,7 @@ function App() {
           <ShoppingCartPage />
         </Route>
 
-        <Route exact path='/:gender/:category'>
+        <Route exact path='/:gender/:productsCategory'>
           <CategoryProductsPage />
         </Route>
       </Switch>

@@ -88,10 +88,7 @@ const Navbar = () => {
                         key={idx}
                         className='dropDown__item'
                         onClick={() => categoryProducts(link)}>
-                        <Link
-                          to={`/${gender}/${link}`}
-                          name='product_type'
-                          onClick={updateFilters}>
+                        <Link to={`/${gender}/${link}`} name='product_type'>
                           {item}
                         </Link>
                       </li>
